@@ -18,7 +18,7 @@
                                 <p style="font-size:18px">С нами проекты проходят легко и не принужденно, давайте
                                     знакомиться!</p>
                             </div>
-                            <form action="{{ route('send.email',['lang' => $lang]) }}" method="post">
+                            {{-- <form action="{{ route('send.email',['lang' => $lang]) }}" method="post">
                                 @csrf
                             <div class="row d-flex">
                                 <label class="field">
@@ -41,7 +41,7 @@
                             <input type="text" name="name" class="field-input field-textarea mt-5"
                                 placeholder="Ваш комментарий или описание">
                                 <button type="sumbit" class="btn send-p d-flex align-items-center text-white" style="">Отправить</button>
-                        </form>
+                        </form> --}}
                         </div>
 
 

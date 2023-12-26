@@ -30,7 +30,7 @@
             Создаем крутые логотипы, дизайны сайтов, понятные, но стильные интерфейсы
         </div>
 
-        <div class="carousel-custom ">
+        {{-- <div class="carousel-custom ">
             <div class="carousel-custom-item">
                 <div class="col flex-column slide-text">
                     <p class="slide-title">Дизайн упаковки перчаток ProfiGlove</p>
@@ -51,10 +51,10 @@
                     <a class="slide-a no-line">Смотреть проект</a>
                 </div>
                 <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
-                {{-- <div class="slide-text">
+                <div class="slide-text">
                     <span class="slide-title">Дизайн упаковки перчаток ProfiGlove</span>
                     <a class="slide-a no-line">Смотреть проект</a>
-                </div> --}}
+                </div>
             </div>
             
             <div class="carousel-custom-item">
@@ -78,7 +78,7 @@
                 </div>
                 <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
             </div>
-        </div>
+        </div> --}}
 
     </div>
 @endsection
@@ -339,7 +339,7 @@
                 про бюджет який вам будет у допомогу! Ми не зламні!</p>
         </div>
         <div class="feedback_form" style="margin: 0 !important">
-            <form action="{{ route('send.email', ['lang' => $lang]) }}" method="post">
+            {{-- <form action="{{ route('send.email', ['lang' => $lang]) }}" method="post">
                 @csrf
                 <label class="field">
                     <input type="text" name="name" class="field-input w-100"
@@ -360,7 +360,7 @@
                 </label>
                 <button type="sumbit" class="btn send-p d-flex align-items-center text-white"
                     style="">Отправить</button>
-            </form>
+            </form> --}}
         </div>
     </div>
     <div class="about_company">
