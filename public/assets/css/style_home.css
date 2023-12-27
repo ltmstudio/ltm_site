@@ -560,67 +560,7 @@ label {
   color: white;
 }
 
-.menu-button img {
-  transition: 0.1s linear;
-  width: 6rem;
-}
-.menu-button:hover img {
-  border-radius: 50%;
-}
-/* курсор
-.cursor {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  z-index: 999;
-  display: none;
-}
-.cursor__dot {
-  position: absolute;
-  height: 0.5rem;
-  width: 0.5rem;
-  background-color: #f6074a;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-}
-.cursor__circle {
-  position: absolute;
-  height: 11.16rem;
-  width: 11.16rem;
-  left: -5.4rem;
-  top: -5.4rem;
-}
-.cursor__circle:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 1px solid #6969e1;
-  border-radius: 50%;
-  transition: background-color 0.2s ease-out, -webkit-transform 0.2s ease-out;
-  transition: background-color 0.2s ease-out, transform 0.2s ease-out;
-  transition: background-color 0.2s ease-out, transform 0.2s ease-out,
-    -webkit-transform 0.2s ease-out;
-  opacity: 0.3;
-  -webkit-transform: scale(0.6);
-  transform: scale(0.6);
-}
-.cursor.has-hover .cursor__circle:before {
-  background-color: #6969e1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-.cursor.has-focus .cursor__circle:before {
-  -webkit-transform: scale(0.6);
-  transform: scale(0.6);
-} */
+
 
 /*карусель*/
 

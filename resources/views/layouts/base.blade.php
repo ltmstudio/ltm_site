@@ -20,16 +20,15 @@
                 <img src="{{ asset('/assets/images/logo.png') }}" alt="Center Image">
             </div>
         </div>
-        {{-- <span class="loader"></span> --}}
     </div>
+
+    {{-- Cursor --}}
     <div class="cursor-outer" id="custom-cursor"></div>
     <div class="cursor-inner" id="cursor-inner"></div>
+    {{-- Content --}}
     <div class="parent">
         <div class="background">
             <div class="bg-color"></div>
-            {{-- <div class="circle_base top"></div> --}}
-            {{-- <div class="circle_base middle"></div> --}}
-            {{-- <div class="circle_base bottom"></div> --}}
         </div>
         <div class="page-content">
             @include('layouts.header')
@@ -46,26 +45,7 @@
     <div class="follow-cursor"></div>
 
     <button onclick="topFunction()" id="myBtn"><i class="fa-solid fa-arrow-up" style="color:#1B2E69"></i></button>
-    <script>
-        const scrollToTopButton = document.getElementById("myBtn");
-
-        window.addEventListener('toggleScrollButton', (event) => {
-            scrollToTopButton.style.display = event.detail.display ? "block" : "none";
-        });
-
-        window.onscroll = function() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollToTopButton.style.display = "block";
-            } else {
-                scrollToTopButton.style.display = "none";
-            }
-        };
-
-        scrollToTopButton.addEventListener("click", function() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
-    </script>
+  
 </body>
 
 </html>

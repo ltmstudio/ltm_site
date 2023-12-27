@@ -1,20 +1,20 @@
 <script src="{{ asset('assets/js/jquery.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-<!-- {{-- <script src="https://cdn.tiny.cloud/1/74xvt7uwri2in2n4ude1gp7rdh9vo0x0g7bmyeenswgocc6o/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> --}}
-{{-- <script src="{{ asset('assets/js/addEditorTinymce.js')}}"></script> --}} -->
 <script src="{{ asset('assets/js/typingHeader.js') }}"></script>
-<script src="{{ asset('assets/js/editors.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/editors.js') }}"></script> --}}
 <script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
-<script src="{{ asset('assets/js/uploadImages.js') }}"></script>
+<script src="{{ asset('assets/js/scrollTop.js') }}"></script>
+
+{{-- <script src="{{ asset('assets/js/uploadImages.js') }}"></script> --}}
 <script src="{{ asset('assets/js/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/customSlick.js') }}"></script>
-{{-- <script src="{{ asset('assets/js/scroll.js') }}"></script> --}}
 <script src="{{ asset('assets/js/scroll2.js') }}"></script>
 <script src="{{ asset('assets/js/cursor.js') }}"></script>
-<script src="{{ asset('assets/js/cursor_test.js    ') }}"></script>
-<script src="{{ asset('assets/js/followedCursor.js') }}"></script>
-<script src="{{ asset('assets/js/modalFooter.js') }}"></script>
-<script src="{{ asset('assets/js/blurPortfolio.js') }}"></script>
+<script src="{{ asset('assets/js/cursor_test.js') }}"></script>
+
+{{-- <script src="{{ asset('assets/js/followedCursor.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/js/modalFooter.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/js/blurPortfolio.js') }}"></script> --}}
 
 
 

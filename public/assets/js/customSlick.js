@@ -103,7 +103,7 @@ $(function () {
         centerMode: false, // Выключаем центрирование
         variableWidth: true, // Включаем переменную ширину слайдов
         speed: 1000,
-        nextArrow: `<button class="services_next"><img src="{{ '../images/long-arrow-right.png' }}" style='width: 5.4rem;' alt=''></button>`,
+        nextArrowHtml : '<button class="services_next"><img src="' + '../images/long-arrow-right.png' + '" style="width: 5.4rem;" alt=""></button>',
         prevArrow: '<div></div>',
     });
 

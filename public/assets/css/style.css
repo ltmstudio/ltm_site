@@ -26,11 +26,21 @@ body {
   color: white;
   overflow-x: hidden;
 }
-
-input {
-  background-color: none;
-  outline: none !important;
-}
+a{
+  text-decoration: none;
+    font-family: "ProbaPro";
+    position: relative;
+    text-decoration: none;
+    cursor: none;
+    color: white;
+    line-height: 0 !important;
+  }
+a:hover:after {
+    width: 0;
+    right: 0%;
+    cursor: none;
+  }
+  
 ::-webkit-scrollbar {
   width: 1.5rem; /* Ширина скроллбара */
 }
@@ -44,91 +54,7 @@ input {
   z-index: 1;
 }
 
-ul {
-  list-style-type: none;
-}
-
-li {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-
-.desktop-none{
-  display: none;
-}
-/*///////////////////////////////////////////////////// Cursor ////////////////////////////*/
-
-a {
-  font-family: "ProbaPro";
-  position: relative;
-  text-decoration: none;
-  cursor: none;
-  color: white;
-  line-height: 0 !important;
-}
-a:hover:after {
-  width: 0;
-  right: 0%;
-  cursor: none;
-}
-.cursor-outer {
-  width: 55px;
-  height: 55px;
-  border-radius: 100%;
-  border: 1px solid rgba(171, 192, 227, 0.1);
-  transition: all 200ms ease-out;
-  position: fixed;
-  pointer-events: none;
-  left: 0;
-  top: 0;
-  transform: translate(calc(-50% + 15px), -50%);
-  z-index: 9999;
-}
-
-.follow-cursor {
-  display: block;
-  width: 4px;
-  height: 4px;
-  background-color: #0d6efd;
-  border: 1px solid #0d6efd;
-  border-radius: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  position: absolute;
-  z-index: 999;
-  pointer-events: none;
-  transition: width 0.2s, height 0.2s, border-radius 0.2s, background 0.2s;
-}
-
-/* Активный класс для кружка при наведении на ссылку */
-.follow-cursor_active {
-  height: 80px;
-  width: 80px;
-  border-width: 2px;
-  background: rgba(13, 110, 253, 0.32);
-}
-.followed-element {
-  width: 100px;
-  height: 100px;
-  /* background-color: blue; */
-  position: relative;
-  transition: transform 0.3s ease;
-  /* Добавляем плавный переход для плавности анимации */
-}
-
-/* Скрываем декоративный элемент при ширине браузера меньше 992px */
-@media (max-width: 991.98px) {
-  .follow-cursor {
-    display: none;
-  }
-  .mobile-none {
-    display: none;
-  }
-}
-
-/* ///////////////////////////////////////////////////// BASE //////////////////////////////////// */
-/* ///////////////////////////////////////////////////// BG - COLOR //////////////////////////////////// */
-
+/*///////////////////////////////////// BASE ////////////////////////*/
 .parent {
   position: relative;
 }
@@ -138,32 +64,6 @@ a:hover:after {
   width: 100%;
   height: 100%;
   background-attachment: fixed;
-}
-.circle_base {
-  opacity: 0.7;
-  background: radial-gradient(
-    70.71% 70.71% at 50% 50%,
-    #2c5bbc 0%,
-    rgba(44, 91, 188, 0) 70%,
-    rgba(44, 91, 188, 0) 100%
-  );
-  width: 707px;
-  height: 600px;
-}
-.top {
-  position: absolute;
-  top: 29.7rem;
-  right: -19.2rem;
-}
-.middle {
-  position: absolute;
-  top: 115.5rem;
-  left: -4.2rem;
-}
-.bottom {
-  position: absolute;
-  top: 294.6rem;
-  right: -19.2rem;
 }
 .page-content {
   position: absolute;
@@ -219,9 +119,7 @@ a:hover:after {
 .header-content {
   position: relative;
 }
-
-/* scrolling name */
-
+/*//////////////////////////// SCROLLING TITLE HEADER //////////////////*/
 .circle-container {
   position: absolute;
   width: 11rem;
@@ -230,7 +128,6 @@ a:hover:after {
   top: 20px;
   left: 20px;
 }
-
 .scrolling-image,
 .center-image {
   position: absolute;
@@ -238,40 +135,18 @@ a:hover:after {
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
 }
-
 .scrolling-image {
   width: 11rem;
-  animation: moveImage 20s linear infinite; /* Adjust the animation duration (20s in this example) */
+  animation: moveImage 30s linear infinite; /* Adjust the animation duration (20s in this example) */
 }
-
 .center-image {
   width: 4.5rem;
-  height: 3.15rem; /* Adjust as needed */
+  height: 3.15rem; 
 }
-
 .scrolling-image img,
 .center-image img {
   width: 100%;
   height: 100%;
-}
-
-@keyframes moveImage {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(-360deg); /* Negative rotation to make it move along the circle */
-  }
-}
-
-.lang {
-  margin-left: 6rem;
-  display: flex;
-  align-items: center;
-}
-.lang img {
-  margin-left: 2rem;
-  width: 6rem;
 }
 
 /* typing text */
@@ -284,78 +159,21 @@ a:hover:after {
   opacity: 1;
   animation: blink 1s infinite;
 }
-
 @keyframes blink {
   50% {
     opacity: 0;
   }
 }
-
-@keyframes cursorAnimation {
-  0%,
-  100% {
-    opacity: 1;
+@keyframes moveImage {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  50% {
-    opacity: 0;
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg); 
   }
 }
-
-.circle {
-  position: absolute;
-  top: 0%;
-  left: 65%;
-}
-.column {
-  flex: 1;
-  /* padding: 10px; */
-  box-sizing: border-box;
-}
-.leftHeader {
-  display: block;
-  width: 41%;
-  justify-content: space-between;
-  position: fixed;
-  left: 86px;
-  top: 55rem;
-  display: flex;
-  padding-right: 6rem;
-  transform: translate(-50%, -50%) rotate(-90deg); /* Rotate the header */
-}
-.rowLeftHeader {
-  display: flex;
-  align-items: start;
-}
-.leftHeaderTop {
-  display: none;
-  align-items: start;
-}
-.leftHeaderTop p {
-  color: white;
-  margin: 0 5.5rem 2rem 0rem;
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-.rowLeftHeader .portfolio {
-  text-decoration-thickness: 1rems;
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: 0.4rem;
-}
-
-.rowLeftHeader a {
-  margin: 2.4rem;
-}
-.rowLeftHeader p {
-  font-family: "ProbaPro";
-  letter-spacing: 0.3rem;
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.7;
-}
-
-.text-row {
+/*///////////////////////////////////// HEADER NAVIGATION BAR /////////////////*/
+.header-nav {
   position: absolute;
   left: 52rem;
   top: 2.5rem;
@@ -364,15 +182,14 @@ a:hover:after {
   align-items: center;
   z-index: 2;
 }
-.text {
+.nav-item {
   color: white;
   font-size: 2rem;
   font-weight: 700;
   padding: 1em 1.2em;
   transition: all 0.3s ease;
 }
-
-.text a:hover {
+.nav-item a:hover {
   color: #0a4dc0 !important;
 }
 a:after {
@@ -382,23 +199,20 @@ a:after {
   height: 1px;
   display: block;
   margin-top: -4px;
-  /* margin-left: auto;
-  margin-right: auto; */
   right: 0%;
   background: white;
   transition: width 0.5s ease;
 }
-
 a:hover:after {
   color: red;
   width: 0;
   right: 0%;
   background: white;
 }
-
-.text a:hover:after {
+.nav-item a:hover:after {
   background: #0a4dc0;
 }
+/* //////////////////////////////////////HEADER CONTACT ////////////////////*/
 .contact-info {
   padding: 1em 0;
   margin-right: 20px;
@@ -421,8 +235,16 @@ a:hover:after {
   border-bottom: 1px solid #ffffff;
   transition: width 2s;
 }
+/* //////////////////////////////////////HEADER LANGUAGE ////////////////////*/
 .lang {
+  margin-left: 6rem;
+  display: flex;
+  align-items: center;
   position: relative;
+}
+.lang img {
+  margin-left: 2rem;
+  width: 6rem;
 }
 .language {
   transition: all 0.3s ease;
@@ -431,9 +253,6 @@ a:hover:after {
   color: #0a4dc0;
   border-bottom: none;
 }
-/*a{*/
-/*    cursor: pointer;*/
-/*}*/
 .language:hover + .langList {
   display: block;
 }
@@ -460,13 +279,7 @@ a:hover:after {
     transform: rotate(0deg);
   }
 }
-.language:active + .langList {
-  display: block;
-}
-.language:visited + .langList {
-  display: block;
-}
-.langList:hover {
+.language:active + .langList, .language:visited + .langList, .langList:hover {
   display: block;
 }
 .langList {
@@ -486,9 +299,211 @@ a:hover:after {
   margin: 0.5rem 0;
 }
 .langList li a {
-  text-decoration: none;
+  /* text-decoration: none; */
   color: white;
 }
+.no-line:after {
+  background: none !important;
+}
+
+.menu-button img {
+  transition: 0.1s linear;
+  width: 6rem;
+}
+.menu-button:hover img {
+  border-radius: 50%;
+}
+
+/*///////////////////////////////////// CIRCLE-BACKGROUND ////////////////////////*/
+/* .circle_base {
+  opacity: 0.7;
+  background: radial-gradient(
+    70.71% 70.71% at 50% 50%,
+    #2c5bbc 0%,
+    rgba(44, 91, 188, 0) 70%,
+    rgba(44, 91, 188, 0) 100%
+  );
+  width: 707px;
+  height: 600px;
+} */
+
+/* .circle {
+  position: absolute;
+  top: 0%;
+  left: 65%;
+} */
+
+/*///////////////////////////////////// LOADER ////////////////////////*/
+/* .loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+} */
+
+/*///////////////////////////////////////////////////// Cursor ////////////////////////////*/
+.cursor-outer {
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  border: 1px solid rgba(171, 192, 227, 0.1);
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: 9999;
+}
+.follow-cursor {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+  border-radius: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  transition: width 0.2s, height 0.2s, border-radius 0.2s, background 0.2s;
+}
+/* Активный класс для кружка при наведении на ссылку */
+.follow-cursor_active {
+  height: 80px;
+  width: 80px;
+  border-width: 2px;
+  background: rgba(13, 110, 253, 0.32);
+}
+.followed-element {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transition: transform 0.3s ease;
+  /* Добавляем плавный переход для плавности анимации */
+}
+/* ///////////////////////////////////LEFT HEADER ///////////////////*/
+.leftHeader {
+  display: block;
+  width: 41%;
+  justify-content: space-between;
+  position: fixed;
+  left: 86px;
+  top: 55rem;
+  display: flex;
+  padding-right: 6rem;
+  transform: translate(-50%, -50%) rotate(-90deg); /* Rotate the header */
+}
+.rowLeftHeader {
+  display: flex;
+  align-items: start;
+}
+.leftHeaderTop {
+  display: none;
+  align-items: start;
+}
+.leftHeaderTop p {
+  color: white;
+  margin: 0 5.5rem 2rem 0rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.rowLeftHeader .portfolio {
+  text-decoration-thickness: 1rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.4rem;
+}
+
+.rowLeftHeader a {
+  margin: 2.4rem;
+}
+.rowLeftHeader p {
+  font-family: "ProbaPro";
+  letter-spacing: 0.3rem;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/*////////////////////////////////////// Unknown ////////////////*/
+/* .top {
+  position: absolute;
+  top: 29.7rem;
+  right: -19.2rem;
+}
+.middle {
+  position: absolute;
+  top: 115.5rem;
+  left: -4.2rem;
+}
+.bottom {
+  position: absolute;
+  top: 294.6rem;
+  right: -19.2rem;
+} */
+/* @keyframes cursorAnimation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+} */
+
+
+
+
+input {
+  background-color: none;
+  outline: none !important;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.desktop-none{
+  display: none;
+}
+
+.column {
+  flex: 1;
+  /* padding: 10px; */
+  box-sizing: border-box;
+}
+
+
+
+
 
 .pre_title {
   padding-top: 0;
@@ -972,9 +987,7 @@ footer p {
   transform: translateY(-20px); /* Поднимаем текст при наведении */
 }
 
-.no-line:after {
-  background: none !important;
-}
+
 
 .start {
   font-size: 72px;
@@ -990,7 +1003,7 @@ footer p {
 
 
 @media (max-width: 1440px) {
-  .text-row {
+  .header-nav {
     left: 45rem;
     top: 3rem;
   }
@@ -1030,9 +1043,25 @@ footer p {
   .circle-container {
     top: 8px;
   }
+
+  .leftHeaderTop{
+    display: flex;
+}
+.leftHeader{
+    display: none;
+}
 }
 
 @media (max-width: 1024px) {
+  .container{
+    width: auto;
+}
+.typing-container{
+    display: none;
+}
+.header-nav{
+    display: none;
+}
   .prev-slide, .next-slide{
     margin-top: 70px!important;
   }
@@ -1057,9 +1086,9 @@ footer p {
     top: 5px;
     left: 15px;
   }
-  .scrolling-image {
+  /* .scrolling-image {
     width: 13rem;
-  }
+  } */
   .center-image {
     width: 5.5rem;
     height: 4.15rem;
@@ -1136,6 +1165,14 @@ footer p {
   .copyrights {
     font-size: 3rem;
   }
+  .leftHeaderTop{
+    justify-content: left;
+    margin: 0 0 4rem 0;
+}
+.leftHeaderTop p{
+margin: 0 5.5rem 0 0rem;
+font-size: 2.5rem;
+}
   /* .contact-info i {
     display: none;
   } */
@@ -1172,6 +1209,16 @@ footer p {
     /* margin-top: 120px; */
     padding: 0 2rem;
   }
+  .contact-info {
+    width: 41%;
+}
+.rowLeftHeader p {
+  font-size: 2.4rem;
+}
+.leftHeaderTop{
+  justify-content: center;
+  margin: 0 0 4rem 0;
+}
 }
 
 .form-row {
@@ -1209,32 +1256,7 @@ footer p {
   cursor: pointer;
 }
 
-.loader {
-  transform: rotateZ(45deg);
-  perspective: 1000px;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  color: #fff;
-}
-.loader:before,
-.loader:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  transform: rotateX(70deg);
-  animation: 1s spin linear infinite;
-}
-.loader:after {
-  color: #ff3d00;
-  transform: rotateY(70deg);
-  animation-delay: 0.4s;
-}
+
 
 #myBtn {
   display: none; /* Hidden by default */

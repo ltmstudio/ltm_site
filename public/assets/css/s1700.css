@@ -65,12 +65,7 @@
     html{
         font-size: 7px;
     }
-    .leftHeaderTop{
-        display: flex;
-    }
-    .leftHeader{
-        display: none;
-    }
+   
 }
 
 /* @media (max-width: 1200px)
@@ -97,18 +92,11 @@
     html{
         font-size: 6px;
     }
-    .container{
-        width: auto;
-    }
+
     /* html{
         font-size: 8px;
     } */
-    .typing-container{
-        display: none;
-    }
-    .text-row{
-        display: none;
-    }
+ 
     .column.right{
         display: none;
     }
@@ -155,14 +143,7 @@
     /* html{
         font-size: 6px;
     } */
-    .leftHeaderTop{
-        justify-content: left;
-        margin: 0 0 4rem 0;
-    }
-    .leftHeaderTop p{
-    margin: 0 5.5rem 0 0rem;
-    font-size: 2.5rem;
-    }
+
     .pre_title{
         font-size: 3rem;
     }
@@ -213,10 +194,7 @@
     html{
         font-size: 5.7px;
     }
-    .leftHeaderTop{
-        justify-content: center;
-        margin: 0 0 4rem 0;
-    }
+   
     .title {
         font-size: 5.5rem;
         text-align: center;

@@ -250,16 +250,12 @@
 }
 
 @media (max-width: 600px) {
-  .contact-info {
-    width: 41%;
-}
+
 .portfHeader{
   top: -14rem;
   left: 32%;
 }
-.rowLeftHeader p {
-  font-size: 2.4rem;
-}
+
   .columnPort img {
     width: 70%;
     margin-left: 40px;

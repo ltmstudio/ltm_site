@@ -4,25 +4,17 @@
 @section('custom-slider')
     @if (session('success'))
         <div class="alert alert-danger">
-
             {{ session('success') }}
-
         </div>
     @endif
     @if ($errors->any())
-
         <div class="alert alert-danger">
-
             <ul>
-
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
-
             </ul>
-
         </div>
-
     @endif
 
     <div class="mainSlider ">
@@ -30,7 +22,7 @@
             Создаем крутые логотипы, дизайны сайтов, понятные, но стильные интерфейсы
         </div>
 
-        {{-- <div class="carousel-custom ">
+        <div class="carousel-custom ">
             <div class="carousel-custom-item">
                 <div class="col flex-column slide-text">
                     <p class="slide-title">Дизайн упаковки перчаток ProfiGlove</p>
@@ -78,7 +70,7 @@
                 </div>
                 <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
             </div>
-        </div> --}}
+        </div>
 
     </div>
 @endsection
@@ -207,9 +199,10 @@
                 <a href="" class="btn first no-line"><span>Смотреть все услуги</span></a>
             </div>
         </div>
-
-
     </div>
+
+
+    {{-- for phone resolution --}}
     <div class="services_content desktop-none">
         <div class="services_title text-center">Мы разбираемся в:</div>
         <div class="services-mobile-slider">
