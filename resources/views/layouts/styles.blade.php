@@ -2,6 +2,9 @@
 <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
 {{--<script src="https://kit.fontawesome.com/99812e2cb8.js" crossorigin="anonymous"></script>--}}
+{{-- <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"></noscript> --}}
+
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/style_home.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/s1700.css') }}">

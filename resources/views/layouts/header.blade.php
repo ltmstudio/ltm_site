@@ -29,7 +29,7 @@
                     <img src="{{ asset('/assets/images/logo.png') }}" alt="Center Image">
                 </div>
             </div>
-            <div style="width:120px"></div>
+            {{-- <div style="width:120px"></div> --}}
             <div class="typing-text"></div>
         </div>
 

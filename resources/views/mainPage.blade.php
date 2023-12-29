@@ -343,7 +343,7 @@
                 </label>
                 <label class="field">
                     <input type="text" name="project" class="field-input w-100" placeholder="Что за проект?">
-                </label>
+                </label>s
                 <label class="field">
                     <input type="email" name="email" class="field-input w-100" placeholder="“Ваш” email">
                 </label>

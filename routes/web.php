@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/{lang}', function ($lang) {
     App::setLocale($lang);
-    $leftMenu = true;
+    $leftMenu = false;
     $currentPage = "Главная";
     return view('mainPage', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 });
@@ -31,8 +31,8 @@ Route::post('/{lang}/admin/add-project', $path . '\CPortfolio@addPortfolio');
 // edit
 Route::get('/{lang}/admin/edit-project/{id}', function ($lang, $id) {
     App::setLocale($lang);
-    // $portfolio = Portfolio::where('id', $id)->get();
-    // return view('editProjects', ['lang' => $lang, 'id' => $id, 'portfolio' => $portfolio[0]]);
+    $portfolio = Portfolio::where('id', $id)->get();
+    return view('editProjects', ['lang' => $lang, 'id' => $id, 'portfolio' => $portfolio[0]]);
 });
 Route::post('/{lang}/admin/edit-project/{id}', $path . '\CPortfolio@editPortfolio');
 
@@ -46,8 +46,8 @@ Route::post('/{lang}/admin/edit-project/{id}', $path . '\CPortfolio@editPortfoli
 Route::get('/{lang}/admin/all-projects', function ($lang) {
     App::setLocale($lang);
     Paginator::useBootstrap();
-    // $portfolio = Portfolio::paginate(10);
-    // return view('allProjects', ['lang' => $lang, 'portfolio' => $portfolio]);
+    $portfolio = Portfolio::paginate(10);
+    return view('allProjects', ['lang' => $lang, 'portfolio' => $portfolio]);
 });
 
 Route::get('/{lang}/services', function ($lang) {
@@ -66,11 +66,11 @@ Route::get('/{lang}/about_us', function ($lang) {
 
 Route::get('/{lang}/portfolio', function ($lang) {
     App::setLocale($lang);
-    $leftMenu = false;
-    $currentPage = "Проекты";
-    // $portfolio = Portfolio::paginate(10);
-    // $portfolio = Portfolio::offset(0)->limit(5)->get();
-    // return view('portfolio', ['portfolio' => $portfolio, 'leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
+    $leftMenu = true;
+    $currentPage = "Проекты122";
+    // $portfolio = Portfolio::paginate(3);
+    $portfolio = Portfolio::offset(0)->limit(3)->get();
+    return view('portfolio', ['portfolio' => $portfolio, 'leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 });
 
 // Load More Portfolio Items
@@ -81,26 +81,19 @@ Route::get('/{lang}/portfolio', function ($lang) {
 //     return view('partials.portfolio_items', ['portfolio' => $portfolio]);
 // });
 
-// Route::get('/{lang}/portfolio/load-more', function (Request $request, $lang) {
-//     App::setLocale($lang);
-//     $page = $request->input('page', 1); // Get the current page from the request
-//     $portfolio = Portfolio::paginate(3, ['*'], 'page', $page);
-//     return view('partials.portfolio_items', ['portfolio' => $portfolio]);
-// });
-
 Route::get('/{lang}/portfolio/{id}', function ($lang, $id) {
     App::setLocale($lang);
     $leftMenu = true;
     $currentPage = "Проекты";
-    // $portfolio = Portfolio::where('id', $id)->get();
-    // $images_add = Images_Add::where('portfolio_id', $id)->get();
-    // return view('oneProjectDetails', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang, 'id' => $id, 'portfolio' => $portfolio[0], 'images_add' => $images_add]);
+    $portfolio = Portfolio::where('id', $id)->get();
+    $images_add = Images_Add::where('portfolio_id', $id)->get();
+    return view('oneProjectDetails', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang, 'id' => $id, 'portfolio' => $portfolio[0], 'images_add' => $images_add]);
 });
 
 Route::get('/{lang}/blog', function ($lang) {
     App::setLocale($lang);
     $leftMenu = true;
-    $currentPage = "Блог12";
+    $currentPage = "Блог";
     return view('blog', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 });
 
@@ -120,4 +113,6 @@ Route::get('/{lang}/faq', function ($lang) {
 
 Route::post('/{lang}/ajax-portfolio', $path . '\CPortfolio@ajaxPortfolio');
 Route::post('/{lang}/ajax-tmp', $path . '\CPortfolio@ajaxTmp');
+Route::post('/{lang}/load-more/{pageOffset}/{type}',  $path . '\CPortfolio@showMore');
+
 

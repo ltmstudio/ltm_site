@@ -28,8 +28,9 @@
                     <div class="blog_cats_wrapper">
                     <div class="blog_cats">
                         <ul class="row_p">
-                     <li class="content ">
-                            <p>{{ __('translate.menuAll') }}</p>
+                     <li class="element">
+                            {{-- <p>{{ __('translate.menuAll') }}</p> --}}
+                        <p>All</p>
                         </li >
                         <li  class="element">
                             <p>CRM</p>
@@ -96,7 +97,7 @@
             </div>
         </div>
         {{-- <button type="button" onclick="lm()" id="lm" type="btn -btn-primary">Bassana gatrak</button> --}}
-        <div class="reload" id="loadMoreButton" data-next-page="2" onclick="lm()">
+        <div class="reload" id="loadMoreButton">
             <div class="reload-icon">
                 <img src="{{ '../assets/images/reload.png' }}">
             </div>

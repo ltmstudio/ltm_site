@@ -12,7 +12,7 @@
 <body>
     <div class="loaders position-fixed w-100 h-100 justify-content-center align-items-center"
         style="background-color: #1b2e69; z-index: 99; display: flex;">
-        <div class="circle-container" style="top: 40%; left:45%; width:25rem; height:25rem ">
+        <div class="circle-container" style="top: 0%; left:5%; width:30rem; height:30rem ">
             <div class="scrolling-image" style="width:20rem; height:auto">
                 <img src="{{ asset('/assets/images/name_1.png') }}" alt="Scrolling Image">
             </div>
