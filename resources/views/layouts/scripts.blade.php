@@ -42,20 +42,16 @@
 //        
 //////////////////////////////// GPT LOAD-MORE//////////////////////
 $(document).ready(function() {
-
-    // var itemsPerPage = 5;
   var currentPage = 1; 
   var selectedType = ""
     $('#loadMoreButton').click(function() {
+    $('#loadMoreButton').prop('disabled', false).addClass('relaod'); // Re-enable the button on every click
         var newType = $('.element.selected p').text();
         if (newType !== selectedType) {
             selectedType = newType;
             currentPage = 1;
-            $('#loadMoreButton').prop('disabled', false).text("Load More");  // Re-enable the load more button
-       
-            // $('.grid_portfolio').html("");  // Clear the previously loaded items
-             
-        }
+            // $('#loadMoreButton').prop('disabled', false).addClass('reload');
+          }
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
@@ -72,12 +68,13 @@ $(document).ready(function() {
                         $('.grid_portfolio').append('<a href="/{{$lang}}/portfolio/'+p['id']+'" class="grid-item no-line"> <div class="columnPort"> <img src="/storage/'+p['photo']+'" alt="Image"> <div class="gridText"> <div class="subtitle">'+p['what']+'</div> <div class="rowPort"> <div class="line"></div> <div class="gridTitle">'+p["title_{{$lang}}"]+'</div> </div> </div> </div> </a>');
                     });
                 }
-                 else {
-                    $('#loadMoreButton').prop('disabled', true).text("");
-                }
+//                 else 
+    //              if (data.length === 0) {
+    //     $('#loadMoreButton').prop('disabled', true).text('No more items');
+    // }
             },
         });
-        currentPage++; // Increment the page number for the next request
+        currentPage++;
     });
 });
 
