@@ -1,7 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-
-
     {{-- <div class="row"> --}}
     <span class="navBtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
        <h4 class="fw-bold py-3 mb-4">
@@ -152,7 +150,7 @@
                       <textarea class="form-control" id="exampleFormControlTextarea1" name="res_en" rows="3" >{{$portfolio['res_en']}}</textarea>
                   </div>
                   <style>
-                    .toolbar a {
+  .toolbar a {
 	display: inline-block;
 	border: 1px solid #888;
 	padding: 5px 8px;
@@ -223,6 +221,10 @@
       <div class="mb-3 col-md-12">
           <label for="formFile" class="form-label">Image</label>
           <input class="form-control" type="file" name="image" id="formFile" accept="image/*">
+          @if ($portfolio['photo'] != '')
+          <img src="{{ asset('storage/' . $portfolio['photo']) }}" alt="Image"
+              style="width: 410px!important; height: 260px !important; padding-top:15px">
+      @endif
       </div>
   </div>
   {{-- <div class="col-md-6 h-75"> --}}
@@ -237,26 +239,33 @@
           </div>
           <div class="mb-3 col-md-12">
             <label for="firstName" class="form-label">What?</label>
-            <select class="form-control" name="what"  onchange="handleSelectChange(this)">
-              <option value="Crm">CRM </option>
-              <option value="Landing">Landing </option>
-              <option value="MultiPage">Multi-page website </option>
-              <option value="Dashboards">Dashboards </option>
-              <option value="MobApplications">Mobile Applications </option>
-              <option value="onlineShop">Online Shop </option>
-              <option value="WebCatalog"> Web-site catalogue </option>
-              <option value="board">Доска Объявлении </option>
-              <option value="Logo">LogoTiger</option>
-              <option value="Other">Other</option>
-            </select>
-    <div id="otherInputContainer"></div>
-            {{-- <input class="form-control" type="text" id="firstName" name="whatEng" placeholder="What?" autofocus/> --}}
-            {{--              <span class="text-danger">@error('ru_name'){{$message}}@enderror</span>--}}
+            {{-- <select class="form-control" name="what[]" multiple onchange="handleSelectChange(this)">
+              @foreach($categories as $category)
+                  <option value="{{ $category['id'] }}" {{ in_array($category['id'], $selectedCategoryIds) ? 'selected' : '' }}>
+                      {{ $category['category_'.$lang] }}
+                  </option>
+              @endforeach
+          </select> --}}
+          
+            {{-- <select class="form-control" name="what[]" multiple onchange="handleSelectChange(this)">
+                @foreach($categories as $category)
+                    <option value="{{ $category['id'] }}">{{  $category['category_'.$lang] }}</option>
+                @endforeach
+            </select> --}}
+            <select class="form-control" name="what[]" multiple onchange="handleSelectChange(this)">
+              @foreach($categories as $category)
+                  <option value="{{ $category->id }}" 
+                      {{ in_array($category->id, $selectedCategoryIds) ? 'selected' : '' }}>
+                      {{ $category['category_'.$lang] }}
+                  </option>
+              @endforeach
+          </select>
+          
+            <div id="otherInputContainer"></div>
         </div>
             <div class="mb-3 col-md-12">
               <label for="firstName" class="form-label">Button Link</label>
-              <input class="form-control" type="text" id="firstName" name="urlButton" value={{$portfolio['urlButton']}} autofocus/>
-              {{--              <span class="text-danger">@error('ru_name'){{$message}}@enderror</span>--}}
+              <input class="form-control" type="text" id="firstName" name="urlButton" value="{{ $portfolio['urlButton'] ?? '' }}" autofocus>
           </div>
             <div class="mb-3 col-md-12">
                   <label for="firstName" class="form-label">Customer</label>
@@ -273,27 +282,51 @@
                   <textarea class="form-control" id="exampleFormControlTextarea1" name="devNames" rows="3" >{{$portfolio['devNames']}}</textarea>
                   <span class="text-danger">@error('tm_description'){{$message}}@enderror</span>
               </div>
+              <div class="mb-3 col-md-12">
+                <label for="isMainPage" class="form-label">Должен ли этот проект отображаться на главной странице?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="isMainPage" id="yes" value="1" {{ $portfolio['isMainPage'] == 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="yes">
+                        Да
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="isMainPage" id="no" value="0" {{ $portfolio['isMainPage'] == 0 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="no">
+                        Нет
+                    </label>
+                </div>
+            </div>
+            
             </div>
           </div>
         </div>
  {{--                <option <?php echo count() != 0 ? "hidden" : ""; ?> value="">{{__('words.select-hall')}}</option>--}}
 </div>
+
 <div class="row">
   @include('uploadImage')
+<div class="form-row">
+@if (count($images_add) != 0)
+  @foreach ($images_add as $i)
+  <div class="img-item" style=" margin:15px">
+    <img src="{{ asset('storage/' . $i['image_portf']) }}" style="width: 300px!important">
+    <a href="#" class="remove-img"  data-id="{{ $i['id'] }}" onclick="remove_img(this); return false;">x</a>
+  </div>
+    @endforeach
+@endif
+</div>
 </div>   
 
     <div class="mt-5">
         <button type="submit" class="btn btn-primary me-2 send">
             Save
         </button>
-        {{-- <a href="/{{$lang}}/admin/exhibits"> --}}
             <button type="button" class="btn btn-outline-secondary ">
                Cancel
             </button>
-        {{-- </a> --}}
     </div>
   </form>
-{{--</div>--}}
 
 <script>
   function handleSelectChange(selectElement) {

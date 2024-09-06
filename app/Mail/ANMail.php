@@ -24,72 +24,18 @@ class ANMail extends Mailable
     {
         $this->data = $data;
     }
+    public function build()
 
-    /**
-     * Get the message envelope.
-     */
-    // public function envelope(): Envelope
-    // {
-    //     return new Envelope(
-    //         from: new Address('a.ahmedova@arassanusga.com', 'Arassa Nusga'),
-    //         subject: 'Form Submitted',
-    //     );
-    // }
+    { 
+        return $this->
+        from('a.ahmedova@arassanusga.com', 'Arassa Nusga')
+        ->subject('Заявка')->view('mailTemplate'
+        // , ['email' => $this->data['email'], 'name' => $this->data['name']]
+    );
 
-    /**
-     * Get the message content definition.
-     */
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         view: 'mailTemplate',
-    //         with:[
-    //             'content'=>$this->data
-    //         ]
-    //     );
-    // }
+    }
 
-    // public function build()
-    // {
-    //     return $this->view('mailTemplate')
-    //                 ->with([
-    //                     'testVarOne' => $this->data,
-                       
-    //                 ]);
-    // }
-
-    // /**
-    //  * Get the attachments for the message.
-    //  *
-    //  * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-    //  */
-    // public function attachments(): array
-    // {
-    //     return [];
-    // }
-    // public $details;
-
- 
-
-    // /**
-
-    //  * Create a new message instance.
-
-    //  *
-
-    //  * @return void
-
-    //  */
-
-    // public function __construct($details)
-
-    // {
-
-    //     $this->details = $details;
-
-    // }
-
- 
+}
 
     /**
 
@@ -101,19 +47,6 @@ class ANMail extends Mailable
 
      */
 
-    public function build()
-
-    {
-
-        return $this->
-        from('a.ahmedova@arassanusga.com', 'Arassa Nusga')
-        ->subject('Заявка')->view('mailTemplate'
-        // , ['email' => $this->data['email'], 'name' => $this->data['name']]
-    );
-
-    }
-
-}
-
+  
  
 

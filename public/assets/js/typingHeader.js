@@ -33,14 +33,12 @@
 // }
 // setTimeout(typeText, 500); // Start the typing and deleting process
 
-
 document.addEventListener('DOMContentLoaded', () => {
-    const texts = ["Первый текст", "Второй текст", "Третий текст"];
     let textIndex = 0;
     let charIndex = 0;
     const typingDelay = 100;
     const erasingDelay = 50;
-    const newTextDelay = 2000; // Задержка перед началом печатания нового текста
+    const newTextDelay = 2000;
     const typingElement = document.querySelector(".typing-text");
 
     function typeText() {

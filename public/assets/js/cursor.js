@@ -1,71 +1,36 @@
-// const cursorSmall = document.querySelector('.small');
-// const cursorBig = document.querySelector('.big');
+var cursorOuter = document.querySelector('.cursor-outer');
+var cursorInner = document.querySelector('.cursor-inner');
+var links = document.querySelectorAll('a');
 
+document.addEventListener('mousemove', function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
 
-// const positionElement = (e)=> {
-//   const mouseY = e.clientY;
-//   const mouseX = e.clientX;
-   
-//   cursorSmall.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  cursorOuter.style.transform = 'translate3d(' + (x - 27) + 'px, ' + (y - 27) + 'px, 0)';
   
-//   cursorBig.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
- 
-// }
+  
+  // Вычисляем координаты для cursor-inner
+  var innerX = x - cursorInner.offsetWidth / 2;
+  var innerY = y - cursorInner.offsetHeight / 2;
 
-// window.addEventListener('mousemove', positionElement)
-
-// const customCursor = document.getElementById('cursor');
-
-// document.addEventListener('mousemove', (e) => {
-//   customCursor.style.left = e.clientX + 'px';
-//   customCursor.style.top = e.clientY + 'px';
-//   document.getElementById('cursor-inner').style.left = e.clientX+'px';
-//   document.getElementById('cursor-inner').style.top = e.clientY+'px';
-
-// });
-
-// UPDATE: I was able to get this working again... Enjoy!
-
-var cursor = document.querySelector('.cursor-outer');
-var cursorinner = document.querySelector('.cursor-inner');
-var a = document.querySelectorAll('a');
-
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+  cursorInner.style.left = innerX + 'px';
+  cursorInner.style.top = innerY + 'px';
 });
 
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursorinner.style.left = x + 'px';
-  cursorinner.style.top = y + 'px';
+document.addEventListener('click', function() {
+  cursorOuter.classList.add('click');
+  cursorInner.classList.add('cursorinnerhover');
+  setTimeout(function() {
+    cursorOuter.classList.remove('click');
+    cursorInner.classList.remove('cursorinnerhover');
+  }, 100);
 });
 
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-  cursorinner.classList.add('cursorinnerhover')
-});
-
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-  cursorinner.classList.remove('cursorinnerhover')
-});
-
-a.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
+links.forEach(function(link) {
+  link.addEventListener('mouseover', function() {
+    cursorOuter.classList.add('hover');
   });
-  item.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
+  link.addEventListener('mouseleave', function() {
+    cursorOuter.classList.remove('hover');
   });
-})
-
-
-// const customCursor = document.querySelector('.cursor');
-
-// document.addEventListener('mousemove', (e) => {
-//     customCursor.style.left = e.clientX + 'px';
-//     customCursor.style.top = e.clientY + 'px';
-// });
+});

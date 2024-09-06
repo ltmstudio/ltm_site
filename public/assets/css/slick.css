@@ -50,6 +50,7 @@
 
 .slick-track
 {
+    /* transform: translate3d(0px, 0px, 0px)!important; */
     position: relative;
     top: 0;
     left: 0;

@@ -1,7 +1,32 @@
 @extends('layouts.base')
 
-@section('title', 'About Us')
-
+@section('title', 'Об IT-консалтинговой компании Arassa Nusga в Туркменистане')
+@section('circles')
+    <div class="circle-1">
+        <img src="{{ '../assets/images/circle-1.png' }}" alt="" loading="lazy" >
+    </div>
+    <div class="circle-3">
+        <img src="{{ '../assets/images/circle-3.png' }}" alt="" loading="lazy">
+    </div>
+    <div class="circle-4">
+        <img src="{{ '../assets/images/circle-4.png' }}" alt="" loading="lazy">
+    </div>
+    <div class="circle-5">
+        <img src="{{ '../assets/images/circle-5.png' }}" alt="" loading="lazy">
+    </div>
+    <div class="circle-6">
+        <img src="{{ '../assets/images/circle-6.png' }}" alt="" loading="lazy">
+    </div>
+    <div class="circle-7">
+        <img src="{{ '../assets/images/radialCircle.png' }}" width="707px" style="z-index: 1;"> 
+    </div>
+    <div class="circle-3">
+        <img src="{{ '../assets/images/circle-3.png' }}" alt="" loading="lazy">
+    </div>
+    <div class="circle-5">
+        <img src="{{ '../assets/images/circle-5.png' }}" alt="" loading="lazy">
+    </div>
+@endsection
 @section('content')
     {{-- <div class="container"> --}}
         <div class="aboutUs_content">
@@ -16,12 +41,12 @@
         <a href="">О нас</a>
     </span>
 </div>
-                    <h1 style="">{{ __('translate.aboutUs') }}</h1>
-                    <p class="header-sub"> {{ __('translate.aboutSub') }}
+                     <h1 style="">{{ __('translate.aboutUsTitle') }}</h1>
+                    {{-- <p class="header-sub"> {{ __('translate.aboutSub') }} 
                         <a href="">Remote agency</a>
                         {{ __('translate.aboutSubCont') }}
                     </p>
-                    <p class="hugeFont"><strong>{{ __('translate.aboutTitle') }}</strong></p>
+                    <p class="hugeFont"><strong>{{ __('translate.aboutTitle') }}</strong></p> --}}
                
                 <p></p>
                 <p class="largeFont">{{ __('translate.aboutP1') }}</p>
@@ -36,12 +61,12 @@
                 </p>
                 <p class="largeFont">{!! nl2br(__('translate.aboutP4')) !!}
                 </p>
-                <h2>Remote agency</h2>
+                {{-- <h2>Remote agency</h2>
                 <p class="descFont">{{ __('translate.aboutP5') }}</p>
-                <p></p>
+                <p></p> --}}
                 <h2>{{ __('translate.history') }}</h2>
                 <p class="descFont">{!! nl2br(__('translate.aboutHistory')) !!}</p>
-                <h2>Почему «баклажан»?</h2>
+                {{-- <h2>Почему «баклажан»?</h2>
                 <p class="descFont">Кто-то таки видит баклажан, кто-то желудь, есть такие что видят
                     перо … образ получился — многогранным, как все символы
                     окружающие нас играют с воображением. Но история будет про баклажан 🍆</p>
@@ -60,7 +85,7 @@
                 </p>
                 <p class="descFont">Вот как-то так.) А вот
                     <strong> <a href="">рецепт самой вкусной икры из синих</a></strong>
-                </p>
+                </p> --}}
 
                 <h2>{{ __('translate.aboutStatistics') }}</h2>
                 <div class="aboutUs_stats">
@@ -69,19 +94,19 @@
                     <div class="about-us-photo-3" style="transform: translate3d(0px, -158px, 0px)"></div>
                     <ul class="stats">
                         <li>
-                            <div class="stats_count">10+</div>
+                            <div class="stats_count">5+</div>
                             <div class="stats_desc">{{ __('translate.years') }}</div>
                         </li>
                         <li>
-                            <div class="stats_count">279+</div>
+                            <div class="stats_count">50+</div>
                             <div class="stats_desc">{{ __('translate.projects') }}</div>
                         </li>
                         <li>
-                            <div class="stats_count">83+</div>
+                            <div class="stats_count">50+</div>
                             <div class="stats_desc">{{ __('translate.clients') }}</div>
                         </li>
                         <li>
-                            <div class="stats_count">82+</div>
+                            <div class="stats_count">49+</div>
                             <div class="stats_desc">{{ __('translate.satClients') }}</div>
                         </li>
                         <li>
@@ -130,28 +155,28 @@
 
                 <p class="descFont">{{ __('translate.valueSubCont') }}</p>
 
-                {{-- <img src="{{ '../assets/images/arassanusga-certificate-banner.jpg' }}" alt="" height="400"
+                {{-- <img src="{{ '../assets/images/arassanusga-certificate-banner.jpg' }}" alt="" loading="lazy" height="400"
                     class="p-auto d-flex flex-start"> --}}
                 
                 <div class="aboutUs_certificates">
                     <ul style="margin: 0">
-                        <li><img src="{{'../assets/images/certificates/certificate1.webp'}}" alt=""> </li>
-                        <li><img src="{{'../assets/images/certificates/certificate2.webp'}}" alt=""> </li>
-                        <li><img src="{{'../assets/images/certificates/certificate3.webp'}}" alt=""> </li>
-                        <li><img src="{{'../assets/images/certificates/certificate4.webp'}}" alt=""> </li>
-                        <li><img src="{{'../assets/images/certificates/certificate5.webp'}}" alt=""> </li>
-                        <li><img src="{{'../assets/images/certificates/certificate6.webp'}}" alt=""> </li>
+                        <li><img src="{{'../assets/images/certificates/certificate1.webp'}}" alt="" loading="lazy" loading="lazy"> </li>
+                        <li><img src="{{'../assets/images/certificates/certificate2.webp'}}" alt="" loading="lazy" loading="lazy"> </li>
+                        <li><img src="{{'../assets/images/certificates/certificate3.webp'}}" alt="" loading="lazy" loading="lazy"> </li>
+                        <li><img src="{{'../assets/images/certificates/certificate4.webp'}}" alt="" loading="lazy" loading="lazy"> </li>
+                        <li><img src="{{'../assets/images/certificates/certificate5.webp'}}" alt="" loading="lazy" loading="lazy"> </li>
+                        <li><img src="{{'../assets/images/certificates/certificate6.webp'}}" alt="" loading="lazy" loading="lazy"> </li>
                         
                     </ul>    
                     <div class="certificates_info">
-                        <div class="stats_count">12+</div>
+                        <div class="stats_count">15+</div>
                         <div class="certificates-info_desc"> {{ __('translate.exp') }}</div>
                     </div>
                 </div>
 
-                <p class="descFont">
+                {{-- <p class="descFont">
                     {{ __('translate.valueJobs') }}
-                </p>
+                </p> --}}
             </div>
                 <h2>{{ __('translate.aboutSpecTitle') }}</h2>
                 <p class="descFont">{{ __('translate.aboutSpecSub') }}</p>
@@ -159,7 +184,7 @@
                     <ul class="valuesList">
                         <li class="valueList_item">
                             <div class="item_column">
-                                <div class="item_title">{{ __('translate.spec1') }}</div>
+                                <h3 class="item_title">{{ __('translate.spec1') }}</h3>
                                 <hr>
                                 <div class="item_desc"> {!! nl2br(__('translate.spec1Sub')) !!}</div>
                             </div>
@@ -167,7 +192,7 @@
 
                         <li class="valueList_item">
                             <div class="item_column">
-                                <div class="item_title">{{ __('translate.spec2') }}</div>
+                                <h3 class="item_title">{{ __('translate.spec2') }}</h3>
                                 <hr>
                                 <div class="item_desc"> {!! nl2br(__('translate.spec2Sub')) !!}</div>
                             </div>
@@ -175,9 +200,16 @@
 
                         <li class="valueList_item">
                             <div class="item_column">
-                                <div class="item_title">{{ __('translate.spec3') }}</div>
+                                <h3 class="item_title">{{ __('translate.spec3') }}</h3>
                                 <hr>
                                 <div class="item_desc"> {!! nl2br(__('translate.spec3Sub')) !!}</div>
+                            </div>
+                        </li>
+                        <li class="valueList_item">
+                            <div class="item_column">
+                                <h3 class="item_title">{{ __('translate.spec4') }}</h3>
+                                <hr>
+                                <div class="item_desc"> {!! nl2br(__('translate.spec4Sub')) !!}</div>
                             </div>
                         </li>
                     </ul>
@@ -186,7 +218,7 @@
                 <h2>{{ __('translate.aboutPartnerTitle') }}</h2>
                 <p class="descFont">{{ __('translate.aboutPartnerSub') }} </p>
 
-                <h2><strong>{{ __('translate.aboutTeamTitle') }}</strong></h2>
+                <h2>{{ __('translate.aboutTeamTitle') }}</h2>
                 <p class="descFont">{{ __('translate.aboutTeamSub') }} </p>
                 <p class="descFont">{{ __('translate.aboutTeamSub2') }} </p>
                 <ul class="criteria">
@@ -242,17 +274,17 @@
                         <p> {{ __('translate.teamQ17') }}</p>
                     </li>
                     <li>
-                        <p> {{ __('translate.teamQ18') }}</p>
+                        {{-- <p> {{ __('translate.teamQ18') }}</p> --}}
                     </li>
                 </ul>
                 <p class="descFont">{!! nl2br(__('translate.aboutFooterSub')) !!}
-                    <a href=""><strong>{{ __('translate.custom') }}</strong></a>
+                    <a href=""><strong>{{ __('translate.mailHr') }}</strong></a>
                     {{ __('translate.aboutFooterSubCont') }}
                 </p>
             </div>
         </div>
-        <div class="aboutCompany"><strong>
-                {!! nl2br(__('translate.aboutFooterTitle')) !!} </strong>
-        </div>
+        <h2 class="aboutCompany">
+                {!! nl2br(__('translate.footerTitle')) !!} 
+        </h2>
     {{-- </div> --}}
 @endsection

@@ -5314,7 +5314,7 @@ fieldset:disabled .btn {
   --bs-modal-padding: 1rem;
   --bs-modal-margin: 0.5rem;
   --bs-modal-color: ;
-  --bs-modal-bg: var(--bs-body-bg);
+  /* --bs-modal-bg: var(--bs-body-bg); */
   --bs-modal-border-color: var(--bs-border-color-translucent);
   --bs-modal-border-width: var(--bs-border-width);
   --bs-modal-border-radius: var(--bs-border-radius-lg);
@@ -5372,7 +5372,7 @@ fieldset:disabled .btn {
   overflow: hidden;
 }
 .modal-dialog-scrollable .modal-body {
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 .modal-dialog-centered {
   display: flex;
@@ -5386,29 +5386,30 @@ fieldset:disabled .btn {
   width: 100%;
   color: var(--bs-modal-color);
   pointer-events: auto;
-  background-color: var(--bs-modal-bg);
-  background-clip: padding-box;
+  /* background-color: var(--bs-modal-bg); */
+  /* background-clip: padding-box; */
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
   border-radius: var(--bs-modal-border-radius);
   outline: 0;
 }
 .modal-backdrop {
-  --bs-backdrop-zindex: 1050;
-  --bs-backdrop-bg: #000;
-  --bs-backdrop-opacity: 0.5;
+  /* --bs-backdrop-zindex: 1050; */
+  /* --bs-backdrop-bg: #000; */
+  /* --bs-backdrop-opacity: 0.5; */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--bs-backdrop-zindex);
+  /* z-index: var(--bs-backdrop-zindex); */
   width: 100vw;
   height: 100vh;
-  background-color: var(--bs-backdrop-bg);
+  background-color: transparent;
 }
 .modal-backdrop.fade {
-  opacity: 0;
+  opacity: 1;
 }
 .modal-backdrop.show {
-  opacity: var(--bs-backdrop-opacity);
+  /* opacity: var(--bs-backdrop-opacity); */
 }
 .modal-header {
   display: flex;
@@ -5435,7 +5436,7 @@ fieldset:disabled .btn {
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: var(--bs-modal-padding);
+  /* padding: var(--bs-modal-padding); */
 }
 .modal-footer {
   display: flex;
@@ -5494,7 +5495,8 @@ fieldset:disabled .btn {
   border-radius: 0;
 }
 .modal-fullscreen .modal-body {
-  overflow-y: auto;
+  overflow: hidden;
+
 }
 @media (max-width: 575.98px) {
   .modal-fullscreen-sm-down {

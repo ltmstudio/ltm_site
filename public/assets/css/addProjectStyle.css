@@ -1,32 +1,69 @@
 /* My CSS code */
 /*@charset "UTF-8";*/
+
+
+#app{
+  display: flex;
+  min-height: 100vh;
+}
+.mainContent{
+  flex-grow: 1;
+  margin-left: 250px;
+}
 .sidebarPoints {
-    height: 100%;
-    /*width: 0;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+    color: #fff;
+    width: 230px;
     position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #222;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 20px;
+    list-style: none;
+}
+input, input:focus{
+  outline: none;
+  border: none;
+}
+.sidebarHeading{
+  margin: 10px;
+}
+.sidebarHeader{
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
 }
 .sidebarHeader img{
-    margin:2rem;
-    width: 10rem;
+  align-items: center;
+    margin:15px;
+    width: 150px;
 }
-.sidebarPoints a {
-    padding: 8px 8px 8px 32px;
+.sidebarSection{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebarSection a {
+    padding: 8px 5px;
     text-decoration: none;
-    font-size: 1.2rem;
-    color: #818181;
+    font-size: 17px;
+    color: #ffffff;
     display: block;
     transition: 0.3s;
 }
-
-.sidebarPoints a:hover {
-    color: #f1f1f1;
+.sidebarSection a:hover{
+  color: white;
+  background-color: #333;
+  border-radius: 10px;
 }
 
 .sidebarPoints .closebtn {
@@ -36,8 +73,31 @@
     font-size: 36px;
     margin-left: 50px;
 }
+.col{
+  justify-content: space-between;
+    display: flex;
+    flex: 0.4 0 0%;
+}
+.searchBar{
+  background-color: white;
+  width: 300px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+}
+.searchBar.d-flex{
+  justify-content: space-between!important;
+}
+.fa-magnifying-glass{
+  background-color: #0d6efd;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-
+.page-item.active{
+  background-color: #0d6efd!important;
+}
 .card.h-100.card-purple.tariffss-card {
   justify-content: space-between;
 }

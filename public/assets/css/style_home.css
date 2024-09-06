@@ -1,6 +1,12 @@
 @font-face {
   font-family: "Proxima Nova";
-  src: url("../fonts/ProximaNova-Rg.ttf"), format('truetype');
+  src: url("../fonts/ProximaNova-Rg.ttf"), format("truetype");
+}
+webkit-details-marker {
+  display: none;
+}
+summary{
+  display: block;
 }
 .mainSlider {
   margin-top: 160px;
@@ -105,7 +111,7 @@
   /* opacity: 0; */
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   pointer-events: all;
   transition: 0.6s cubic-bezier(0.7, 0, 0.3, 1);
   display: inline-block;
@@ -142,7 +148,7 @@
   padding: 1.5em;
   font-size: 3.6rem;
   font-weight: 700;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
 }
 .slider_next {
   background-color: transparent;
@@ -152,7 +158,7 @@
   padding: 1.5em;
   font-size: 3.6rem;
   font-weight: 700;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
 }
 .slider_next_button {
   display: none;
@@ -168,7 +174,7 @@
   background-color: #2c5bbc;
 }
 .services_content {
-  margin: 0 -2rem;
+  /* margin: 0 -2rem; */
   position: relative;
   padding-top: 0;
 }
@@ -180,7 +186,7 @@
   text-align: left;
   padding: 0 2rem;
   font-weight: 700;
-  color: #2c5bbc;
+  color: #7aaaff;
   /* color: #8e2442; */
   letter-spacing: 0.05em;
   max-width: 132rem;
@@ -188,17 +194,17 @@
   margin-right: auto;
 }
 .services_next {
-  background-image: url("../images/long-arrow-right.png");
+  background-image: url("https://arassanusga.com/assets/images/long-arrow-right.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
   position: absolute;
-  top: 6.5rem;
-  right: 0;
+  top: -13.5rem;
+  right: 20px;
   height: 10.5rem;
   width: 10.5rem;
   border-radius: 50%;
-  border: 1px solid #6ba1ff;
+  border: 1px solid #7aaaff;
   /* z-index: 4; */
   background-color: transparent;
 }
@@ -225,11 +231,12 @@
   display: none;
 }
 .small-container {
-  padding: 0 2rem;
+  padding: 0 1rem;  /*0 2rem*/
   transition: 0.6s;
-  max-width: 134rem;
+  max-width: 138rem; /*130rem*/
   margin-left: auto;
   margin-right: auto;
+
 }
 
 .section_title {
@@ -238,7 +245,7 @@
   line-height: 1.2;
 }
 .section_desc {
-  line-height: 4rem;
+  line-height: 1.25;
   color: #fff;
   font-size: 2.4rem;
   margin-bottom: 1.5em;
@@ -246,19 +253,24 @@
   margin-left: 0;
   margin-right: auto;
   letter-spacing: 0.025em;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
 }
-
+.section_desc .cont{
+  font-family: ProbaPro;
+    line-height: 1.5!important;
+    font-size: 2rem;
+}
 .services_more {
   color: white;
   text-decoration: none;
   /* border-bottom: 1px solid white; */
-  margin-bottom: 2.5rem;
+  /* margin-bottom: 2.5rem;
   position: relative;
   bottom: auto;
   right: auto;
-  font-size: 3rem;
+  font-size: 3rem; */
   margin-bottom: 2.5rem;
+  line-height: 40px!important;
   position: relative;
   bottom: auto;
   right: auto;
@@ -304,7 +316,7 @@
 }
 .services_buttons .btn {
   width: auto;
-  margin-right: 2.5rem;
+  margin-left: 2.5rem;
   /* min-width: 25rem; */
   font-size: 2rem;
   display: inline-flex;
@@ -339,17 +351,17 @@
   background-size: contain;
   /* z-index: -1; */
 }
-.serv-mobile-item{
-  border:1px solid #6ba1ff;
-  padding:10px 15px;
-  border-radius:25px;
+.serv-mobile-item {
+  border: 1px solid #7aaaff;
+  padding: 10px 15px;
+  border-radius: 25px;
 }
 
 .first {
-  background-color: #2c5bbc;
+  background-color: #3c73d3;
 }
 .second {
-  border: 1px solid #2c5bbc;
+  border: 1px solid #3c73d3;
 }
 
 .feedback-section {
@@ -431,6 +443,10 @@ label {
   padding-top: 10rem;
   position: relative;
 }
+.about_company p {
+  color: #fff;
+  opacity: 0.5;
+}
 .side-text-wrapper {
   position: absolute;
   color: rgba(175, 196, 230, 0.185);
@@ -478,8 +494,7 @@ label {
 .about_company_title:first-child {
   top: 0.15em;
   left: -0.1em;
-  /* width: 100%;
-  height: 70px; */
+  /* width: 100%;*/
 }
 .about_company_title:nth-child(3) {
   bottom: 0;
@@ -492,14 +507,19 @@ label {
   position: relative;
   /* z-index: 2; */
 }
-.about_company_desc {
+
+/* .about_company_title .title_back{
+  height: 50px;
+} */
+.about_company_sml {
   max-width: 62rem;
   line-height: 1.25;
   font-size: 2.7rem;
-  color: #b2afb2;
+  color: #fff;
+  opacity: 0.7;
   /* font-family: Proxima Nova Rg,sans-serif; */
 }
-.about_company_desc p {
+.about_company_sml p {
   margin-bottom: 1.5em;
 }
 
@@ -519,7 +539,7 @@ label {
   display: flex;
 }
 .scroll_content {
-  scrollbar-width: thin;
+  /* scrollbar-width: thin; */
   overflow-x: hidden !important;
   /* overflow-y: scroll; */
   min-width: 100% !important;
@@ -530,20 +550,23 @@ label {
 .scroll_content::-webkit-scrollbar {
   width: 2.5rem;
 }
+
 .scroll_content::-webkit-scrollbar-track {
-  background: #120a12;
+  background: transparent;
   border-radius: 99rem;
   opacity: 1;
-  color: #abc1e4;
-  border: 1px solid #320d1f;
+  color: #7aaaff;
+  /* border: 1px solid #320d1f; */
   z-index: 1;
 }
 .scroll_content::-webkit-scrollbar-thumb {
   background: rgba(171, 193, 228, 255);
   border-radius: 99rem;
+  height: 20px;
 }
+
 .scroll_desc {
-  color: #b2afb2;
+  color: #6ba1ff;
   padding-right: 6rem;
   overflow-y: hidden !important;
   /* overflow-x: scroll; */
@@ -560,8 +583,6 @@ label {
   color: white;
 }
 
-
-
 /*карусель*/
 
 .slide-text {
@@ -569,8 +590,10 @@ label {
   bottom: 20px;
   left: -80px;
   color: white;
-  font-size: 6rem;
-  font-weight: 800;
+  font-size: 5.2rem;
+  font-weight: 600;
+  /* font-size: 6rem;
+  font-weight: 800; */
   padding: 10px;
   z-index: 999;
 }
@@ -578,7 +601,8 @@ label {
 .slide-a {
   /* left:-80px; */
   font-size: 18px;
-  text-decoration: underline;
+  line-height: 30px!important;
+  /* text-decoration: underline; */
   transition: all 0.5s ease;
 }
 
@@ -608,12 +632,11 @@ label {
 /* Основной стиль слайдера */
 /* Стиль для всех слайдов */
 
-
 /* Стиль для всех слайдов */
 .serv-slider .slick-slide {
   opacity: 0.5; /* Более прозрачные для неактивных слайдов */
   transition: opacity 0.5s; /* Плавный переход */
-  width: 70vw; 
+  width: 70vw;
 }
 
 /* Стиль для активного слайда */
@@ -623,19 +646,18 @@ label {
 }
 
 .serv-slider {
-  margin-left: 20%;
+  margin-left: 15.5%;
 }
-
 
 .services-dot.active-dot {
   /* здесь могут быть стили для изменения внешнего вида активного элемента */
-  color: #2875fa; /* Пример изменения цвета текста */
+  color: #7aaaff; /* Пример изменения цвета текста */
 }
 .carousel-custom .slick-slide {
   /* transition: transform 0.5s ease, opacity 0.5s ease; */
   transition: all 0.8s ease;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   opacity: 0.5; /* Полупрозрачность для всех слайдов */
   /* max-width:50% */
   width: auto;
@@ -643,13 +665,16 @@ label {
   box-sizing: border-box;
   margin-left: 100px;
   margin-right: 100px;
+  z-index: -1;
 }
 
 /* Увеличиваем и делаем непрозрачным текущий слайд */
 .carousel-custom .slick-slide.slick-current {
-  z-index: 2;
+  /* z-index: 2; */
   opacity: 1;
   transform: scale(1);
+  z-index: -1;
+
   /* max-width:100%; */
 }
 
@@ -660,6 +685,7 @@ label {
   width: 100%;
   height: 100%;
   display: block;
+  z-index: -1;
   margin: auto;
 }
 
@@ -693,17 +719,17 @@ label {
   font-weight: 700;
   transform: translate(0, -50%);
 }
-.contacts_request_{
+.contacts_request_ {
   justify-content: center;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-@media(max-width:1850px){
+@media (max-width: 1850px) {
   .prev-cust-button {
     left: 170px;
   }
-  
+
   .next-cust-button {
     right: 170px;
   }
@@ -753,13 +779,22 @@ label {
 /* flex-direction: column; */
 /* } */
 
-.slick-prev {
+/* .slick-prev {
   left: 0;
+} */
+.slick-prev {
+  position: absolute;
+  top: 38%;
+  left: -4%;
 }
-.slick-next {
+/* .slick-next {
   right: 0;
+} */
+.slick-next {
+  position: absolute;
+  top: 38%;
+  right: -2%;
 }
-
 /* .carousel-custom-item img{
   width: 92%;
   position:relative;
@@ -818,6 +853,26 @@ label {
   display: none;
 }
 
+/* Добавляем класс для анимации */
+.modal-content {
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(0);
+}
+
+.slide-out {
+  transform: translateY(100%);
+}
+
+/* Определяем анимацию slideOut */
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
 @media (max-width: 1440px) {
   .mainSlider {
     margin-top: 125px;
@@ -826,16 +881,16 @@ label {
     transform: translateY(-74%) scale(0.8, 0.8);
   }
 
-  .prev-cust-button{
+  .prev-cust-button {
     /* left:5% !important; */
-    top: 50%; 
+    top: 50%;
   }
-  .next-cust-button{
+  .next-cust-button {
     /* right:5% !important; */
     top: 40%;
   }
 
-  .carousel-custom {  
+  .carousel-custom {
     margin-top: 30px;
   }
   .carousel-custom .slick-slide {
@@ -845,7 +900,7 @@ label {
 }
 /**/
 
-@media (max-width: 1300px) {
+@media (max-width: 1600px) {
   /* .field-input {
     width: 90%;
   } */
@@ -858,38 +913,52 @@ label {
     transform: translateY(-50%) scale(0.8, 0.8);
   }
 }
+@media (max-width: 1440px) {
+  .serv-slider {
+    margin-left: 5%;
+  }
+  .typing-text {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 1550px) {
+  .serv-slider {
+    margin-left: 6%;
+  }
+}
 
-@media(max-width:1100px){
-  .carousel-custom .slick-slide{
-    margin-left:50px;
-    margin-right:50px;
+@media (max-width: 1100px) {
+  .carousel-custom .slick-slide {
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
-  .prev-cust-button, .next-cust-button{
+  .prev-cust-button,
+  .next-cust-button {
     font-size: 28px;
   }
-  .prev-cust-button{
+  .prev-cust-button {
     top: 70%;
-    font-size:24px;
+    font-size: 24px;
   }
-  .next-cust-button{
-    top:30%;
-    font-size:24px;
-
+  .next-cust-button {
+    top: 30%;
+    font-size: 24px;
   }
 
-  .slide-text{
+  .slide-text {
     left: -40px;
   }
 
-  .slide-title{
+  .slide-title {
     font-size: 4.7rem;
+    backdrop-filter: blur(6px);
   }
 
   .serv-slider {
-    margin-left: 10%;
+    margin-left: 4%;
   }
-  
 }
 
 @media (max-width: 1024px) {
@@ -899,26 +968,24 @@ label {
     font-size: 15rem;
   }
   .prev-slide, .next-slide
-  /* , .slick-current */
-   {
-    margin-top: 70px!important;
-}
-  
+  /* , .slick-current */ {
+    margin-top: 70px !important;
+  }
+
   .prev-cust-button {
     top: 50%;
-    left:11% !important;
-}
+    left: 11% !important;
+  }
   .next-cust-button {
-    right:10% !important;
-    top:50%;
-}
-.slide-text {
-  bottom: 5px;
-}
-.slide-a {
-  font-size: 15px;
-}
-
+    right: 10% !important;
+    top: 50%;
+  }
+  .slide-text {
+    bottom: 5px;
+  }
+  .slide-a {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -928,76 +995,158 @@ label {
 }
 
 @media (max-width: 991px) {
+  .cursor-inner,
+  .cursor-outer {
+    display: none;
+  }
   .mobile-serv-slider {
     display: block;
   }
   .mobile-none {
-    display: none!important;
+    display: none !important;
   }
-  .desktop-none{
-    display: block!important;
+  .desktop-none {
+    display: block !important;
   }
   #closeModalButton {
-   display: block!important;
-}
-  .serv-mobile-item{
+    display: block !important;
+  }
+  .serv-mobile-item {
     position: relative;
-    margin-left:100px ;
-    height:380px;
+    margin-left: 100px;
+    max-height: 625px;
     flex-wrap: wrap;
     align-content: space-between;
-    padding:20px;
+    padding: 20px;
   }
-  .serv-mobile-item .section_desc{
-    color:#b2afb2;
-    font-family:'Proxima Nova', sans-serif !important;
+  .serv-mobile-item .section_desc {
+    color: #b2afb2;
+    font-family: "Proxima Nova", sans-serif !important;
   }
-  .serv-mobile-p{
-    font-size:22px;
-    font-weight:700;
-    margin-bottom:20px;
+  .serv-mobile-p {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
   }
-  .serv-mobile-a{
-    margin-right:16px;
-    margin-bottom:20px;
+  .serv-mobile-a {
+    margin-right: 16px;
+    margin-bottom: 20px;
     font-size: 16px;
     font-weight: 600;
-    text-decoration:underline;
+    text-decoration: underline;
   }
-  .serv-mobile-dots{
-    width:5px;
-    height:5px;
+  .serv-mobile-dots {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
     background-color: #6ba1ff;
-    border-radius:50%;
+    border-radius: 50%;
   }
-  .serv-mobile-dots .active-mobile-dot{
-    background-color: #256ff0;
+  .serv-mobile-dots.active-mobile-dot {
+    background-color: #fff;
   }
-.services_title{
-  font-size:24px;
+  .services_title {
+    font-size: 24px;
+  }
+
+  .dots-container {
+    width: 150px;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .services_buttons {
+    margin-top: 6rem;
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  .services-buttons .btn {
+    margin-top: 30px;
+    padding: 20px 10px;
+  }
+  .services-buttons .btn span {
+    font-size: 24px;
+  }
+  .form-container {
+    margin: 0 6rem;
+  }
+
+  .text-collapsed {
+    max-height: 420px;
+    overflow: hidden;
+  }
+  .show-more-block {
+    display: flex;
+  }
+  .show-more-block p,
+  .hide-more-block p {
+    font-size: 18px;
+    opacity:0.4;
+  }
+  .show-more-btn,
+  .hide-more-btn {
+    margin-left: 10px;
+    background-color: #7aaaff;
+    border: none;
+    height:32px;
+    opacity:0.8;
+    color: #fff;
+    border-radius: 50%;
+    padding: 6px; /* Регулируйте padding для изменения размера кнопки */
+    cursor: pointer;
+    animation: pulse 2s infinite;
+  }
+
+  .show-more-btn svg,
+  .hide-more-btn svg {
+    font-size: 16px;
+    margin-bottom:4px;
+  }
+  .pulse {
+    
+    width: fit-content;
+    background: rgb(122, 170, 255);
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(122, 170, 255, 1);
+    animation: pulse 2s infinite;
+  }
+
+  .pulse:hover {
+    animation: none;
+  }
+
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(122, 170, 255, 0.8);
+    }
+    70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(122, 170, 255, 0.8);
+      box-shadow: 0 0 0 0 rgba(122, 170, 255, 0.4);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+      box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+      box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+  }
+  
 }
-
-  .dots-container{
-    width:300px;
-    margin:auto;
-    margin-top:50px;
-  }
-
-  .services_buttons{
-    margin-top:6rem;
-    padding:20px;
-    font-size:24px;
-  }
-
-  .services-buttons .btn{
-    margin-top:30px;
-    padding:20px 10px;
-  }
-  .services-buttons .btn span{
-    font-size:24px;
-  }
-  .form-container{
-      margin: 0 6rem ;
+@media (min-width: 500px) and (max-width: 768px) {
+  .feedback-section {
+    padding-right: 50px !important;
   }
 }
 
@@ -1023,14 +1172,14 @@ label {
     display: block;
   }
   .feedback-section {
-    margin: 5rem 0 5rem;
+    margin: 5rem 3rem 5rem;
   }
   .services_next {
     right: 1rem;
     top: 10.5rem;
   }
   .services_title {
-    text-align: center;
+    /* text-align: center; */
     font-size: 4.4rem;
   }
   .section_title {
@@ -1040,7 +1189,7 @@ label {
   .about_company_left {
     width: 100%;
   }
-  .about_company_desc {
+  .about_company_sml {
     max-width: 100%;
   }
   .about_company_right {
@@ -1049,44 +1198,56 @@ label {
     position: relative;
   }
 }
-
-@media (max-width: 768px) 
-{
+@media (max-width: 349px) {
+  .about_company_title .title_back:nth-child(1) {
+    height: 86px;
+  }
+}
+@media (max-width: 768px) {
   /* .prev-slide, .next-slide, .slick-current {
     margin-top: 40px!important;
 } */
-.carousel-custom .slick-slide {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.carousel-custom {
-  margin-top: 0px;
-}
-.serv-mobile-item {
-  /* position: relative; */
-  margin-left: 25px;
-  width: 300px!important;
-}
-.prev-cust-button {
-  font-size: 18px;
-  top:50%;
-  left: 13% !important;
-}
-.next-cust-button {
-  font-size: 18px ;
-  top:50%;
-  right: 13% !important;
-}
-.slide-text {
-  bottom: -12px;
-}
+  .about_company_sml {
+    font-size: 3.5rem !important;
+  }
+  .scroll_desc * {
+    font-size: 3.5rem !important;
+  }
+  .carousel-custom .slick-slide {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .carousel-custom {
+    margin-top: 0px;
+  }
+  .serv-mobile-p {
+    font-size: 20px !important;
+  }
+  .section_desc {
+    font-size: 2.5rem !important;
+  }
+  .serv-mobile-item {
+    /* position: relative; */
+    margin-left: 10px;
+    max-width: 350px !important;
+  }
+  .prev-cust-button {
+    font-size: 18px;
+    top: 50%;
+    left: 13% !important;
+  }
+  .next-cust-button {
+    font-size: 18px;
+    top: 50%;
+    right: 13% !important;
+  }
+  .slide-text {
+    bottom: -12px;
+  }
 
-
-/* .slide-title{
+  /* .slide-title{
   font-size:20px;
 } */
-
-
 }
 
 @media (max-width: 720px) {
@@ -1096,6 +1257,20 @@ label {
   }
   .feedback_form .field {
     width: 100%;
+  }
+  .next-cust-button {
+    top: 18%;
+
+    right: 5% !important;
+    background-color: #7aaaff;
+    padding: 10px;
+  }
+  .prev-cust-button {
+    top: 18%;
+
+    left: 5% !important;
+    background-color: #7aaaff;
+    padding: 10px;
   }
 }
 @media (max-width: 670px) {
@@ -1112,7 +1287,7 @@ label {
   }
   .field {
     margin: 3rem 5rem 1rem 0 !important;
-    width: 100%; 
+    width: 100%;
   }
 }
 @media (max-width: 500px) {
@@ -1120,12 +1295,11 @@ label {
     width: 70rem;
   }
 
-  .prev-cust-button{
-    font-size:16px;
-    
+  .prev-cust-button {
+    font-size: 16px;
   }
-  .next-cust-button{
-    font-size:16px;
+  .next-cust-button {
+    font-size: 16px;
   }
 
   /* .slide-text{
@@ -1133,13 +1307,16 @@ label {
   } */
   .prev-cust-button {
     font-size: 18px;
-    top:50%;
+    top: 30.6%;
     left: 1% !important;
   }
   .next-cust-button {
-    font-size: 18px ;
-    top:50%;
-    right: 1% !important;
+    font-size: 18px;
+    top: 30%;
+  }
+  .next-cust-button i {
+    font-size: 18px;
+    font-weight: 700;
   }
   .slide-text {
     bottom: -6px;
@@ -1154,26 +1331,46 @@ label {
     width: 60rem;
   }
   .section_title {
-    font-size: 5.6rem;
+    font-size: 6.6rem;
+    font-weight: 700;
+    text-align: start !important;
   }
   .carousel-custom {
     margin-top: 0px;
+  }
+  .serv-mobile-p {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  .section_desc {
+    line-height: 4.5rem;
+    font-size: 3rem;
+  }
+  .services_buttons .btn {
+    font-size: 3rem;
+    height: 12rem;
+    padding: 0px 3.6em;
+  }
+  .field-input {
+    height: 9rem;
+    font-size: 10rem;
+  }
+
+  .field-input::placeholder {
+    font-size: 16px;
+  }
+  .start {
+    font-size: 40px;
+  }
+
+  .mobile-menu-url {
+    font-size: 24px;
+  }
 }
-.serv-mobile-p {
-  font-size: 5rem;
-  font-weight: bold;
-}
-.section_desc {
-  line-height: 4.5rem;
-  font-size: 3rem;
-}
-.services_buttons .btn {
-  font-size: 4rem;
-  height: 12rem;
-  padding: 0px 3.6em;
-}
-.field-input {
-  height: 9rem;
-  font-size: 10rem;
-}
+
+@media (max-width: 991px) {
+  #closeModalButton {
+    top: 20px !important;
+    right: 20px !important;
+  }
 }

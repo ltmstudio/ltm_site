@@ -77,7 +77,7 @@
 @media (max-width: 1024px)
 {
     .container{
-        width: 148rem;
+        /* width: 148rem; */
         /* margin-top: 152px; */
     }
     .about_desc h1{
@@ -111,6 +111,13 @@
     }
 
     .rows-3 div {
+        font-weight: 200;
+        letter-spacing: 0.05rem;
+        font-size: 2.4rem;
+        line-height: 1.5;
+    }
+
+    .rows-3 h3 {
         font-weight: 200;
         letter-spacing: 0.05rem;
         font-size: 2.4rem;

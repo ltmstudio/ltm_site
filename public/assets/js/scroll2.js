@@ -1,63 +1,51 @@
-// window.onscroll = function() {scrollFunction()};
-// function scrollFunction() {
-//     var scrollVal = window.pageYOffset;
-//     var scrollSlow  = (scrollVal / 4);
-//     document.getElementById("h2").style.width = Math.min(Math.max(scrollSlow, 0), 46) + "%";
-//     document.getElementById("h3").style.width = Math.min(Math.max(scrollSlow, 0), 48) + "%";
+window.addEventListener('scroll', function () {
+  requestAnimationFrame(scrollFunction);
+});
 
-// }
+function scrollFunction() {
+  var scrollVal = window.pageYOffset;
+  var scrollSlow = scrollVal / 4;
 
+  var triggerElement = document.querySelector('.about_company');
 
+  if (triggerElement) {
+    var triggerRect = triggerElement.getBoundingClientRect();
 
-    // function changeWidth() {
-    //   var scroll = (window.pageYOffset / 4);
-    //   var width = scroll;
-    //   // var width = Math.min(100 - scroll);
-
-    //   document.getElementById('h2').style.width = width + '%';
-    //   document.getElementById('h3').style.width = width + '%';
-
-    // }
-
-    // window.addEventListener('scroll', function(){
-    //   requestAnimationFrame(changeWidth);
-    // })
-
-
-
-     window.addEventListener('scroll', function(){
-          requestAnimationFrame(scrollFunction);
-        })
-// window.onscroll = function() {
-//     scrollFunction();
-//   };
-  
-  function scrollFunction() {
-    var scrollVal = window.pageYOffset;
-    var scrollSlow = scrollVal / 4;
-  
-    // Get the trigger element by class name
-    var triggerElement = document.querySelector('.about_company');
-  
-    if (triggerElement) {
-      // Get the position of the trigger element relative to the viewport
-      var triggerRect = triggerElement.getBoundingClientRect();
-  
-      // Check if the trigger element is in the viewport
-      if (triggerRect.top <= window.innerHeight && triggerRect.bottom >= 0) {
-        // Perform your scroll action here, e.g., changing the width of the h1 element
-        document.getElementById("h2").style.width = Math.min(Math.max(scrollSlow, 0), 46) + "%";
-        document.getElementById("h3").style.width = Math.min(Math.max(scrollSlow, 0), 54) + "%";
-        // var width = Math.min(Math.max(scrollSlow, 0), 46) + "%";
-        // document.querySelectorAll('.title_back').forEach(function(element) {
-        //   element.style.width = width;
-        // });
-      } else {
-        // If the trigger element is not in view, set the width to zero
-        document.querySelectorAll('.title_back').forEach(function(element) {
+    if (triggerRect.top <= window.innerHeight && triggerRect.bottom >= 0) {
+      var h2Width = 0;
+      var h3Width = 0;
+      if (window.innerWidth < 349) {
+        console.log('что то меньше 349');
+        h2Width = 64;
+        h3Width = 70;
+      }
+      else if (window.innerWidth > 349 && window.innerWidth < 487) {
+        console.log('что то больше 349 и меньше 487');
+        h2Width = 90;
+        h3Width = 64;
+      } else if (window.innerWidth > 488 && window.innerWidth < 767) {
+        console.log('что то меньше 767');
+        h2Width = 72;
+        h3Width = 54;
+      }
+      else if (window.innerWidth > 768 && window.innerWidth < 991) {
+        console.log('что то больше 768 и меньше 991');
+        h2Width = 52;
+        h3Width = 42;
+      } else if (window.innerWidth > 991) {
+        console.log('что то больше 991');
+        document.querySelectorAll('.title_back').forEach(function (element) {
           element.style.width = "0";
         });
+        h2Width = 48;
+        h3Width = 40;
       }
+
+      // Применяем ширину элементов
+      document.getElementById("h2").style.width = Math.min(Math.max(scrollSlow, 0), h2Width) + "%";
+      document.getElementById("h3").style.width = Math.min(Math.max(scrollSlow, 0), h3Width) + "%";
+      document.getElementById("h2Mobile").style.width = Math.min(Math.max(scrollSlow, 0), h3Width) + "%";
+      document.getElementById("h3Mobile").style.width = Math.min(Math.max(scrollSlow, 0), h3Width) + "%";
     }
   }
-  
+}

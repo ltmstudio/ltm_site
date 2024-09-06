@@ -1,75 +1,78 @@
 @extends('layouts.base')
 
-@section('title', 'MainPage')
+@section('title', 'Arassa Nusga: IT-консалтинговая компания в Туркменистане')
+@section('ogTitle', 'Arassa Nusga: IT-консалтинг в Туркменистане')
+@section('metaDesc',
+    'IT-консалтинговая компания Arassa Nusga в Туркменистане предлагает полный комплекс
+    профессиональных услуг, от консалтинга до разработки веб-сайтов, мобильных приложений, и внедрение Logo Tiger ERP, CRM
+    системы Битрикс24.')
+@section('metaKey',
+    'разработка сайтов в Туркменистане, разработка мобильных приложений в Туркменистане, Bitrix CRM в
+    Туркменистане, консалтинговая компания в Туркрменистане, IT компания в Туркменистане')
 @section('custom-slider')
     @if (session('success'))
-        <div class="alert alert-danger">
-            {{ session('success') }}
+        <div class="alert alert-success">
+            <p style="font-size:18px">{{ session('success') }}</p>
         </div>
     @endif
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    @section('ruLink', 'https://arassanusga.com/ru/');
+    @section('enLink', 'https://arassanusga.com/en/');
+    @section('tkLink', 'https://arassanusga.com/tk/')
 
     <div class="mainSlider ">
-        <div class="homeTitle">
-            Создаем крутые логотипы, дизайны сайтов, понятные, но стильные интерфейсы
-        </div>
+        <h1 class="homeTitle">
+            {{ __('translate.home_h1') }}
+        </h1>
 
         <div class="carousel-custom ">
+            @foreach ($projects as $p)
+            <div class="carousel-custom-item">
+            <a href="/{{ $lang }}/portfolio/{{ $p['id'] }}">
+                <div class="col flex-column slide-text">
+                    <p class="slide-title">{{ $p['title_'.$lang] }}</p>
+                    <a class="slide-a">{{ __('translate.readMore') }}</a>
+                </div>
+                <img class="image-container" src="{{ asset('storage/' . $p['photo']) }}" alt="Image" class="" loading="lazy">
+            </a>
+            </div>
+            {{-- </a> --}}
+            @endforeach
+            {{-- <div class="carousel-custom-item">
+                <div class="col flex-column slide-text">
+                    <p class="slide-title">Разработка интернет-магазина Stilli Dekor</p>
+                    <a class="slide-a no-line">{{ __('translate.readMore') }}</a>
+                </div>
+                <img class="image-container" src="{{ '../assets/images/portfolio/stilli.jpg' }}" alt="" loading="lazy">
+            </div>
             <div class="carousel-custom-item">
                 <div class="col flex-column slide-text">
-                    <p class="slide-title">Дизайн упаковки перчаток ProfiGlove</p>
-                    <a class="slide-a no-line">Смотреть проект</a>
+                    <p class="slide-title">Разработка моб. приложения Ak Yayla Shop Scanner</p>
+                    <a class="slide-a no-line">{{ __('translate.readMore') }}</a>
                 </div>
-                <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
+                <img class="image-container" src="{{ '../assets/images/portfolio/akyayla.jpg' }}" alt="" loading="lazy">
+            </div>
+
+            <div class="carousel-custom-item">
+                <div class="col flex-column slide-text">
+                    <span class="slide-title">Разработка сайта Ashgabat Golf Club</span>
+                    <a class="slide-a no-line">{{ __('translate.readMore') }}</a>
+                </div>
+                <img class="image-container" src="{{ '../assets/images/portfolio/golf.jpg' }}" alt="" loading="lazy">
             </div>
             <div class="carousel-custom-item">
-                <div class="slide-text">
-                    <p class="slide-title">Дизайн упаковки перчаток ProfiGlove</p>
-                    <a class="slide-a no-line">Смотреть проект</a>
+                <div class="col flex-column slide-text">
+                    <span class="slide-title">Разработка моб. приложения Kinokompas</span>
+                    <a class="slide-a no-line">{{ __('translate.readMore') }}</a>
                 </div>
-                <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
+                <img class="image-container" src="{{ '../assets/images/portfolio/kinokompas.jpg' }}" alt="" loading="lazy">
             </div>
             <div class="carousel-custom-item">
-                <div class="slide-text">
-                    <span class="slide-title">Дизайн упаковки перчаток ProfiGlove</span>
-                    <a class="slide-a no-line">Смотреть проект</a>
+                <div class="col flex-column slide-text">
+                    <span class="slide-title">Разработка сайта Nidjat</span>
+                    <a class="slide-a no-line">{{ __('translate.readMore') }}</a>
                 </div>
-                <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
-                <div class="slide-text">
-                    <span class="slide-title">Дизайн упаковки перчаток ProfiGlove</span>
-                    <a class="slide-a no-line">Смотреть проект</a>
-                </div>
-            </div>
-            
-            <div class="carousel-custom-item">
-                <div class="slide-text">
-                    <span class="slide-title">Дизайн упаковки перчаток ProfiGlove</span>
-                    <a class="slide-a no-line">Смотреть проект</a>
-                </div>
-                <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
-            </div>
-            <div class="carousel-custom-item">
-                <div class="slide-text">
-                    <span class="slide-title">Дизайн упаковки перчаток ProfiGlove</span>
-                    <a class="slide-a no-line">Смотреть проект</a>
-                </div>
-                <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
-            </div>
-            <div class="carousel-custom-item">
-                <div class="slide-text">
-                    <span class="slide-title">Дизайн упаковки перчаток ProfiGlove</span>
-                    <a class="slide-a no-line">Смотреть проект</a>
-                </div>
-                <img class="image-container" src="{{ '../assets/images/div.tilter__figure.png' }}" alt="">
-            </div>
+                <img class="image-container" src="{{ '../assets/images/portfolio/nidjat.jpg' }}" alt="" loading="lazy">
+            </div> --}}
         </div>
 
     </div>
@@ -77,126 +80,136 @@
 @section('serv-slider')
 
     <div class="services_content mobile-none">
-        <div class="services_title">Мы разбираемся в:</div>
+        <div class="services_title">{{ __('translate.myRazbirayemsya') }}</div>
 
-        <div class=" services serv-slider">
-            <div class="serv-custom-item">
+        <div class="services serv-slider">
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
-                <h2 class="section_title">
-                    Логотипы <br>
-                    и фирменный стиль
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle1')) !!}
                 </h2>
                 <div class="section_desc">
-                    <p>
-                        <span>Разработка уникального логотипа и
-                            корпоративного фирменного стиля, создание брендбука
-                            (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                            Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                    <p itemprop="description">
+                        <span>{{ __('translate.servDesc1') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">Узнать больше</a>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
-            <div class="serv-custom-item">
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
-                <h2 class="section_title">
-                    Логотипы <br>
-                    и фирменный стиль
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle2')) !!}
                 </h2>
                 <div class="section_desc">
-                    <p>
-                        <span>Разработка уникального логотипа и
-                            корпоративного фирменного стиля, создание брендбука
-                            (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                            Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                    <p itemprop="description">
+                        <span>{{ __('translate.servDesc2') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">Узнать больше</a>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
-            <div class="serv-custom-item">
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
-                <h2 class="section_title">
-                    Логотипы <br>
-                    и фирменный стиль
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle3')) !!}
                 </h2>
                 <div class="section_desc">
-                    <p>
-                        <span>Разработка уникального логотипа и
-                            корпоративного фирменного стиля, создание брендбука
-                            (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                            Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                    <p itemprop="description">
+                        <span>{{ __('translate.servDesc3') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">Узнать больше</a>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
-            <div class="serv-custom-item">
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
-                <h2 class="section_title">
-                    не логотипы <br>
-                    и фирменный стиль
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle4')) !!}
                 </h2>
                 <div class="section_desc">
-                    <p>
-                        <span>Разработка уникального логотипа и
-                            корпоративного фирменного стиля, создание брендбука
-                            (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                            Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                    <p itemprop="description">
+                        <span>{{ __('translate.servDesc4') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">Узнать больше</a>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
-            <div class="serv-custom-item">
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
-                <h2 class="section_title">
-                    Логотипы <br>
-                    и не фирменный стиль
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle5')) !!}
                 </h2>
                 <div class="section_desc">
-                    <p>
-                        <span>Разработка уникального логотипа и
-                            корпоративного фирменного стиля, создание брендбука
-                            (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                            Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                    <p itemprop="description">
+                        <span>{{ __('translate.servDesc5') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">Узнать больше</a>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
+            </div>
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
+
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle6')) !!}
+                </h2>
+                <div class="section_desc">
+                    <p itemprop="description">
+                        <span>{{ __('translate.servDesc6') }}</span>
+                    </p>
+                </div>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
+            </div>
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
+
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle7')) !!}
+                </h2>
+                <div class="section_desc">
+                    <p itemprop="description">
+                        <span></span>
+                    </p>
+                </div>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
+            </div>
+            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
+
+                <h2 class="section_title" itemprop="name">
+                    {!! nl2br(__('translate.servTitle8')) !!}
+                </h2>
+                <div class="section_desc">
+                    <p itemprop="description">
+                        <span>{{ __('translate.servDesc8') }}</span>
+                    </p>
+                </div>
+                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
         </div>
-        <div class=" small-container">
+        <div class="small-container">
             <ul class="services_dots">
                 <li>
-                    <button class="services-dot"><span>Логотипы <br> и фирменный стиль</span></button>
+                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle1')) !!}</span></button>
                 </li>
                 <li>
-                    <button class="services-dot"><span>Не логотипы <br> и фирменный стиль</span></button>
+                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle2')) !!}</span></button>
                 </li>
                 <li>
-                    <button class="services-dot"><span>Логотипы <br> и не фирменный стиль</span></button>
+                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle3')) !!}</span></button>
                 </li>
                 <li>
-                    <button class="services-dot"><span>не Логотипы <br> и не стиль</span></button>
+                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle4')) !!}</span></button>
                 </li>
                 <li>
-                    <button class="services-dot"><span>нет <br> и нет стиль</span></button>
+                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle5')) !!}</span></button>
                 </li>
                 <li>
-                    <button class="services-dot"><span>стиль <br> и стиль</span></button>
+                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle6')) !!}</span></button>
                 </li>
                 <li>
-                    <button class="services-dot"><span>Логотипы << /button>
+                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle7')) !!}</span></button>
                 </li>
                 <li>
-                    <button class="services-dot"><span>Логотипы <br> и фирменный стиль</span></button>
+                    <button class="services-dot">{!! nl2br(__('translate.servTitle8')) !!}</span></button>
                 </li>
-                <li>
-                    <button class="services-dot"><span>Логотипы <br> и фирменный стиль</span></button>
-                </li>
-                <li>
-                    <button class="services-dot"><span>Логотипы <br> и фирменный стиль</span></button>
-                </li>
-
             </ul>
             <div class="services_buttons">
-                <a href="" class="btn first no-line"><span>Смотреть все услуги</span></a>
+                <a href="/{{ $lang }}/services"
+                    class="btn first no-line"><span>{{ __('translate.allServ') }}</span></a>
             </div>
         </div>
     </div>
@@ -204,90 +217,126 @@
 
     {{-- for phone resolution --}}
     <div class="services_content desktop-none">
-        <div class="services_title text-center">Мы разбираемся в:</div>
+        <div class="services_title text-center">{{ __('translate.myRazbirayemsya') }}</div>
         <div class="services-mobile-slider">
             <div class="serv-mobile-item d-flex flex-column justify-content-between">
                 <div>
-                    <p class="serv-mobile-p">Логотипы и фирменый стиль</p>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle1') }}</p>
                     <div class="section_desc">
                         <p>
-                            <span>Разработка уникального логотипа и
-                                корпоративного фирменного стиля, создание брендбука
-                                (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                                Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                            <span>{{ __('translate.servDesc1') }}</span>
                         </p>
                     </div>
                 </div>
-                <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a> --}}
             </div>
             <div class="serv-mobile-item d-flex flex-column justify-content-between">
                 <div>
-                    <p class="serv-mobile-p">Логотипы и фирменый стиль</p>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle2') }}</p>
                     <div class="section_desc">
                         <p>
-                            <span>Разработка уникального логотипа и
-                                корпоративного фирменного стиля, создание брендбука
-                                (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                                Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                            <span>{{ __('translate.servDesc2') }}</span>
                         </p>
                     </div>
                 </div>
-                <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a> --}}
             </div>
             <div class="serv-mobile-item d-flex flex-column justify-content-between">
                 <div>
-                    <p class="serv-mobile-p">Логотипы и фирменый стиль</p>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle3') }}</p>
                     <div class="section_desc">
                         <p>
-                            <span>Разработка уникального логотипа и
-                                корпоративного фирменного стиля, создание брендбука
-                                (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                                Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                            <span>{{ __('translate.servDesc3') }}</span>
                         </p>
                     </div>
                 </div>
-                <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a> --}}
             </div>
             <div class="serv-mobile-item d-flex flex-column justify-content-between">
                 <div>
-                    <p class="serv-mobile-p">Логотипы и фирменый стиль</p>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle4') }}</p>
                     <div class="section_desc">
                         <p>
-                            <span>Разработка уникального логотипа и
-                                корпоративного фирменного стиля, создание брендбука
-                                (гайдлайна) для повышения уровня компании и грамотной стандартизации.
-                                Повышаем узнаваемость, доверие, формируем платформу бренда.</span>
+                            <span>{{ __('translate.servDesc4') }}</span>
                         </p>
                     </div>
                 </div>
-                <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a> --}}
+            </div>
+            <div class="serv-mobile-item d-flex flex-column justify-content-between">
+                <div>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle5') }}</p>
+                    <div class="section_desc">
+                        <p>
+                            <span>{{ __('translate.servDesc5') }}</span>
+                        </p>
+                    </div>
+                </div>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a> --}}
+            </div>
+            <div class="serv-mobile-item d-flex flex-column justify-content-between">
+                <div>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle6') }}</p>
+                    <div class="section_desc">
+                        <p>
+                            <span>{{ __('translate.servDesc6') }}</span>
+                        </p>
+                    </div>
+                </div>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a> --}}
+            </div>
+            <div class="serv-mobile-item d-flex flex-column justify-content-between">
+                <div>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle7') }}</p>
+                    <div class="section_desc">
+                        <p>
+                            <span>{{ __('translate.servDesc7') }}</span>
+                        </p>
+                    </div>
+                </div>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a> --}}
+            </div>
+            <div class="serv-mobile-item d-flex flex-column justify-content-between">
+                <div>
+                    <p class="serv-mobile-p">{{ __('translate.servTitle8') }}</p>
+                    <div class="section_desc">
+                        <p>
+                            <span>{{ __('translate.servDesc8') }}</span>
+                        </p>
+                    </div>
+                </div>
+                {{-- <a href="" class="services_more serv-mobile-a no-line align-self-end">Узнать больше</a>  --}}
             </div>
         </div>
         <div class=" dots-container d-flex justify-content-between align-items-center">
-           <div class="serv-mobile-dots">
-            
-           </div>
-           <div class="serv-mobile-dots">
+            <div class="serv-mobile-dots">
 
-           </div>
-           <div class="serv-mobile-dots">
+            </div>
+            <div class="serv-mobile-dots">
 
-           </div>
-           <div class="serv-mobile-dots">
+            </div>
+            <div class="serv-mobile-dots">
 
-           </div>
-           <div class="serv-mobile-dots">
+            </div>
+            <div class="serv-mobile-dots">
 
-           </div>
-           <div class="serv-mobile-dots">
+            </div>
+            <div class="serv-mobile-dots">
 
-           </div>
-           <div class="serv-mobile-dots">
+            </div>
+            <div class="serv-mobile-dots">
 
-           </div>
+            </div>
+            <div class="serv-mobile-dots">
+
+            </div>
+            <div class="serv-mobile-dots">
+
+            </div>
         </div>
         <div class="services_buttons">
-            <a href="" class="btn first no-line m-auto"><span>Смотреть все услуги</span></a>
+            <a href="/{{ $lang }}/services"
+                class="btn first no-line m-auto"><span>{{ __('translate.allServ') }}</span></a>
         </div>
     </div>
 
@@ -320,48 +369,57 @@
 
 
     <div class="feedback-section">
-        <h2 class="section_title">
-            Предложите свой проект <br>
-            настоящим специалистам <br>
-            дизайна, кода и оптимизации
+        <h2 class="section_title" itemprop="name">
+            {!! nl2br(__('translate.titleForm')) !!}
         </h2>
         <div class="section_desc">
-            <p>Начните общение со Слава Україні! або Паляниця — докажить що не
-                клятий москаль, та отримуйте смаколик у вигляді знижки 10%. <br>
-                Якщо ви зараз почали бізнес в Україні — пишить, домовимось
-                про бюджет який вам будет у допомогу! Ми не зламні!</p>
+            <p class="cont">{{ __('translate.descForm') }}</p>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger w-50">
+                {{-- <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul> --}}
+                <p style="font-size:18px">{{ __('translate.formError') }}</p>
+            </div>
+        @endif
         <div class="feedback_form" style="margin: 0 !important">
-            {{-- <form action="{{ route('send.email', ['lang' => $lang]) }}" method="post">
+            <form action="{{ route('contact.submit', ['lang' => $lang]) }}" method="post">
                 @csrf
                 <label class="field">
                     <input type="text" name="name" class="field-input w-100"
-                        placeholder="Ваше Имя (или любимый никнейм)">
+                        placeholder="{{ __('translate.formName') }}">
                 </label>
                 <label class="field">
-                    <input type="text" name="phone" class="field-input w-100" placeholder="“Ваш” номер телефона">
+                    <input type="text" name="phone" class="field-input w-100"
+                        placeholder="{{ __('translate.formPhone') }}">
                 </label>
                 <label class="field">
-                    <input type="text" name="project" class="field-input w-100" placeholder="Что за проект?">
-                </label>s
+                    <input type="text" name="subject" class="field-input w-100"
+                        placeholder="{{ __('translate.formProject') }}">
+                </label>
                 <label class="field">
-                    <input type="email" name="email" class="field-input w-100" placeholder="“Ваш” email">
+                    <input type="email" name="email" class="field-input w-100"
+                        placeholder="{{ __('translate.formEmail') }}">
                 </label>
                 <label class="field_comment" style="margin: 5rem 0 !important">
                     <input type="text" name="message" class="field-input w-100"
-                        placeholder="“Ваш” комментарий или описание">
+                        placeholder="{{ __('translate.formComment') }}">
                 </label>
                 <button type="sumbit" class="btn send-p d-flex align-items-center text-white"
-                    style="">Отправить</button>
-            </form> --}}
+                    style="">{{ __('translate.sendText') }}</button>
+            </form>
         </div>
     </div>
-    <div class="about_company">
+    <div class="about_company ">
         <div class="small-container">
             <div class="large-text-wrap" style="position: relative">
                 <div class="side-text-wrapper" data-side-text
                     style="transform: translate(0%, -22.0837%) translate3d(0px, 0px, 0px);">
-                    Лучшие <br> в своём деле
+                    {!! nl2br(__('translate.weAreBest')) !!}
+
                 </div>
             </div>
             <div class="about_company_left">
@@ -371,58 +429,66 @@
 
 
                         </div>
-                        <span class="word">Больше, чем просто <br> </span>
+                        <span class="word">{{ __('translate.moreThan1') }} <br> </span>
                         <div class="title_back" id="h3">
 
 
                         </div>
-                        <span class="word">Веб студия в Ашхабаде</span>
+                        <span class="word">{{ __('translate.moreThan2') }}</span>
+
                     </h2>
-                    <div class="about_company_desc">
+                    <div class="about_company_sml">
                         <p>
-                            Создаем «детали и инструменты», которые двигают ваш
-                            бизнес вперед. Прорабатывая каждую идею, мы расширяем
-                            ее ценности и философию, создаем важные решения, которые
-                            помогают бизнесу достигать необходимого роста.
+                            {{ __('translate.aboutUsFooter1') }}
                         </p>
-                        <p>Наша дизайн-студия ставит «эффективность» на первое место,
-                            и несмотря на всю прагматичность бизнеса, находим множество
-                            креативных идей для реализации решений, которые способны связать
-                            вас с вашей аудиторией на долгие годы вперед. </p>
+
+                        <p>{{ __('translate.aboutUsFooter2') }}</p>
+
                     </div>
+
                 </div>
             </div>
-            <div class="about_company_right">
+            <details class="desktop-none">
+                <summary>
+                    <div class="d-flex hide-more-block">
+                        <p> {{ __('translate.more') }}</p>
+                        <div class="hide-more-btn ">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </summary>
+                <div class="scroll_desc" style="padding-bottom: 20px;">
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter3') }}</p>
+
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter4') }}</p>
+
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter5') }}</p>
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter6') }}</p>
+                </div>
+            </details>
+
+            <div class="about_company_right mobile-none">
                 <div class="right_desc">
 
                     <div class="scroll_content" style="padding-right: 20px; margin-bottom: -20px;">
                         <div class="scroll_desc" style="padding-bottom: 20px;">
-                            <p>Консалтинговая компания "Arassa Nusga" была основана в 2017 году в составе Lotta Business
-                                group.
-                                Девиз нашей компании: "Качество.Инновации.Решения". Наша команда состоит из специалистов из
-                                разных областей.
-                                Мы предлагаем широкий спектр профессиональных консалтинговых услуг, которые помогут улучшить
-                                качество Вашей работы,
-                                поднять уровень осведомленности работников, решить актуальные бизнес-вопросы и увеличить
-                                прибыль компании.
-                                Консультируемым компаниям предоставлем всегда больше, чем от нас ожидают, а их успех
-                                является нашей репутацией.
-                            </p>
-                            <p>Основная ценность — это сотрудники, развивающие общество вокруг себя к лучшему. </p>
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter3') }}</p>
 
-                            <p> Компанию "Arassa Nusga" объединяет стремление к новым знаниям и навыкам в сфере
-                                профессиональной деятельности.
-                                Мы воплощаем свои идеи, преодолевая границы привычного, понимая, что идеи могут стать новой
-                                возможностью для всей
-                                компании, потому не боимся изменений в привычной для нас практике. Мы высоко ценим
-                                сотрудников, которые стремятся
-                                к профессиональному и личностному саморазвитию, делятся знаниями с коллегами, действуют во
-                                благо интересов своей
-                                компании. Мы считаем, что КОМАНДА — это намного больше, чем просто несколько людей.</p>
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter4') }}</p>
+
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter5') }}</p>
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter6') }}</p>
                         </div>
                     </div>
                 </div>
+                <div class="d-flex hide-more-block desktop-none mobile-none">
+                    <p>Скрыть</p>
+                    <div class="hide-more-btn">
+                        <i class="fa fa-chevron-up"></i>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -460,5 +526,13 @@
                 }
             });
         });
+    </script>
+    <script>
+        window.onload = function() {
+            var errorsExist = document.querySelector('.alert-danger');
+            if (errorsExist) {
+                document.querySelector('.feedback_form').scrollIntoView();
+            }
+        };
     </script>
 @endsection

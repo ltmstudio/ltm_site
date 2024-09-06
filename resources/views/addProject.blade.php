@@ -3,7 +3,7 @@
 
 
     {{-- <div class="row"> --}}
-    <span class="navBtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    {{-- <span class="navBtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> --}}
        <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Projects / </span> Add Projects
         </h4>
@@ -237,22 +237,29 @@
           </div>
           <div class="mb-3 col-md-12">
             <label for="firstName" class="form-label">What?</label>
-            <select class="form-control" name="what"  onchange="handleSelectChange(this)">
-              <option value="Crm">CRM </option>
+            <select class="form-control" name="what[]" multiple onchange="handleSelectChange(this)">
+                @foreach($categories as $category)
+                    <option value="{{ $category['id'] }}">{{  $category['category_'.$lang] }}</option>
+                @endforeach
+            </select>
+            <div id="otherInputContainer"></div>
+        </div>
+          {{-- <div class="mb-3 col-md-12">
+            <label for="firstName" class="form-label">What?</label>
+            <select class="form-control" name="what[]" multiple onchange="handleSelectChange(this)">
+              <option value="CRM">CRM </option>
               <option value="Landing">Landing </option>
-              <option value="MultiPage">Multi-page website </option>
+              <option value="MultiPage Website">Multi-page website </option>
               <option value="Dashboards">Dashboards </option>
-              <option value="MobApplications">Mobile Applications </option>
-              <option value="onlineShop">Online Shop </option>
+              <option value="Mobile Applications">Mobile Applications </option>
+              <option value="Online Shop">Online Shop </option>
               <option value="WebCatalog"> Web-site catalogue </option>
-              <option value="board">Доска Объявлении </option>
-              <option value="Logo">LogoTiger</option>
+              <option value="Classifieds">Доска Объявлении </option>
+              <option value="LogoTiger">LogoTiger</option>
               <option value="Other">Other</option>
             </select>
     <div id="otherInputContainer"></div>
-            {{-- <input class="form-control" type="text" id="firstName" name="whatEng" placeholder="What?" autofocus/> --}}
-            {{--              <span class="text-danger">@error('ru_name'){{$message}}@enderror</span>--}}
-        </div>
+        </div> --}}
             <div class="mb-3 col-md-12">
               <label for="firstName" class="form-label">Button Link</label>
               <input class="form-control" type="text" id="firstName" name="urlButton" placeholder="URL" autofocus/>
@@ -273,6 +280,21 @@
                   <textarea class="form-control" id="exampleFormControlTextarea1" name="devNames" rows="3" placeholder="Names of developers"></textarea>
                   <span class="text-danger">@error('tm_description'){{$message}}@enderror</span>
               </div>
+              <div class="mb-3 col-md-12">
+                <label for="isMainPage" class="form-label">Должен ли этот проект отображаться на главной странице?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="isMainPage" id="yes" value="1" >
+                    <label class="form-check-label" for="yes">
+                        Да
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="isMainPage" id="no" value="0" checked>
+                    <label class="form-check-label" for="no">
+                        Нет
+                    </label>
+                </div>
+            </div>
             </div>
           </div>
         </div>

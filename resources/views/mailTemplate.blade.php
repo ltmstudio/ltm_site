@@ -13,7 +13,7 @@
     Почта : {{$data['email']}}    
     </p>
     <p>
-   Проект : {{$data['project']}}    
+   Проект : {{$data['subject']}}    
     </p>
     <p>
     Сообщение : {{$data['message']}}    

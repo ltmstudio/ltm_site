@@ -29,6 +29,7 @@
 } */
 .row_p li{
   font-size: 2.5rem;
+  font-weight: 200;
   margin: 0 3rem 0 0;
 
 }
@@ -46,6 +47,7 @@
 .add-padding{
   padding-top: 15rem;
 }
+
 .element {
   margin: 20px 20px 20 px 0px;
   color: #a0989e;
@@ -85,7 +87,7 @@
 } */
 .gridText {
   margin: 4rem 0rem 0rem 3.5rem;
-  max-width: 45rem;
+  /* max-width: 45rem; */
 }
 .columnPort img {
   width: 95%; /* Set your desired image width */
@@ -98,8 +100,8 @@
   margin: 0rem 0rem 2rem 1rem;
 }
 .rowPort {
-  display: flex;
-  align-items: top;
+  /* display: flex;
+  align-items: top; */
   margin-bottom: 10px;
 }
 
@@ -114,26 +116,72 @@
 .gridTitle {
   font-size: 6.2rem;
   font-weight: 600;
-  line-height: 3.8rem;
+  line-height: normal;
   letter-spacing: 0.08rem;
   text-align: left;
 }
 
+ /*///////////////////////////// SLICK SLIDER AT THE BOTTOM OF ONEPROJECT ///////////////////////////*/
 
+
+ .arrows {
+   font-weight: 400;
+   font-size: 24px;
+ }
+ 
+ .slider__portf {
+   height: 45%;
+   text-align: center;
+   
+   img{
+     display: block;
+     margin-top: 4rem;
+     /* width: 400px!important; */
+   }
+ }
+
+ 
 .reload {
-  margin: 3rem 0rem;
+  position: relative;
+  margin: 10rem 0 0 0!important  ;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 12rem;
+}
+.loading {
+  animation: loadMore 3s linear infinite;
+}
+@keyframes loadMore {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg); 
+  }
 }
 
+/* @keyframes loadMore {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg); 
+  }
+} */
 .reload-icon img {
-  margin-bottom: 20px;
-  width: 8.5rem;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-bottom: 20px; */
+  /* width: 8.5rem; */
   /* Add any other styles you want for the reload icon */
 }
 
 .reloadText {
+  position: absolute;
+  top: 50%;
   font-size: 2.9rem;
   border-bottom: 1px dashed #ffffff;
   /* Add any other styles you want for the text */
@@ -202,7 +250,7 @@
   padding: 0 0.6em;
 }
 }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 .blog_cats_wrapper{
   width: 104%;
 }
@@ -249,7 +297,8 @@
     } */
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 475px) {
 
 .portfHeader{
   top: -14rem;
@@ -257,8 +306,9 @@
 }
 
   .columnPort img {
-    width: 70%;
-    margin-left: 40px;
+    /* width: 70%;
+    margin-left: 40px; */
+    text-align: center;
   }
   .gridText {
     max-width: 50rem;

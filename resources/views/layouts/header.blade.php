@@ -1,45 +1,39 @@
 <div class="header-sticky-top ">
-
-    <div class="header-nav">
-        <div class="nav-item"> <a href="/{{ $lang }}/services">
+    <div class="header-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <div class="nav-item" > <a href="/{{ $lang }}/services" itemprop="url">
                 {{ __('translate.services') }} </a> </div>
-        <div class="nav-item"> <a href="/{{ $lang }}/about_us">
+        <div class="nav-item" > <a href="/{{ $lang }}/about_us" itemprop="url">
                 {{ __('translate.aboutUs') }} </a> </div>
-        <div class="nav-item"> <a href="/{{ $lang }}/portfolio">
+        <div class="nav-item" > <a href="/{{ $lang }}/portfolio" itemprop="url">
                 {{ __('translate.portfolio') }} </a> </div>
-        <div class="nav-item"> <a href="/{{ $lang }}/blog">
+        {{-- <div class="nav-item"> <a href="/{{ $lang }}/blog">
                 {{ __('translate.blog') }}
-            </a> </div>
-        <div class="nav-item"> <a href="/{{ $lang }}/contacts">
+            </a> </div> --}}
+        <div class="nav-item" > <a href="/{{ $lang }}/contacts" itemprop="url">
                 {{ __('translate.contacts') }}
             </a> </div>
     </div>
-
     <div class="header-fixed position-fixed">
         <div class="rotating-logo d-flex">
-
-            {{-- <div class="image"></div> --}}
             <div class="circle-container" id="logoMain">
                 <div class="scrolling-image">
                     <img src="{{ asset('/assets/images/name_1.png') }}?v={{ time() }}" alt="Scrolling Image">
-
-                    {{-- <img src="{{ asset('/assets/images/name_1.png') }}" alt="Scrolling Image"> --}}
                 </div>
                 <div class="center-image">
                     <img src="{{ asset('/assets/images/logo.png') }}" alt="Center Image">
                 </div>
             </div>
-            {{-- <div style="width:120px"></div> --}}
             <div class="typing-text"></div>
-        </div>
 
+        </div>
         <div class="contact-info">
             <span><a href="tel:+99361648605" class="no-line">+993 61 648605</a></span>
-            <a href="https://www.linkedin.com/company/arassa-nusga/"  class="no-line"><i id="linkedIn" class="fa-brands fa-linkedin"
-                style="color: #6ba1ff; font-size: 3.6rem; text-align: center;"></i></a>
-            <a href="https://www.instagram.com/arassanusga" class="no-line"><i id="instagram" class="fa-brands fa-instagram"
-                style="color: #6ba1ff; font-size: 3.6rem; text-align: center;"></i></a>
-
+            <a href="https://www.linkedin.com/company/arassa-nusga/" class="no-line"><i id="linkedIn"
+                    class="fa-brands fa-linkedin"
+                    style="color: #7aaaff; font-size: 3.6rem; text-align: center;"></i></a>
+            <a href="https://www.instagram.com/arassanusga" class="no-line"><i id="instagram"
+                    class="fa-brands fa-instagram"
+                    style="color: #7aaaff; font-size: 3.6rem; text-align: center;"></i></a>
             <div class="lang">
                 @php
                     $langs = ['ru', 'en', 'tm'];
@@ -48,7 +42,7 @@
                 <div class="language">
                     <a>
                         <span>{{ $lang }}</span>
-                        <i class="fa-solid fa-arrow-down-long" style= "color: #2C5BBC; font-size: 2rem;"></i>
+                        <i class="fa-solid fa-arrow-down-long" style= "color: #7aaaff; font-size: 2rem;"></i>
                     </a>
                 </div>
                 <ul class="langList">
@@ -69,12 +63,14 @@
                     @endphp
                 </ul>
             </div>
-            <div class="menu-button"><img src="{{ asset('/assets/images/menu.png') }}" alt="menu_button" />
+            <div id="menuButton" class="menu-button" data-bs-toggle="modal" data-bs-target="#complexMenuModal"
+                style="">
+                {{-- <img src="{{ asset('/assets/images/menu.png') }}" alt="menu_button" /> --}}
+                {!! nl2br(__('translate.menu')) !!}
             </div>
         </div>
     </div>
 </div>
-
 <div class="leftHeader">
     <div class="rowLeftHeader">
         <div class="followed-element">
@@ -92,21 +88,187 @@
         </div>
     @endif
 </div>
+<div class="modal fade modal-no-bg" id="complexMenuModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content mobile-none">
+            <div class="modal-body d-flex">
+                <div class="block-60 reveal-item" id="reveal-6">
+                    <div class="d-flex mt-3">
+                        <div class="rotating-logo d-flex ">
+                            <div class="circle-container" id="logoMain">
+                                <div class="scrolling-image">
+                                    <img src="{{ asset('/assets/images/name_1.png') }}?v={{ time() }}"
+                                        alt="Scrolling Image">
+                                </div>
+                                <div class="center-image">
+                                    <img src="{{ asset('/assets/images/logo.png') }}" alt="Center Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex ml-3 lang-flex my-auto">
+                            <a class="menu-a no-line">Ru</a>
+                            <a class="menu-a no-line">En</a>
+                            <a class="menu-a no-line">Tm</a>
+                        </div>
+                    </div>
+                    <div class="big-block-content d-flex flex-column m-auto w-50">
+                        <a class="all-services-p no-line"
+                            href="/{{ $lang }}/services">{{ __('translate.allServ') }}</a>
+                        <a class="phone-number-p no-line">+993 12 754480</a>
+                        <a class="email-p no-line">info@arassanusga.com</a>
+                        <div class="d-flex my-auto media-links">
+                            <a class="menu-a no-line" href="instagram.com/arassanusga" id="instLink">In</a>
+                            <a class="menu-a no-line" href="linkedin.com/company/arassa-nusga" id="linkedLink">Ln</a>
+                            <a class="menu-a no-line" href="/{{ $lang }}/blog"
+                                id="blogLink">{{ __('translate.blog') }}</a>
+                        </div>
+                        <a class="temp-a no-line" href="/{{ $lang }}/blog"
+                            id="linkAddress">arassanusga.com/blog</a>
+                    </div>
+                </div>
+                <div class="block-40">
+                    <div class="sub-blocks-60 d-flex flex-wrap">
+                        <div class="block-item-13 text-center reveal-item" id="reveal-4"><span
+                                class="main-menu-portfolio-link"><a
+                                    class="no-line "href="/{{ $lang }}/portfolio">{{ __('translate.portfolio') }}</a></span>
+                        </div>
+                        <div class="big-block-60">
+                            <div class="d-flex pojalusta">
+                                <div class="sub-block-50 text-center reveal-item"id="reveal-2"><span
+                                        class="main-menu-about-us-link"><a class="no-line"
+                                            href="/{{ $lang }}/about_us">{{ __('translate.aboutUs') }}</a></span>
+                                </div>
+                                <div class="sub-block-50 text-center reveal-item" id="reveal-1">
+                                    <div class="button-close" id="closeDesktopModal"><i class="fa fa-close"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-block-item-60-100 reveal-item" id="reveal-3"><span
+                                    class="main-contacts-link"><a class="no-line" class="no-line"
+                                        href="/{{ $lang }}/contacts">{{ __('translate.contacts') }}</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-item-40 text-center reveal-item" id="reveal-5"><span class="main-offer-link"
+                            id="openFromMenu">{{ __('translate.sugProject') }}</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-content  desktop-none">
+            <div class="modal-body mobile-menu-body ">
+                <div class="d-flex mt-3 justify-content-between">
+                    <div class="rotating-logo d-flex ">
+                        <div class="circle-container" id="logoMain">
+                            <div class="scrolling-image">
+                                <img src="{{ asset('/assets/images/name_1.png') }}?v={{ time() }}"
+                                    alt="Scrolling Image">
+                            </div>
+                            <div class="center-image">
+                                <img src="{{ asset('/assets/images/logo.png') }}" alt="Center Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex ml-3 lang-flex my-auto">
+                        <div class="d-flex my-auto">
+                            <a class="menu-a no-line">Ru</a>
+                            <a class="menu-a no-line">En</a>
+                            <a class="menu-a no-line">Tm</a>
+                        </div>
+                        <div class="button-close" id="closeMobileModal"><i class="fa fa-close"
+                                style="font-size:18px"></i></div>
+                    </div>
+                </div>
+                <p class="mobile-menu-p text-center mt-5 w-50 m-auto">{{ __('translate.mobileMenuTitle') }}</p>
+                <p class="phone-mobile-menu-p text-center mt-5">+993 12 754480</p>
+                <div class="d-flex align-items-center justify-content-center" style="margin-bottom:30px">
+                    <i class="fa fa-envelope" style=" font-size: 3.6rem;text-align: center; margin-right:10px"></i>
+                    <i class="fa-brands fa-linkedin" style=" font-size: 3.6rem; text-align: center;margin-right:10px"
+                        id="linkedMobile"></i>
+                    <i class="fa-brands fa-instagram" style=" font-size: 3.6rem; text-align: center;margin-right:10px"
+                        id="instMobile"></i>
+                </div>
+                <div
+                    class="mobile-menu-urls flex-column align-items-center justify-content-center w-50 text-center m-auto">
+                    <p class="no-line mobile-menu-url" id="aboutUsMobileMenuLink">{{ __('translate.aboutUs') }}</p>
+                    <p class="no-line mobile-menu-url" id="servicesMobileMenuLink">{{ __('translate.services') }}</p>
+                    <p class="no-line mobile-menu-url" id="portfolioMobileMenuLink">{{ __('translate.portfolio') }}
+                    </p>
+                    <p class="no-line mobile-menu-url" id="blogMobileMenuLink">{{ __('translate.blog') }}</p>
+                    <p class="no-line mobile-menu-url" id="contactsMobileMenuLink">{{ __('translate.contacts') }}</p>
+                </div>
+                <div class="request-sign text-center">
+                    <p class="request-sign-p" id="requestSign">{{ __('translate.leftRequest') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
+//     $(document).ready(function() {
+//     var path = window.location.pathname;
+// console.log(path);
+//     $('.nav-item a').each(function() {
+//         var href = $(this).attr('href');
+
+//         if (path === href) {
+//             $(this).addClass('active');
+//         }
+//     });
+// });
+
+// $(document).ready(function() {
+//     var currentPage = "{{ $currentPage }}";
+
+//     $('.header-nav a').each(function() {
+//         var text = $(this).text().trim();
+
+//         if (currentPage === text) {
+//             $(this).addClass('active');
+//         }
+//     });
+// });
+
+
     const logo = document.getElementById('logoMain');
     const linkedin = document.getElementById('linkedIn');
+    const linkedMiobile = document.getElementById('linkedMobile');
+    const instMobile = document.getElementById('instMobile');
     const instagram = document.getElementById('instagram');
-
+    const aboutUsMobileMenuLink = document.getElementById('aboutUsMobileMenuLink');
+    const servicesMobileMenuLink = document.getElementById('servicesMobileMenuLink');
+    const portfolioMobileMenuLink = document.getElementById('portfolioMobileMenuLink');
+    const blogMobileMenuLink = document.getElementById('blogMobileMenuLink');
+    const contactsMobileMenuLink = document.getElementById('contactsMobileMenuLink');
     logo.addEventListener('click', function() {
         window.location.href = '/{{ $lang }}';
     });
     linkedin.addEventListener('click', function() {
         window.location.href = 'https://www.linkedin.com/company/arassa-nusga/';
     });
+    linkedMobile.addEventListener('click', function() {
+        window.location.href = 'https://www.linkedin.com/company/arassa-nusga/';
+    });
     instagram.addEventListener('click', function() {
         window.location.href = 'https://www.instagram.com/arassanusga';
     });
-
+    instMobile.addEventListener('click', function() {
+        window.location.href = 'https://www.instagram.com/arassanusga';
+    });
+    aboutUsMobileMenuLink.addEventListener('click', function() {
+        window.location.href = '/{{ $lang }}/about_us';
+    });
+    servicesMobileMenuLink.addEventListener('click', function() {
+        window.location.href = '/{{ $lang }}/services';
+    });
+    portfolioMobileMenuLink.addEventListener('click', function() {
+        window.location.href = '/{{ $lang }}/portfolio';
+    });
+    blogMobileMenuLink.addEventListener('click', function() {
+        window.location.href = '/{{ $lang }}/blog';
+    });
+    contactsMobileMenuLink.addEventListener('click', function() {
+        window.location.href = '/{{ $lang }}/contacts';
+    });
     const element = document.querySelector('.followed-element');
 
     element.addEventListener('mouseenter', () => {
@@ -116,4 +278,17 @@
     element.addEventListener('mouseleave', () => {
         element.style.transform = 'scale(1)'; // Возвращаем элемент в исходное состояние при уходе курсора
     });
+
+    element.addEventListener('mousemove', (event) => {
+        // Получаем координаты курсора относительно элемента
+        const x = event.offsetX;
+        const y = event.offsetY;
+
+        // Выполняем перемещение элемента на основе координат курсора
+        element.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+    });
+    if (window.innerWidth < 991) { // Проверяем ширину экрана (примерное значение для мобильных устройств)
+        var windowHeight = window.innerHeight;
+        document.getElementById('mobile-menu-body').style.height = windowHeight + 'px';
+    }
 </script>
