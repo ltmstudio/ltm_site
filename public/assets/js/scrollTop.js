@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    const scrollToTopButton = $("#myBtn");
+    const scrollToTopButton = $("#scrollBtn");
 
     window.addEventListener('toggleScrollButton', (event) => {
         scrollToTopButton.css("display", event.detail.display ? "block" : "none");

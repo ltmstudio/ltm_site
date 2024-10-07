@@ -59,7 +59,7 @@
 
 .element.selected {
   color: white;
-  border-color: #f6074a; /* Underline color when selected */
+  border-color: #e31e24; /* Underline color when selected */
 }
 .grid_portfolio {
   margin-top: 10rem;

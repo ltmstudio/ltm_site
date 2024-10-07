@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Контакты IT-консалтинговой компании Arassa Nusga в Туркменистане')
+@section('title', 'Контакты IT-консалтинговой компании LTM Studio в Туркменистане')
 
 @section('content')
 
@@ -26,23 +26,23 @@
                 <ul class="contacts_links">
                     <li>
                         <div class="link_row">
-                            <i class="fa fa-envelope" style="color: #6ba1ff; font-size: 3.6rem;text-align: center;"></i>
-                            <div><a href="mailto:info@arassanusga.com">info@arassanusga.com</a></div>
+                            <i class="fa fa-envelope" style="color: #e31e24; font-size: 3.6rem;text-align: center;"></i>
+                            <div><a href="mailto:info@arassanusga.com" style="color: #fff">info@arassanusga.com</a></div>
                         </div>
                     </li>
                     <li>
                         <div class="link_row">
                             <i id="linkedIn" class="fa-brands fa-linkedin"
-                                style="color: #6ba1ff; font-size: 3.6rem; text-align: center;"></i>
+                                style="color: #e31e24; font-size: 3.6rem; text-align: center;"></i>
                             <div><a href="http://linkedin.com/company/arassa-nusga"
-                                    class="no-line">linkedin.com/company/arassa-nusga</div>
+                                    class="no-line" style="color: #fff">linkedin.com/company/arassa-nusga</div>
                         </div>
                     </li>
                     <li>
                         <div class="link_row">
                             <i id="instagram" class="fa-brands fa-instagram"
-                                style="color: #6ba1ff; font-size: 3.6rem; text-align: center;"></i>
-                            <div><a href="http://instagram.com/arassanusga" class="no-line">instagram.com/arassanusga</a>
+                                style="color: #e31e24; font-size: 3.6rem; text-align: center;"></i>
+                            <div><a href="http://instagram.com/arassanusga" class="no-line" style="color: #fff">instagram.com/arassanusga</a>
                             </div>
                         </div>
                     </li>
@@ -62,15 +62,15 @@
                                 <img src="{{ '../assets/images/dzin__title.png' }}">
                             </div>
                             <div class="dzin_icon">
-                                <img src="{{ '../assets/images/phoneLightBlue.png' }}">
+                                <img src="{{ '../assets/images/phoneLightRed.png' }}">
                             </div>
-                            <div class="dzin_phone"><a href="tel:+99312754480" class="no-line">+993 12 754480</a></div>
-                            <div class="dzin_phone"><a href="tel:+99361648605" class="no-line">+993 61 648605</a></div>
+                            <div class="dzin_phone"><a href="tel:+99312754480" class="no-line">+993 12 75 37 13</a></div>
+                            <div class="dzin_phone"><a href="tel:+99361648605" class="no-line">+993 61 00 97 92</a></div>
                         </div>
 
 
                         <div class="mail">
-                            <div class="mail_icon"> <img src="{{ '../assets/images/doveLightBlue.png' }}"></div>
+                            <div class="mail_icon"> <img src="{{ '../assets/images/doveLightRed.png' }}"></div>
                             <div class="mail_title"><a href="mailto:info@arassanusga.com">{!! nl2br(__('translate.pigeon')) !!}</a></div>
                             {{-- <div class="mail_title">info@arassanusga.com</div> --}}
                         </div>

@@ -10,7 +10,7 @@
     <meta property="og:description" content="@yield('metaDesc')">
     <meta property="og:url" content="https://arassanusga.com/{{ $lang }}">
     <meta property="og:image" content="https://arassanusga.com/assets/images/logo.png">
-    <meta property="og:site_name" content="Arassa Nusga">
+    <meta property="og:site_name" content="LTM Studio">
     <meta property="og:locale" content="ru_RU">
     <title itemprop="headline">@yield('title')</title>
     <meta property="og:title" content="@yield('ogTitle')">
@@ -23,11 +23,11 @@
 {
   "@context": "http://www.schema.org",
   "@type": "LocalBusiness",
-  "name": "Arassa Nusga",
+  "name": "LTM Studio",
   "url": "https://arassanusga.com",
   "logo": "https://arassanusga.com/logo.png",
   "image": "https://arassanusga.com/logo.png",
-  "description": "IT-консалтинговая компания Arassa Nusga в Туркменистане предлагает полный комплекс профессиональных услуг, от консалтинга до разработки веб-сайтов, мобильных приложений, и внедрение Logo Tiger ERP, CRM системы Битрикс24.",
+  "description": "IT-консалтинговая компания LTM Studio в Туркменистане предлагает полный комплекс профессиональных услуг, от консалтинга до разработки веб-сайтов, мобильных приложений, и внедрение Logo Tiger ERP, CRM системы Битрикс24.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Куллиева, здание 27",
@@ -56,13 +56,13 @@
 
 <body>
     <div class="loaders position-fixed w-100 h-100 justify-content-center align-items-center"
-        style="background-color: #001335; z-index: 99; display: flex;">
-        <div class="circle-container" style="top: 0%; left:0%; width:30rem; height:30rem ">
+        style="background-color: #1c1b1b; z-index: 99; display: flex;">
+        <div class="circle-container" style="top: 0%; left:0%; width:70rem; height: 70rem ">
             <div class="scrolling-image" style="width:20rem; height:auto">
-                <img src="{{ asset('/assets/images/name_1.png') }}" alt="Scrolling Image">
+                <img src="{{ asset('/assets/images/circled-text.png') }}" alt="Scrolling Image">
             </div>
-            <div class="center-image" style="width:35%; height:auto">
-                <img src="{{ asset('/assets/images/logo.png') }}" alt="Center Image">
+            <div class="center-image" style="width:10%; height:auto">
+                <img src="{{ asset('/assets/images/ltm-white.png') }}" alt="Center Image">
             </div>
         </div>
     </div>
@@ -90,7 +90,7 @@
     @include('layouts.scripts')
     <div class="follow-cursor"></div>
 
-    <button onclick="topFunction()" id="myBtn"><i class="fa-solid fa-arrow-up" style="color:#1B2E69"></i></button>
+    <button onclick="topFunction()" id="scrollBtn"><i class="fa-solid fa-arrow-up" style="color:#1B2E69"></i></button>
 
 </body>
 

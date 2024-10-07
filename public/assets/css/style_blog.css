@@ -67,6 +67,7 @@
 .reload-icon img {
   margin-bottom: 20px;
   width: 8.5rem;
+  filter: contrast(0);
   /* Add any other styles you want for the reload icon */
 }
 

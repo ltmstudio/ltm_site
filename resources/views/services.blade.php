@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Услуги IT-консалтинговой компании Arassa Nusga в Туркменистане')
+@section('title', 'Услуги IT-консалтинговой компании LTM Studio в Туркменистане')
 @section('circles')
     <div class="circle-1">
         <img src="{{ '../assets/images/circle-1.png' }}" alt="" loading="lazy">

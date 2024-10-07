@@ -3,7 +3,7 @@
 return [
   'services' => 'Services',
   'aboutUs' => 'About Us',
-  'aboutUsTitle' => 'Arassa Nusga：',
+  'aboutUsTitle' => 'LTM Studio',
   'portfolio' => 'Portfolio',
   'blog' => 'Blog',
   'contacts' => 'Contacts',
@@ -217,7 +217,7 @@ return [
   'titleForm' => "Transform your ideas into action:\ncontact us now!",
   'descForm' => 'Every great journey begins with the first step. In the world of business, this step
      could be simple
-     a message that opens doors to new opportunities and success. At Arassa Nusga, we believe that behind everyone
+     a message that opens doors to new opportunities and success. At LTM Studio, we believe that behind everyone
      the demand is the potential for innovation and transformation.',
   'formModalTitle' => 'Are we starting?',
   'formModalDesc' => 'With us, projects are easy and relaxed, let`s
@@ -283,8 +283,8 @@ return [
   'servDesc9' => "Text needed",
 
   'aboutUsFooter1' => 'We create the “parts and tools” that move your business forward. As we work through each idea, we expand on its values and philosophy, creating meaningful solutions that help businesses achieve the growth they need.',
-  'aboutUsFooter2' => 'Our company puts “efficiency” in the first place, and despite all the pragmatism of the business, we find many creative ideas for implementing solutions that can connect you with your audience for many years to come. Arassa Nusga who can!',
-  'aboutUsFooter3' => 'The consulting company "Arassa Nusga" was founded in 2017 with
+  'aboutUsFooter2' => 'Our company puts “efficiency” in the first place, and despite all the pragmatism of the business, we find many creative ideas for implementing solutions that can connect you with your audience for many years to come. LTM Studio who can!',
+  'aboutUsFooter3' => 'The consulting company "LTM Studio" was founded in 2017 with
      Lotta Business
      group. Our company`s motto is: "Quality. Innovation. Solutions." In addition to a wide range
      professional consulting services, we are proud of our IT solutions that combine
@@ -309,7 +309,7 @@ return [
      innovative IT solutions can become a new opportunity for the entire company. Therefore we are not afraid
      changes in our usual practice. We highly value employees who strive to
      professional and personal self-development, share knowledge with colleagues and act in
-     the benefit of the interests of his company. We believe that the TEAM at Arassa Nusga is much more
+     the benefit of the interests of his company. We believe that the TEAM at LTM Studio is much more
      more than just a few people. This is an association of professionals who are ready to contribute their
      contribution to the development of innovative IT solutions and improving the business of our clients.',
 

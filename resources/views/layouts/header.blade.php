@@ -17,23 +17,23 @@
         <div class="rotating-logo d-flex">
             <div class="circle-container" id="logoMain">
                 <div class="scrolling-image">
-                    <img src="{{ asset('/assets/images/name_1.png') }}?v={{ time() }}" alt="Scrolling Image">
+                    <img src="{{ asset('/assets/images/circled-text.png') }}?v={{ time() }}" alt="Scrolling Image">
                 </div>
                 <div class="center-image">
-                    <img src="{{ asset('/assets/images/logo.png') }}" alt="Center Image">
+                    <img src="{{ asset('/assets/images/ltm-white.png') }}" alt="Center Image">
                 </div>
             </div>
             <div class="typing-text"></div>
 
         </div>
         <div class="contact-info">
-            <span><a href="tel:+99361648605" class="no-line">+993 61 648605</a></span>
+            <span><a href="tel:+99361648605" class="no-line">+993 61 00 97 92</a></span>
             <a href="https://www.linkedin.com/company/arassa-nusga/" class="no-line"><i id="linkedIn"
                     class="fa-brands fa-linkedin"
-                    style="color: #7aaaff; font-size: 3.6rem; text-align: center;"></i></a>
+                    style="color: #ffffff; font-size: 3.6rem; text-align: center;"></i></a>
             <a href="https://www.instagram.com/arassanusga" class="no-line"><i id="instagram"
                     class="fa-brands fa-instagram"
-                    style="color: #7aaaff; font-size: 3.6rem; text-align: center;"></i></a>
+                    style="color: #ffffff; font-size: 3.6rem; text-align: center;"></i></a>
             <div class="lang">
                 @php
                     $langs = ['ru', 'en', 'tm'];
@@ -42,7 +42,7 @@
                 <div class="language">
                     <a>
                         <span>{{ $lang }}</span>
-                        <i class="fa-solid fa-arrow-down-long" style= "color: #7aaaff; font-size: 2rem;"></i>
+                        <i class="fa-solid fa-arrow-down-long" style= "color: #e31e24; font-size: 2rem;"></i>
                     </a>
                 </div>
                 <ul class="langList">
@@ -95,7 +95,7 @@
                 <div class="block-60 reveal-item" id="reveal-6">
                     <div class="d-flex mt-3">
                         <div class="rotating-logo d-flex ">
-                            <div class="circle-container" id="logoMain">
+                            <div class="circle-container" >
                                 <div class="scrolling-image">
                                     <img src="{{ asset('/assets/images/name_1.png') }}?v={{ time() }}"
                                         alt="Scrolling Image">
@@ -158,7 +158,7 @@
             <div class="modal-body mobile-menu-body ">
                 <div class="d-flex mt-3 justify-content-between">
                     <div class="rotating-logo d-flex ">
-                        <div class="circle-container" id="logoMain">
+                        <div class="circle-container" >
                             <div class="scrolling-image">
                                 <img src="{{ asset('/assets/images/name_1.png') }}?v={{ time() }}"
                                     alt="Scrolling Image">

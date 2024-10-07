@@ -3,7 +3,7 @@
 return [
    'services' => 'Serwisler',
    'aboutUs' => 'Biz Barada',
-   'aboutUsTitle' => 'Arassa Nusga：',
+   'aboutUsTitle' => 'LTM Studio：',
    'portfolio' => 'Portfolio',
    'blog' => 'Blog',
    'contacts' => 'Kontaktlar',
@@ -220,7 +220,7 @@ iň pes derejesi Senior. Munuň sebäbi bize ýerine ýetirýän proýektlerimiz
    'titleForm' => "Pikirleriňizi herekete öwüriň: \ indi bize ýüz tutmaň!",
    'descForm' => 'Her beýik syýahat ilkinji ädimden başlaýar. Iş dünýäsinde bu ädim
      ýönekeý bolup biler
-     täze mümkinçiliklere we üstünliklere gapy açýan habar. Arassa Nusga-da, her kimiň arkasynda durýandygyna ynanýarys
+     täze mümkinçiliklere we üstünliklere gapy açýan habar. LTM Studio-da, her kimiň arkasynda durýandygyna ynanýarys
      isleg innowasiýa we özgerişler üçin potensialdyr. ',
    'formModalTitle' => 'Biz başlaýarysmy?',
    'formModalDesc' => 'Biziň bilen taslamalar aňsat we rahat, geliň duşuşalyň!',
@@ -286,8 +286,8 @@ iň pes derejesi Senior. Munuň sebäbi bize ýerine ýetirýän proýektlerimiz
 
 
    'aboutUsFooter1' => 'We create the “parts and tools” that move your business forward. As we work through each idea, we expand on its values and philosophy, creating meaningful solutions that help businesses achieve the growth they need.',
-   'aboutUsFooter2' => 'Our company puts “efficiency” in the first place, and despite all the pragmatism of the business, we find many creative ideas for implementing solutions that can connect you with your audience for many years to come. Arassa Nusga who can!',
-   'aboutUsFooter3' => 'The consulting company "Arassa Nusga" was founded in 2017 with
+   'aboutUsFooter2' => 'Our company puts “efficiency” in the first place, and despite all the pragmatism of the business, we find many creative ideas for implementing solutions that can connect you with your audience for many years to come. LTM Studio who can!',
+   'aboutUsFooter3' => 'The consulting company "LTM Studio" was founded in 2017 with
      Lotta Business
      group. Our company`s motto is: "Quality. Innovation. Solutions." In addition to a wide range
      professional consulting services, we are proud of our IT solutions that combine
@@ -312,7 +312,7 @@ iň pes derejesi Senior. Munuň sebäbi bize ýerine ýetirýän proýektlerimiz
      innovative IT solutions can become a new opportunity for the entire company. Therefore we are not afraid
      changes in our usual practice. We highly value employees who strive to
      professional and personal self-development, share knowledge with colleagues and act in
-     the benefit of the interests of his company. We believe that the TEAM at Arassa Nusga is much more
+     the benefit of the interests of his company. We believe that the TEAM at LTM Studio  is much more
      more than just a few people. This is an association of professionals who are ready to contribute their
      contribution to the development of innovative IT solutions and improving the business of our clients.',
 ];

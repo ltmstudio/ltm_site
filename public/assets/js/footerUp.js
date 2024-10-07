@@ -7,7 +7,7 @@ $(document).ready(function () {
   const $suggestProject = $('#suggestProject');
   const $closeModalButton = $('#closeModalButton');
   const $closeMobileModalButton = $('#closeMobileModalButton');
-  const $scrollToTopButton = $('#myBtn');
+  const $scrollToTopButton = $('#scrollBtn');
 
   function checkScrollAndShowButton() {
     if ($(document).scrollTop() > 20) {

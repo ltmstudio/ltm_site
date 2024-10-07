@@ -1,6 +1,7 @@
 .contacts {
   position: relative;
-  margin-bottom: 10rem;
+  margin-bottom: 6.7rem;
+  height: 100%;
 }
 .contacts_info {
   max-width: 54rem;
@@ -11,9 +12,9 @@
 }
 
 .contacts_desc p a {
-  color: #1478e8;
+  color: var(--primary);
   text-decoration: none;
-  border-bottom: 1px solid #1478e8;
+  border-bottom: 1px solid var(--primary);
 }
 .contacts_desc h1 {
   font-weight: 700;
@@ -33,6 +34,10 @@
   flex-wrap: wrap;
   margin-bottom: 0.5rem;
   font-size: 3.6rem;
+}
+
+.contacts_phone li strong a {
+  font-family: "Inter-Bold";
 }
 
 .contacts_icons {
@@ -58,7 +63,7 @@
 
 .custom-button {
   margin-top: 4rem;
-  background-color: #2c5bbc;
+  background-color: var(--primary);
   color: white;
   border: none;
   padding: 2rem 1.6em;
@@ -73,11 +78,11 @@
   display: block; /* Задаем блочное отображение */
   width: 30px; /* Пример ширины стрелки */
   height: 30px; /* Пример высоты стрелки */
-  margin-top: 18px;
+  margin-top: 8px;
   margin-left: 40px;
   background-size: contain;
   background-repeat: no-repeat; /* Убедимся, что фон не повторяется */
-  background-image: url("https://arassanusga.com/assets/images/long-arrow-right.png"); /* Проверьте, что путь к изображению верный */
+  background-image: url("../images/long-arrow-right.png"); /* Проверьте, что путь к изображению верный */
   transition: transform 0.2s ease;
 }
 .custom-button:hover:after {
@@ -102,9 +107,10 @@
   right: -2%;
   bottom: 0;
   z-index:-1;
+  text-transform: lowercase;
   opacity:0.2;
-  color: #001335;
-  text-shadow: -1px 0 #3c73d3, 0 1px #3c73d3, 1px 0 #3c73d3, 0 -1px #3c73d3;
+  color: var(--dark-primary);
+  text-shadow: -1px 0 var(--primary), 0 1px var(--primary), 1px 0 var(--primary), 0 -1px var(--primary);
   font-family: 'Bebas Neue';
   font-weight: 700;
   line-height: 1;
@@ -133,8 +139,12 @@
   margin: -0.5rem auto 2rem;
 }
 .dzin_phone {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
+}
+
+.dzin_phone a{
+  font-family: "Inter-Bold";
 }
 
 .mail_icon img {

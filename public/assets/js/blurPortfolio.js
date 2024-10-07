@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   
       if (line) {
-        line.style.backgroundColor = '#6ba1ff';
-        line.style.boxShadow = '0px 0px 30px 10px rgba(107, 161, 255, 0.4)';
+        line.style.backgroundColor = '#e31e24';
+        line.style.boxShadow = '0px 0px 30px 10px rgba(255, 107, 107, 0.4)';
       }
   
       if (arrow) {

@@ -1,9 +1,9 @@
 @extends('layouts.base')
 
-@section('title', 'Arassa Nusga: IT-консалтинговая компания в Туркменистане')
-@section('ogTitle', 'Arassa Nusga: IT-консалтинг в Туркменистане')
+@section('title', 'LTM Studio: IT-консалтинговая компания в Туркменистане')
+@section('ogTitle', 'LTM Studio: IT-консалтинг в Туркменистане')
 @section('metaDesc',
-    'IT-консалтинговая компания Arassa Nusga в Туркменистане предлагает полный комплекс
+    'IT-консалтинговая компания LTM Studio в Туркменистане предлагает полный комплекс
     профессиональных услуг, от консалтинга до разработки веб-сайтов, мобильных приложений, и внедрение Logo Tiger ERP, CRM
     системы Битрикс24.')
 @section('metaKey',
@@ -80,6 +80,9 @@
 @section('serv-slider')
 
     <div class="services_content mobile-none">
+        <div class="red-circle-serv">
+            <img src="{{ asset('/assets/images/pseudo-red.png') }}" alt="" >
+        </div>
         <div class="services_title">{{ __('translate.myRazbirayemsya') }}</div>
 
         <div class="services serv-slider">
@@ -210,6 +213,8 @@
             <div class="services_buttons">
                 <a href="/{{ $lang }}/services"
                     class="btn first no-line"><span>{{ __('translate.allServ') }}</span></a>
+                    <a href="/{{ $lang }}/about_us"
+                    class="btn second no-line m-auto"><span>{{ __('translate.allServ') }}</span></a>
             </div>
         </div>
     </div>
@@ -337,6 +342,8 @@
         <div class="services_buttons">
             <a href="/{{ $lang }}/services"
                 class="btn first no-line m-auto"><span>{{ __('translate.allServ') }}</span></a>
+            <a href="/{{ $lang }}/about_us"
+                class="btn second no-line m-auto"><span>{{ __('translate.allServ') }}</span></a>
         </div>
     </div>
 
@@ -369,6 +376,9 @@
 
 
     <div class="feedback-section">
+        <div class="red-circle-feedback">
+            <img src="{{ asset('/assets/images/pseudo-red.png') }}" alt="">
+        </div>
         <h2 class="section_title" itemprop="name">
             {!! nl2br(__('translate.titleForm')) !!}
         </h2>
