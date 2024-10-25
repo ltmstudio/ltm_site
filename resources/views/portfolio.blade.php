@@ -60,7 +60,7 @@
                                 </li>
                             </ul>
                         </div> --}}
-                        <div class="blog_cats">
+                        <!-- <div class="blog_cats">
                             <ul class="row_p">
                                 <li class="element">
                                     <p data-category-name="All">{{ __('translate.menuAll') }}</p>
@@ -71,7 +71,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="grid_portfolio">

@@ -1,6 +1,6 @@
 <footer itemscope itemtype="http://schema.org/WPFooter">
     <div class="footer_container row">
-        <div class="copyrights col-lg-4 col-12">2017 - <?php echo date('Y'); ?>. LTM Studio -
+        <div class="copyrights col-lg-4 col-12"><?php echo date('Y'); ?>. LTM Studio -
             {{ __('translate.copyright') }}
         </div>
         <div class="expand-text col-lg-4 col-12" id="openModalButton">
@@ -65,14 +65,14 @@
                                     <div class="dzin_icon">
                                         <img src="{{ asset('assets/images/phoneLightRed.png') }}">
                                     </div>
-                                    <div class="dzin_phone">+993 12 754480</div>
-                                    <div class="dzin_phone">+993 61 648605</div>
+                                    <div class="dzin_phone">+993 12 75 37 13</div>
+                                    <div class="dzin_phone">+993 61 00 97 92</div>
                                 </div>
                                 <div class="mail">
                                     <div class="mail_icon"> <img src="{{ asset('assets/images/doveLightRed.png') }}">
                                     </div>
-                                    <div class="mail_title w-line">{!! nl2br(__('translate.pigeon')) !!}</div>
-                                    <div class="mail_title">info@arassanusga.com</div>
+                                    <div class="mail_title">{!! nl2br(__('translate.pigeon')) !!}</div>
+                                    <div class="mail_title">info@ltm.studio</div>
                                 </div>
                                 <p class="col-5 col-md-9"
                                     style="font-size:42px; font-weight:700; font-family:'Bebas Neue'">
@@ -102,7 +102,7 @@
                             <div class ="start">{{ __('translate.formModalTitle') }}</div>
                             <button id="closeModalButton" class="close-modal"><i class="fa-solid fa-xmark"
                                     style="font-size:18px"></i></button>
-                            <p style="font-size:18px">{{ __('translate.formModalDesc') }}</p>
+                            <p style="font-size:18px; text-align: start">{{ __('translate.formModalDesc') }}</p>
                         </div>
                         <div class="row d-flex">
                             <label class="field">
@@ -124,7 +124,7 @@
                                     placeholder="{{ __('translate.formEmail') }}">
                             </label>
                         </div>
-                        <input type="text" name="name" class="field-input field-textarea mt-5"
+                        <input type="text" name="name" class="field-input field-textarea mt-5" style="margin-left: 10px !important"
                             placeholder="{{ __('translate.formComment') }}">
                     </div>
 
@@ -147,7 +147,7 @@
                     <div class="mail">
                         <div class="mail_icon"> <img src="{{ asset('assets/images/doveLightRed.png') }}"></div>
                         <div class="mail_title w-line">{!! nl2br(__('translate.pigeon')) !!}</div>
-                        <div class="mail_title">info@arassanusga.com</div>
+                        <div class="mail_title">info@ltm.studio</div>
                     </div>
                     <p class="col-5 col-lg-5 col-md-9"
                         style="font-size:42px; font-weight:700; font-family:'Bebas Neue'">
@@ -157,10 +157,9 @@
         </div>
         <ul class="col-lg-4 col-12 text-center">
 
-            {{-- <li><a href="https://www.facebook.com/arassa.nusga/">Fb</a></li> --}}
-            <li><a href="https://www.instagram.com/arassanusga/"> Inst</a></li>
+            <li><a href="https://www.instagram.com/ltmstudio/"> Inst</a></li>
 
-            <li><a href="https://tm.linkedin.com/company/arassa-nusga/">Ln</a></li>
+            <li><a href="https://tm.linkedin.com/company/ltmstudio/">Ln</a></li>
         </ul>
 
     </div>

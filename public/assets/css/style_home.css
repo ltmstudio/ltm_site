@@ -216,7 +216,7 @@ summary {
     margin-bottom: 6rem;
     margin-top: 10rem;
     text-align: left;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
     font-weight: 700;
     color: var(--primary);
     /* color: #8e2442; */
@@ -224,6 +224,12 @@ summary {
     max-width: 132rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (min-width: 2000px){
+    .services_title{
+        max-width: 140rem !important;
+    }
 }
 .services_next {
     background-image: url("../images/long-arrow-right.png");
@@ -385,7 +391,7 @@ summary {
     /* z-index: -1; */
 }
 .serv-mobile-item {
-    border: 1px solid #7aaaff;
+    border: 1px solid #ff7a7a;
     padding: 10px 15px;
     border-radius: 25px;
 }
@@ -1082,7 +1088,7 @@ label {
         width: 10px;
         height: 10px;
         margin-right: 10px;
-        background-color: #6ba1ff;
+        background-color: var(--primary);
         border-radius: 50%;
     }
     .serv-mobile-dots.active-mobile-dot {
@@ -1102,11 +1108,14 @@ label {
         margin-top: 6rem;
         padding: 20px;
         font-size: 24px;
+        justify-content: space-between;
+        width: 100% !important;
     }
 
     .services-buttons .btn {
         margin-top: 30px;
         padding: 20px 10px;
+        width: -webkit-fill-available;
     }
     .services-buttons .btn span {
         font-size: 24px;
@@ -1130,9 +1139,9 @@ label {
     .show-more-btn,
     .hide-more-btn {
         margin-left: 10px;
-        background-color: #7aaaff;
+        background-color: #ff7a7a;
         border: none;
-        height: 32px;
+        height: 28px;
         opacity: 0.8;
         color: #fff;
         border-radius: 50%;
@@ -1144,7 +1153,7 @@ label {
     .show-more-btn svg,
     .hide-more-btn svg {
         font-size: 16px;
-        margin-bottom: 4px;
+        margin-bottom: 5px;
     }
     .pulse {
         width: fit-content;
@@ -1303,15 +1312,18 @@ label {
         top: 18%;
 
         right: 5% !important;
-        background-color: #7aaaff;
+        background-color: #ff7a7a;
         padding: 10px;
     }
     .prev-cust-button {
         top: 18%;
 
         left: 5% !important;
-        background-color: #7aaaff;
+        background-color: #ff7a7a;
         padding: 10px;
+    }
+    .cont{
+        font-size: 3rem !important;
     }
 }
 @media (max-width: 670px) {
@@ -1388,9 +1400,13 @@ label {
         font-size: 3rem;
     }
     .services_buttons .btn {
-        font-size: 3rem;
+        font-size: 2.9rem;
         height: 12rem;
-        padding: 0px 3.6em;
+        width: 98%;
+        /* padding: 0px 3.6em; */
+    }
+    .first{
+        margin-right: 10px !important;
     }
     .field-input {
         height: 9rem;

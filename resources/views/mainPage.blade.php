@@ -1,23 +1,23 @@
 @extends('layouts.base')
 
-@section('title', 'LTM Studio: IT-консалтинговая компания в Туркменистане')
-@section('ogTitle', 'LTM Studio: IT-консалтинг в Туркменистане')
+@section('title', 'LTM Studio: IT-компания в Туркменистане')
+@section('ogTitle', 'LTM Studio: IT-компания в Туркменистане')
 @section('metaDesc',
-    'IT-консалтинговая компания LTM Studio в Туркменистане предлагает полный комплекс
-    профессиональных услуг, от консалтинга до разработки веб-сайтов, мобильных приложений, и внедрение Logo Tiger ERP, CRM
+    'IT-компания LTM Studio в Туркменистане предлагает полный комплекс
+    профессиональных услуг, от дизайна до разработки веб-сайтов, мобильных приложений, интернер-магазинов и
     системы Битрикс24.')
 @section('metaKey',
     'разработка сайтов в Туркменистане, разработка мобильных приложений в Туркменистане, Bitrix CRM в
-    Туркменистане, консалтинговая компания в Туркрменистане, IT компания в Туркменистане')
+    Туркменистане, компания разработчиков в Туркрменистане, IT компания в Туркменистане')
 @section('custom-slider')
     @if (session('success'))
         <div class="alert alert-success">
             <p style="font-size:18px">{{ session('success') }}</p>
         </div>
     @endif
-    @section('ruLink', 'https://arassanusga.com/ru/');
-    @section('enLink', 'https://arassanusga.com/en/');
-    @section('tkLink', 'https://arassanusga.com/tk/')
+    @section('ruLink', 'https://ltm.studio/ru/');
+    @section('enLink', 'https://ltm.studio/en/');
+    @section('tkLink', 'https://ltm.studio/tk/')
 
     <div class="mainSlider ">
         <h1 class="homeTitle">
@@ -134,54 +134,6 @@
                 </div>
                 <a href="" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
-            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
-
-                <h2 class="section_title" itemprop="name">
-                    {!! nl2br(__('translate.servTitle5')) !!}
-                </h2>
-                <div class="section_desc">
-                    <p itemprop="description">
-                        <span>{{ __('translate.servDesc5') }}</span>
-                    </p>
-                </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
-            </div>
-            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
-
-                <h2 class="section_title" itemprop="name">
-                    {!! nl2br(__('translate.servTitle6')) !!}
-                </h2>
-                <div class="section_desc">
-                    <p itemprop="description">
-                        <span>{{ __('translate.servDesc6') }}</span>
-                    </p>
-                </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
-            </div>
-            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
-
-                <h2 class="section_title" itemprop="name">
-                    {!! nl2br(__('translate.servTitle7')) !!}
-                </h2>
-                <div class="section_desc">
-                    <p itemprop="description">
-                        <span></span>
-                    </p>
-                </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
-            </div>
-            <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
-
-                <h2 class="section_title" itemprop="name">
-                    {!! nl2br(__('translate.servTitle8')) !!}
-                </h2>
-                <div class="section_desc">
-                    <p itemprop="description">
-                        <span>{{ __('translate.servDesc8') }}</span>
-                    </p>
-                </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
-            </div>
         </div>
         <div class="small-container">
             <ul class="services_dots">
@@ -197,24 +149,12 @@
                 <li>
                     <button class="services-dot"><span>{!! nl2br(__('translate.servTitle4')) !!}</span></button>
                 </li>
-                <li>
-                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle5')) !!}</span></button>
-                </li>
-                <li>
-                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle6')) !!}</span></button>
-                </li>
-                <li>
-                    <button class="services-dot"><span>{!! nl2br(__('translate.servTitle7')) !!}</span></button>
-                </li>
-                <li>
-                    <button class="services-dot">{!! nl2br(__('translate.servTitle8')) !!}</span></button>
-                </li>
             </ul>
             <div class="services_buttons">
                 <a href="/{{ $lang }}/services"
                     class="btn first no-line"><span>{{ __('translate.allServ') }}</span></a>
                     <a href="/{{ $lang }}/about_us"
-                    class="btn second no-line m-auto"><span>{{ __('translate.allServ') }}</span></a>
+                    class="btn second no-line m-auto"><span>{{ __('translate.aboutUs') }}</span></a>
             </div>
         </div>
     </div>
@@ -343,7 +283,7 @@
             <a href="/{{ $lang }}/services"
                 class="btn first no-line m-auto"><span>{{ __('translate.allServ') }}</span></a>
             <a href="/{{ $lang }}/about_us"
-                class="btn second no-line m-auto"><span>{{ __('translate.allServ') }}</span></a>
+                class="btn second no-line m-auto"><span>{{ __('translate.aboutUs') }}</span></a>
         </div>
     </div>
 

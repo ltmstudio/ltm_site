@@ -14,11 +14,11 @@
     <div class="circle-5">
         <img src="{{ '../assets/images/circle-5.png' }}" alt="" loading="lazy">
     </div>
-    <div class="circle-6">
+    <div class="circle-7">
         <img src="{{ '../assets/images/circle-6.png' }}" alt="" loading="lazy">
     </div>
-    <div class="circle-7">
-        <img src="{{ '../assets/images/radialCircle.png' }}" width="707px" style="z-index: 1;" loading="lazy">
+    <div class="circle-6">
+        <img src="{{ '../assets/images/radialCircle.png' }}" width="707px" loading="lazy">
     </div>
 @endsection
 @section('content')
@@ -30,20 +30,23 @@
                 <p>{{ __('translate.mainPage') }}</p>
                 <p>{{ __('translate.services') }}</p>
             </div>
-            {{-- <div class="pre_title">{{ __('translate.pre_title') }}</div> --}}
+            {{-- <div class="pre_title">{{ __('translate.pre_title') }}
+    </div> --}}
             <div class="h"></div>
 
             <div class="column left">
-                {{--                    <p>{!! nl2br(__('translations.title')) !!}</p> --}}
+                {{-- <p>{!! nl2br(__('translations.title')) !!}</p> --}}
 
                 <h1 class="title"> {!! nl2br(__('translate.title')) !!} </h1>
-                {{--                    <div class="title"> {{__('translate.title')}} </div> --}}
+                {{-- <div class="title"> {{__('translate.title')}}
+    </div> --}}
 
                 <div class="subt">
                     <div class="p1">{{ __('translate.p1') }}</div>
-                    <div class="p1">{{ __('translate.p1_2') }} <span
-                            style="color:#1478E8; font-weight: 600;">{{ __('translate.p1_2_custom') }} </span>
-                        {{ __('translate.p1_2_cont') }}</div>
+                    <div class=" p1">{{ __('translate.p1_2') }} <span class="serv-p1">{{ __('translate.p1_2_custom') }}
+                        </span>
+                        {{ __('translate.p1_2_cont') }}
+                    </div>
                 </div>
             </div>
             <div class="column right">
@@ -52,102 +55,66 @@
                 <img src="{{ '../assets/images/image.png' }}" loading="lazy">
             </div>
         </div>
-        <!-- <div class="container"> -->
-        {{-- <div class="advertise">{{__('translate.advert')}}<span style="color:#1478E8; font-weight: 600;"> {{__('translate.advert_custom')}}</span>{{__('translate.advert_cont')}}</div> --}}
-        <div class="gridCon">
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/website.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle1') }}</h2>
-                    <hr>
+        <section class="section-slider gsap_slider mobile-none">
+            <p class="slider-title">{{ __('translate.our_serv_title') }}</p>
+            <div class="content m60">
+                <div class="section__slider gsap_h">
+                    <div class="gsap__bl">
+                        <div class="gsap__inner">
+                            <div class="gsap__track">
+                                <div class="glassmorph-slide gsap__item active">
+                                    <h2 class="slide-title"> {{ __('translate.servTitle1') }}</h2>
+                                    <p class="slide-desc">{{ __('translate.servDesc1') }}</p>
+                                </div>
+                                <div class="glassmorph-slide gsap__item">
+                                    <h2 class="slide-title">{{ __('translate.servTitle2') }}</h2>
+                                    <p class="slide-desc">{{ __('translate.servDesc2') }}</p>
+                                </div>
+                                <div class="glassmorph-slide gsap__item">
+                                    <h2 class="slide-title">{{ __('translate.servTitle3') }}</h2>
+                                    <p class="slide-desc">{{ __('translate.servDesc3') }}</p>
+                                </div>
+                                <div class="glassmorph-slide gsap__item">
+                                    <h2 class="slide-title">{{ __('translate.servTitle4') }}</h2>
+                                    <p class="slide-desc">{{ __('translate.servDesc4') }}</p>
+                                </div>
 
-                    <h3>{{ __('translate.servSubTitle1') }}</h3>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- gsap__bl END -->
                 </div>
             </div>
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/app-development.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle2') }}</h2>
-                    <hr>
-
-                    <h3>{{ __('translate.servSubTitle2') }}</h3>
-                </div>
+        </section>
+        <div class="mobile-glassmorph-cards desktop-none">
+            <div class="glassmorph-slide active">
+                <h2 class="slide-title"> {{ __('translate.servTitle1') }}</h2>
+                <p class="slide-desc">{{ __('translate.servDesc1') }}</p>
             </div>
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/bitrix.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle3') }}</h2>
-                    <hr>
-                    <h3>{{ __('translate.servSubTitle3') }}</h3>
-                </div>
+            <div class="glassmorph-slide active">
+                <h2 class="slide-title">{{ __('translate.servTitle2') }}</h2>
+                <p class="slide-desc">{{ __('translate.servDesc2') }}</p>
             </div>
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/logosoft.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle4') }}</h2>
-                    <hr>
-
-                    <h3>{{ __('translate.servSubTitle4') }}</h3>
-                </div>
+            <div class="glassmorph-slide active">
+                <h2 class="slide-title">{{ __('translate.servTitle3') }}</h2>
+                <p class="slide-desc">{{ __('translate.servDesc3') }}</p>
             </div>
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/diagnostic.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle5') }}</h2>
-                    <hr>
-
-                    <h3>{{ __('translate.servSubTitle5') }} </h3>
-                </div>
-            </div>
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/analytics.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle6') }}</h2>
-                    <hr>
-
-                    <h3>{{ __('translate.servSubTitle6') }}</h3>
-                </div>
-            </div>
-
-
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/consulting.png' }}"width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle7') }}</h2>
-                    <hr>
-
-                    <h3>{{ __('translate.servSubTitle7') }}</h3>
-                </div>
-            </div>
-
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/antivirus.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle8') }}</h2>
-                    <hr>
-
-                    <h3>{{ __('translate.servSubTitle8') }}</h3>
-                </div>
-            </div>
-            <div class="gridItem">
-                <div class="rows-3">
-                    <img src="{{ '../assets/images/sales.png' }}" width="57" loading="lazy">
-                    <h2>{{ __('translate.servTitle9') }} </h2>
-                    <hr>
-
-                    <h3>{{ __('translate.servSubTitle9') }}</h3>
-                </div>
+            <div class="glassmorph-slide active">
+                <h2 class="slide-title">{{ __('translate.servTitle4') }}</h2>
+                <p class="slide-desc">{{ __('translate.servDesc4') }}</p>
             </div>
         </div>
-
+        @include('components.timeline')
         <div class="emoji">
             <p> {{ __('translate.emoji') }}</p>
-            {{-- <div class="emojis"> &#129310; &#128406; &#9996;</div> --}}
         </div>
 
         <div class="servicesBody">
             <div class="title">
-                {{ __('translate.qualityTitle') }} </div>
+                {{ __('translate.qualityTitle') }}
+            </div>
             <div class="sub">{{ __('translate.qualitySub') }}</div>
             <ul>
                 <li>
@@ -185,10 +152,11 @@
             <p>
                 <strong>{{ __('translate.questionTitle') }}</strong>
                 <br> {{ __('translate.questionSub') }}
-                <strong> <span style="color:#1478E8;"> {{ __('translate.questionSubCustom') }} </span></strong>
+                <strong> <span class="serv-p1"> {{ __('translate.questionSubCustom') }} </span></strong>
             </p>
             <p>{!! nl2br(__('translate.call')) !!}
-                <strong><span style="color:#1478E8;"> {{ __('translate.mail') }} </span> </strong>
+                <strong><a class="no-line" href="mailto:info@ltm.studio"><span class="serv-p1"> {{ __('translate.mail') }}
+                        </span> </a></strong>
             </p>
         </div>
     </div>

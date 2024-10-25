@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjSliderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use App\Models\Portfolio;
@@ -11,14 +12,65 @@ use App\Models\Blog;
 use App\Models\Categories;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 $path = 'App\Http\Controllers';
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-// Redirect
+
+//sitemap
+Route::get('/sitemap.xml', function () {
+
+    $languages = ['ru', 'en', 'tm']; // Укажите языки вашего сайта
+
+    $sitemap = Sitemap::create();
+
+    foreach ($languages as $lang) {
+        // Добавляем главные страницы для каждого языка
+        $sitemap->add(Url::create("/{$lang}")
+            ->setPriority(1.0)
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            ->setLastModificationDate(now()));
+
+        // Добавляем страницы портфолио для каждого языка
+        $portfolios = Portfolio::all();
+        foreach ($portfolios as $portfolio) {
+            $sitemap->add(Url::create("/{$lang}/portfolio/{$portfolio->id}")
+                ->setPriority(0.8)
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setLastModificationDate($portfolio->updated_at));
+        }
+
+        // Статические страницы
+        $staticPages = [
+            ['url' => '/services', 'priority' => 0.9, 'changeFreq' => Url::CHANGE_FREQUENCY_MONTHLY],
+            ['url' => '/about_us', 'priority' => 0.7, 'changeFreq' => Url::CHANGE_FREQUENCY_YEARLY],
+            ['url' => '/contacts', 'priority' => 0.7, 'changeFreq' => Url::CHANGE_FREQUENCY_YEARLY],
+            ['url' => '/faq', 'priority' => 0.6, 'changeFreq' => Url::CHANGE_FREQUENCY_YEARLY],
+            ['url' => '/services-bitrix', 'priority' => 0.8, 'changeFreq' => Url::CHANGE_FREQUENCY_MONTHLY],
+            ['url' => '/services-bcloud', 'priority' => 0.8, 'changeFreq' => Url::CHANGE_FREQUENCY_MONTHLY],
+        ];
+
+        foreach ($staticPages as $page) {
+            $sitemap->add(Url::create("/{$lang}{$page['url']}")
+                ->setPriority($page['priority'])
+                ->setChangeFrequency($page['changeFreq'])
+                ->setLastModificationDate(now()));
+        }
+    }
+
+    // Возвращаем карту сайта
+    return $sitemap->toResponse(request());
+});
+
+// Переадресация на /ru только для корневого маршрута
 Route::get('/', function () {
     return redirect('/ru');
 });
+
+
+
 
 ///mainPage
 Route::get('/{lang}', [HomeController::class, 'index'])->middleware('redirect');
@@ -47,34 +99,39 @@ Route::get('/{lang}/admin/edit-article/{id}', function ($lang, $id) {
 Route::post('/{lang}/admin/edit-article/{id}', $path . '\CBlog@editBlog');
 
 // all portfolio
-Route::get('/{lang}/admin/all-projects', function($lang) {
+Route::get('/{lang}/admin/all-projects', function ($lang) {
     App::setLocale($lang);
     Paginator::useBootstrap();
     $portfolio = Portfolio::paginate(10);
-    return view('allProjects', ['lang'=>$lang, 'portfolio'=>$portfolio]);
+    return view('allProjects', ['lang' => $lang, 'portfolio' => $portfolio]);
 })->middleware('auth');
 
 // add portfolio
-Route::get('/{lang}/admin/add-project' , [CPortfolio::class, 'addProject']);
+Route::get('/{lang}/admin/add-project', [CPortfolio::class, 'addProject']);
 Route::post('/{lang}/admin/add-project', $path . '\CPortfolio@addPortfolio');
 
 // edit
-Route::get('/{lang}/admin/edit-project/{id}' , [CPortfolio::class, 'editProject']);
+Route::get('/{lang}/admin/edit-project/{id}', [CPortfolio::class, 'editProject']);
 Route::post('/{lang}/admin/edit-project/{id}', $path . '\CPortfolio@editPortfolio');
 
 //services
 Route::get('/{lang}/services', function ($lang) {
     App::setLocale($lang);
     $leftMenu = true;
-    $currentPage = __('translate.services');
+    $currentPage = "";
     return view('services', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 })->middleware('redirect');
+
+
+Route::get('/{lang}/services-webpages', [ProjSliderController::class, 'index'])->middleware('redirect');
+
+
 
 //about-us
 Route::get('/{lang}/about_us', function ($lang) {
     App::setLocale($lang);
-    $leftMenu = false;
-    $currentPage = __('translate.aboutUs');//"О нас";
+    $leftMenu = true;
+    $currentPage = ""; //"О нас";
     return view('about_us', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 })->middleware('redirect');
 
@@ -102,7 +159,7 @@ Route::get('/{lang}/blog/{id}', function ($lang, $id) {
 Route::get('/{lang}/contacts', function ($lang) {
     App::setLocale($lang);
     $leftMenu = true;
-    $currentPage = __('translate.contacts');
+    $currentPage = "";
     return view('contacts', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 })->middleware('redirect');
 //QA
@@ -112,6 +169,21 @@ Route::get('/{lang}/faq', function ($lang) {
     $currentPage = "FAQ";
     return view('faq', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 })->middleware('redirect');
+//bitrix box
+Route::get('/{lang}/services-bitrix', function ($lang) {
+    App::setLocale($lang);
+    $leftMenu = true;
+    $currentPage = "";
+    return view('bitrixbox', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
+})->middleware('redirect');
+//bitrix cloud
+Route::get('/{lang}/services-bcloud', function ($lang) {
+    App::setLocale($lang);
+    $leftMenu = true;
+    $currentPage = "";
+    return view('bitrixcloud', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
+})->middleware('redirect');
+
 
 
 Route::post('/{lang}/admin/delete-project', $path . '\CPortfolio@destroy');

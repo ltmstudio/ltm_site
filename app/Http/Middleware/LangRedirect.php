@@ -16,12 +16,21 @@ class LangRedirect
      */
     public function handle(Request $request, Closure $next)
     {
+        // Получаем параметры маршрута
         $parameters = $request->route()->parameters();
-        if ($parameters['lang'] =='ru' || $parameters['lang']=='en' || $parameters['lang']=='tm') {
-            true;
-        }  else {
-            return redirect('/ru');
+
+        // Если есть параметр 'lang', проверяем его корректность
+        if (isset($parameters['lang'])) {
+            if (in_array($parameters['lang'], ['ru', 'en', 'tm'])) {
+                // Если язык допустим, продолжаем выполнение запроса
+                return $next($request);
+            } else {
+                // Если язык недопустим, перенаправляем на '/ru'
+                return redirect('/ru');
+            }
         }
+
+        // Если параметра 'lang' нет, ничего не делаем и позволяем Laravel продолжить
         return $next($request);
     }
 }

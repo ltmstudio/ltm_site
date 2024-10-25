@@ -6,51 +6,32 @@
     <!-- CSRF Token -->
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <!-- Open Graph -->
+    <link rel="canonical" href="{{ config('app.url') }}/{{ Request::path() }}">
     <meta property="og:type" content="website">
     <meta property="og:description" content="@yield('metaDesc')">
-    <meta property="og:url" content="https://arassanusga.com/{{ $lang }}">
-    <meta property="og:image" content="https://arassanusga.com/assets/images/logo.png">
+    <meta property="og:url" content="{{ config('app.url') }}/{{ $lang }}">
+    <meta property="og:image" content="{{ config('app.url') }}/assets/images/ltm-white.png">
     <meta property="og:site_name" content="LTM Studio">
     <meta property="og:locale" content="ru_RU">
     <title itemprop="headline">@yield('title')</title>
     <meta property="og:title" content="@yield('ogTitle')">
     <meta itemprop="description" name="description" content="@yield('metaDesc')">
     <meta itemprop="keywords" name="keywords" content="@yield('metaKey')">
+    <meta name='freelancehunt' content='c02792cc8b8b525'>
     <link rel="alternate" hreflang="ru" href="@yield('ruLink')">
+    <link rel="shortcut icon" href="{{ asset('/assets/images/ltm.svg') }}">
     <link rel="alternate" hreflang="en" href="@yield('enLink')">
     <link rel="alternate" hreflang="tk" href="@yield('tkLink')">
     <script type='application/ld+json'> 
-{
-  "@context": "http://www.schema.org",
-  "@type": "LocalBusiness",
-  "name": "LTM Studio",
-  "url": "https://arassanusga.com",
-  "logo": "https://arassanusga.com/logo.png",
-  "image": "https://arassanusga.com/logo.png",
-  "description": "IT-консалтинговая компания LTM Studio в Туркменистане предлагает полный комплекс профессиональных услуг, от консалтинга до разработки веб-сайтов, мобильных приложений, и внедрение Logo Tiger ERP, CRM системы Битрикс24.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Куллиева, здание 27",
-    "postOfficeBoxNumber": "info@arassanusga.com",
-    "addressLocality": "Ашхабад",
-    "postalCode": "744000",
-    "addressCountry": "Туркменистан"
-  },
-  "hasMap": "https://maps.app.goo.gl/NpTxyrN6jhaJMf577",
-  "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:00 Sa 09:00-13:00",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+99312754480"
-  }
-}
+
 </script>
     <script>
         var texts = @json(__('translate.texts'));
     </script>
-    {{-- <link rel="alternate" hreflang="x-default" href="http://site.com/" />
-    <link rel="alternate" hreflang="ru" href="http://site.com/ru/">
-    <link rel="alternate" hreflang="en" href="http://site.com/en/">
-    <link rel="alternate" hreflang="ua" href="http://site.com/tk/"> --}}
+    <link rel="alternate" hreflang="x-default" href="{{ config('app.url') }}" />
+    <link rel="alternate" hreflang="ru" href="{{ config('app.url') }}/ru/">
+    <link rel="alternate" hreflang="en" href="{{ config('app.url') }}/en/">
+    <link rel="alternate" hreflang="tk" href="{{ config('app.url') }}/tk/"> 
     @include('layouts.styles')
 </head>
 
@@ -90,7 +71,7 @@
     @include('layouts.scripts')
     <div class="follow-cursor"></div>
 
-    <button onclick="topFunction()" id="scrollBtn"><i class="fa-solid fa-arrow-up" style="color:#1B2E69"></i></button>
+    <button onclick="topFunction()" id="scrollBtn"><i class="fa-solid fa-arrow-up"></i></button>
 
 </body>
 

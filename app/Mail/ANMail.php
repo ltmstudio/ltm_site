@@ -27,8 +27,7 @@ class ANMail extends Mailable
     public function build()
 
     { 
-        return $this->
-        from('a.ahmedova@arassanusga.com', 'Arassa Nusga')
+        return $this
         ->subject('Заявка')->view('mailTemplate'
         // , ['email' => $this->data['email'], 'name' => $this->data['name']]
     );

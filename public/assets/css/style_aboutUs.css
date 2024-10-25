@@ -1,7 +1,7 @@
 .aboutUs_content {
   letter-spacing: 0.1em;
   position: relative;
-  padding-top: 1rem;
+  padding: 1rem 0 0;
 }
 .aboutUs_desc h1,
 .aboutUs_desc h2,
@@ -30,11 +30,11 @@
   font-weight: 800;
 }
 .aboutUs_desc p a {
-  color: #1478e8;
+  color: #e31e24;
   /* border-bottom: 1px solid #1478e8; */
 }
 .aboutUs_desc p a:after{
-background: #1478e8;
+background: #e31e24;
 }
 h1,
 h2,
@@ -139,7 +139,7 @@ p + p {
 
 .stats_count {
   font-size: 13.5rem;
-  color: #2d60e6;
+  color: #e31e24;
   font-weight: 700;
   line-height: 1;
   font-family: Bebas Neue, sans-serif;
@@ -215,7 +215,7 @@ z-index: 1;
 .num{
   font-size: 1.8rem;
   font-weight: 700;
-  color: #6ba1ff;
+  color: #e31e24;
 }
 .item_column {
   /* position: relative; */
@@ -306,7 +306,7 @@ hr {
   top: 0.35em; /* Adjust the vertical alignment of the bullet */
   width: 1rem; /* Set the desired bullet size */
   height: 1rem; /* Set the desired bullet size */
-  background-color: #abc1e4; /* Set the desired bullet color */
+  background-color: #e4abab; /* Set the desired bullet color */
   border-radius: 50%;
 }
 
@@ -335,7 +335,10 @@ hr {
 }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
+  .aboutUs_content{
+    padding: 1rem 3rem 0 !important;
+  }
   .aboutUs_desc p {
     max-width: 130rem;
 }
@@ -376,7 +379,7 @@ hr {
     font-size: 3.8rem;
   }
   .item_desc {
-    max-width: 35rem;
+    /* max-width: 35rem; */
     font-size: 18px;
     line-height: 1.5;
     font-weight: 400;
@@ -416,8 +419,8 @@ hr {
   }
   .valuesList {
     display: block;
-    margin: auto;
-    width:fit-content;
+    /* margin: auto; */
+    width:100%;
   }
  
 }

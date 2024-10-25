@@ -27,13 +27,13 @@ return [
     "Quality. Innovation. Solutions",
     "Site without coronavirus",
     "Changing business for the better",
-    "It&Consulting in Turkmenistan",
+    "It-solutions in Turkmenistan",
     "A company that can"
   ],
 
   'pre_title' => 'Digital agency services in Ashgabat',
   'title' => "Packaging the Business\n from the name and logo\n to active sales",
-  'p1' => 'As a business consulting company in Ashgabat, we create complex and customised solutions
+  'p1' => 'As a IT-company in Ashgabat, we create complex and customised solutions
             for business development of private companies.',
   'p1_2' => ' We dont just "design", we treat the process as a "product
             owner" - with attention to all stages of the project with a high concentration on the result. We provide',
@@ -45,7 +45,7 @@ return [
   'emoji' => 'We\'re great at creating emotional designs full of fire and passion',
   'qualityTitle' => 'Your project will be efficient and profitable',
   'qualitySub' => 'Our goal is to lead you in the marketplace or at the very least squeeze the most out of what we can.',
-  'q1_title' => 'We don\'t learn from "cats"',
+  'q1_title' => 'We don\'t learn from you',
   'q1_sub' => 'Over 10 years of experience',
   'q2_title' => 'Profitable investment',
   'q2_sub' => 'Quality and results are always higher than expected',
@@ -55,7 +55,7 @@ return [
   'q4_sub' => 'No "kolkhoz" unless it"s part of "kitsch"',
   'q5_title' => 'The right strategy',
   'q5_sub' => 'Complex projects get profits in the right, for the business,
-     efficiency vector and marketing consulting at every stage',
+     efficiency vector at every stage',
   'q6_title' => 'Getting into the problem',
   'q6_sub' => 'Listen, consider, analyse and solve',
   'q7_title' => 'Empathise with the outcome',
@@ -63,27 +63,25 @@ return [
   'questionTitle' => 'Web services questions:',
   'questionSub' => 'You can read our fact sheet where we answered all of them',
   'questionSubCustom' => 'frequently asked questions about web services',
-  'call' => "And you can call ☎️+993(12)-75-44-80\nor",
+  'call' => "And you can call ☎️+993(12)-75-37-13\nor",
   'mail' => 'email',
-  'footerTitle' => "More than an IT consulting company in Turkmenistan",
-  'footerSub' => "We are an IT consulting company in Turkmenistan,
-      offering a unique combination of technology expertise and strategic business consulting.
+  'footerTitle' => "More than an IT-company in Turkmenistan",
+  'footerSub' => "We are an IT-company in Turkmenistan,
+      offering a unique combination of technology expertise and strategic business solutions.
        Our mission is to help clients achieve their business goals through the innovative application of IT solutions and a deep understanding of market trends.\n
         We specialize in the development and implementation of comprehensive digital transformation strategies,
      which increase operational efficiency by automating and optimizing business processes, opening up new opportunities for growth.\n
-     Our services cover the entire range of IT consulting, including the development of comprehensive solutions,
-     Internet marketing, cybersecurity, software development and data management.\n
-     We also provide strategic guidance in areas such as management consulting,
-     optimization of business processes, sales management and innovative planning, accompanying our clients after the completion of projects.",
+     Our services cover the entire range of IT, including the development of comprehensive solutions,
+     Internet marketing, cybersecurity, software development and data management.",
   'footerSubStrong' => "",
   'mobileMenuTitle' => 'We develop solutions for productive business on the Internet and beyond',
 
 
 
   'leftRequest' => 'Leave a request',
-  'copyright' => 'IT consulting company in Turkmenistan',
+  'copyright' => 'IT-company in Turkmenistan',
   'moreThan1' => 'More than just',
-  'moreThan2' => 'IT-consulting',
+  'moreThan2' => 'IT-company',
   'aboutSub' => 'First',
   'aboutSubCont' => 'in Ashgabat and Turkmenistan as a whole',
   'aboutTitle' => 'We help worthy businesses to become more famous',
@@ -102,11 +100,10 @@ return [
     Therefore, we work effectively remotely. This is a conscious choice, and besides,
     your budget savings – maybe a significant expense item is excluded.',
   'history' => 'History',
-  'aboutHistory' => "There are just a few companies like us. We love the thing we do and it doesn’t matter for us what our client’s material condition is. We equally appreciate the investments put in the development and take the most of it using the most effective ways. \n
-    We are not chasing all these brands and trends – we study them. We love honesty, quality, style, and creativeness,that is why we choose the Author’s approach based on proper marketing and effective communication with the consumer. \n
-    Our history is about the people, that have united as associates working on one project, and now we have finished together more than a hundred of them. \n
-    All of our specialists are not rookies or trainees-freelancers. The minimum level of our teammates is Senior,
-    which is because the quality of our work is important for us.",
+  'aboutHistory' => "
+LTMOur approach is based on honesty, quality, creativity, and innovation. We prefer a unique method, combining `right` marketing with effective communication. This makes us a distinctive creative agency in Ashgabat. Our projects are not just about fulfilling orders but contributing to the development of each client by creating a unique product that reflects their business goals.\n
+   The story of LTM Studio is one of like-minded individuals who started with one project and gradually grew to over 20 successful cases. We are not afraid of innovation and unconventional solutions, offering our clients only what truly benefits their business.\n
+   Our team consists of experienced specialists with skills at least at the Middle level. We do not hire beginners or interns, as we prioritize the quality of every task we undertake.",
   'aboutStatistics' => 'Cold statistics',
   'years' => 'years in design',
   'projects' => 'Projects',
@@ -130,13 +127,14 @@ return [
   'aboutSpecTitle' => 'The specialization of our digital büro',
   'aboutSpecSub' => 'We are not striving to do the thing we are not competent in, but we are not afraid of doing something new in an exploration
     of brand-new solutions, we are growing and improving so here is the result',
-  'spec1' => 'Marketing and promoting',
-  'spec1Sub' => "Analysis and assessment\n at all stages and processes",
-  'spec2' => 'Design and graphics',
-  'spec2Sub' => "As a rational and effective\n investment in creativeness",
-  'spec3' => 'Developing websites',
-  'spec3Sub' => "Building websites of\n any complexity using\n modern technologies",
-  'spec4' => "Management consulting",
+  'spec1' => 'Website and E-commerce Development',
+  'spec1Sub' => "Creation of websites and e-commerce platforms\n of any complexity using\n modern technologies",
+  'spec2' => 'Mobile Application Development',
+  'spec2Sub' => "A rational and effective investment\n in creativity",
+  'spec3' => 'Bitrix24 CRM Implementation',
+  'spec3Sub' => "Integration and setup of Bitrix24 platform for automating business processes, increasing efficiency, and improving internal communication.",
+
+  //   'spec4' => "Management consulting",
   'spec4Sub' => "Optimization, strategic leadership, competitive advantage, process improvement, people development.",
   'aboutPartnerTitle' => 'Co-operation and Partnership',
   'aboutPartnerSub' => 'We are ready to cooperate with it-companies, production-collectives,
@@ -168,8 +166,8 @@ return [
   'teamQ17' => 'You are constantly learning something new',
   'teamQ18' => 'You are not like procrastinating your work 😏',
   'aboutFooterSub' => "Does it match you at least 12 points? Then send your resume on \n",
-  'custom' => 'info@arassanusga.com',
-  'mailHr' => 'hr@arassanusga.com',
+  'custom' => 'info@ltm.studio',
+  'mailHr' => 'info@ltm.studio',
   'aboutFooterSubCont' => '– and maybe you will become a part of our team',
   'aboutFooterTitle' => "Marketing and\n advertisement agency\n in Ashgabat",
 
@@ -226,7 +224,7 @@ return [
   'myRazbirayemsya' => 'We understand:',
   'readMore' => 'Read more',
   'allServ' => 'All services',
-  'home_h1' => 'IT consulting in Turkmenistan - turning technology into advantages',
+  'home_h1' => 'IT-company in Turkmenistan - turning technology into advantages',
   'servTitle1' => "Website \ndevelopment",
   'servSubTitle1' => "Sites of any complexity, style and wow effects",
   'servDesc1' => "An integrated approach to website creation, including design, design,
@@ -268,9 +266,9 @@ return [
      tailored to the needs of your business. Thanks to the mobile application, you will receive
      access to data anywhere in the world, providing constant control and the ability to timely
      responding to changes",
-  'servTitle7' => "Management Consulting",
+  //   'servTitle7' => "Management Consulting",
   'servSubTitle7' => "Solutions for Growth and Innovation",
-  'servDesc7' => "Management consulting aims to solve specific problems that many businesses face: inconsistency in management processes, low productivity and inefficient use of resources. We help eliminate these shortcomings by offering strategies to improve internal communication and synergy between departments, optimization management decisions and increasing overall operational efficiency through the implementation of IT tools.",
+  //   'servDesc7' => "Management consulting aims to solve specific problems that many businesses face: inconsistency in management processes, low productivity and inefficient use of resources. We help eliminate these shortcomings by offering strategies to improve internal communication and synergy between departments, optimization management decisions and increasing overall operational efficiency through the implementation of IT tools.",
   'servTitle8' => "Antiviruses \n Eset and Kaspersky",
   'servSubTitle8' => "Your shield against digital threats",
   'servDesc8' => "We offer reliable antivirus solutions from leading developers - Eset and Kaspersky.
@@ -284,27 +282,23 @@ return [
 
   'aboutUsFooter1' => 'We create the “parts and tools” that move your business forward. As we work through each idea, we expand on its values and philosophy, creating meaningful solutions that help businesses achieve the growth they need.',
   'aboutUsFooter2' => 'Our company puts “efficiency” in the first place, and despite all the pragmatism of the business, we find many creative ideas for implementing solutions that can connect you with your audience for many years to come. LTM Studio who can!',
-  'aboutUsFooter3' => 'The consulting company "LTM Studio" was founded in 2017 with
-     Lotta Business
-     group. Our company`s motto is: "Quality. Innovation. Solutions." In addition to a wide range
-     professional consulting services, we are proud of our IT solutions that combine
+  'aboutUsFooter3' => 'The IT-company "LTM Studio" was founded in 2017. Our company`s motto is: "Creates&Inspires" In addition to a wide range
+     professional business services, we are proud of our IT solutions that combine
      advanced technologies and an individual approach. We provide clients with innovative and
      effective strategies for developing their business, from websites and individual mobile
      applications to complex integrated systems designed specifically for specific
      business tasks.',
-  'aboutUsFooter4' => 'Our IT consulting services help clients optimize their
+  'aboutUsFooter4' => 'Our IT-services help clients optimize their
      business processes and improve
      interaction with clients. We develop and implement custom IT solutions that
      not only meet current business needs, but also adapt to future changes,
      ensuring sustainable development and growth.',
-  'aboutUsFooter5' => 'Our team consists of highly qualified specialists in the field of IT and
-     consulting,
+  'aboutUsFooter5' => 'Our team consists of highly qualified specialists in the field of IT,
      which will help improve the quality of your work, raise the level of employee awareness,
      solve pressing business issues and increase company profits. For consulted companies
      We always deliver more than is expected of us, and their success is our reputation.',
   'aboutUsFooter6' => 'The main value is employees who develop the society around them to
-     to the best. "Arassa
-     Nusga" unites the desire for new knowledge and skills in the field of IT and professional
+     to the best. "LTM Studio" unites the desire for new knowledge and skills in the field of IT and professional
      activities. We realize our ideas, overcoming the boundaries of the usual, and understand that our
      innovative IT solutions can become a new opportunity for the entire company. Therefore we are not afraid
      changes in our usual practice. We highly value employees who strive to
@@ -312,5 +306,10 @@ return [
      the benefit of the interests of his company. We believe that the TEAM at LTM Studio is much more
      more than just a few people. This is an association of professionals who are ready to contribute their
      contribution to the development of innovative IT solutions and improving the business of our clients.',
-
+  'abt1' => "LTM Studio is a team of professionals offering comprehensive IT solutions for your business. We don't just create websites or applications, but strategic tools designed to accelerate company growth and enhance internal processes. The implementation of modern technologies helps our clients improve productivity and optimize workflows, adapting to new challenges.",
+  'abt2' => 'Our approach is based on close collaboration with the client. We thoroughly study the specifics of the business to offer the most suitable and effective solutions. Even if your project requires minor adjustments or a complete rethinking of existing processes, we are ready to propose the optimal solution that ensures long-term results.',
+    'our_serv_title' => 'Our services',
+  'abtLtmstudio' => 'LTM Studio is a team of professionals offering comprehensive IT solutions for your business. We dont just create websites or applications, but strategic tools designed to accelerate company growth and enhance internal processes. The implementation of modern technologies helps our clients improve productivity and optimize workflows, adapting to new challenges.',
+  'abtLtmstudio1' => 'Our approach is based on close collaboration with the client. We thoroughly study the specifics of the business to offer the most suitable and effective solutions. Even if your project requires minor adjustments or a complete rethinking of existing processes, we are ready to propose the optimal solution that ensures long-term results.',
+  'abtLtmstudio3' => 'We are ready to cooperate with it-companies, production-collectives, PR companies, architectural studios, and others. If you have a deal, you are welcome to contact us.',
 ];
