@@ -33,11 +33,19 @@ class Handler extends ExceptionHandler
             $statusCode = $exception->getStatusCode();
     
             if ($statusCode == 404) {
-                // Возвращаем страницу 404
-                return response()->view('errors.404', [], 404);
+                // Получаем язык из URL или используем язык по умолчанию
+                $lang = $request->segment(1);
+    
+                // Если язык не задан или некорректен, устанавливаем язык по умолчанию (например, 'ru')
+                if (!in_array($lang, ['ru', 'en', 'tm'])) {
+                    $lang = 'ru';  // Установите ваш язык по умолчанию
+                }
+    
+                // Возвращаем страницу 404 с переданной языковой переменной
+                return response()->view('errors.404', ['lang' => $lang], 404);
             }
         }
     
         return parent::render($request, $exception);
     }
-}     
+}

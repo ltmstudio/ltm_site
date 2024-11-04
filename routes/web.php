@@ -73,7 +73,9 @@ Route::get('/', function () {
 
 
 ///mainPage
-Route::get('/{lang}', [HomeController::class, 'index'])->middleware('redirect');
+Route::get('/{lang}', [HomeController::class, 'index'])
+    ->where('lang', 'ru|en|tm') // Допускаем только 'ru', 'en', 'tm'
+    ->middleware('redirect');
 
 //all blog
 Route::get('/{lang}/admin/all-articles', function ($lang) {
