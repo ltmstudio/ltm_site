@@ -24,7 +24,6 @@ return [
   'picturesFromProject' => 'Some images from project',
   'goToSite' => "Visit site",
   'texts' => [
-    "Quality. Innovation. Solutions",
     "Site without coronavirus",
     "Changing business for the better",
     "It-solutions in Turkmenistan",
@@ -63,8 +62,10 @@ return [
   'questionTitle' => 'Web services questions:',
   'questionSub' => 'You can read our fact sheet where we answered all of them',
   'questionSubCustom' => 'frequently asked questions about web services',
-  'call' => "And you can call ☎️+993(12)-75-37-13\nor",
-  'mail' => 'email',
+    'call' => "And you can call ☎️",
+    "number" => "+993(12)75-37-13\n or",
+    "write_to_email" => "",
+    'mail' => 'email',
   'footerTitle' => "More than an IT-company in Turkmenistan",
   'footerSub' => "We are an IT-company in Turkmenistan,
       offering a unique combination of technology expertise and strategic business solutions.

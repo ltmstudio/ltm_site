@@ -228,7 +228,7 @@ summary {
 
 @media (min-width: 2000px){
     .services_title{
-        max-width: 140rem !important;
+        max-width: 130rem !important;
     }
 }
 .services_next {
@@ -408,6 +408,13 @@ summary {
     font-family: "Inter-Bold";
     transition: all 0.3s ease;
     /* border: 1px solid #3c73d3; */
+}
+
+@media (max-width: 1620px){
+    .feedback-section {
+        margin: 20rem 3.5rem 5rem !important;
+
+    }
 }
 
 .feedback-section {
@@ -695,7 +702,7 @@ label {
 }
 
 .serv-slider {
-    margin-left: 15.5%;
+    margin-left: 18%;
 }
 
 .services-dot.active-dot {
@@ -747,12 +754,12 @@ label {
 .next-cust-button {
     position: absolute;
     z-index: 3; /* Высокий z-index для видимости над слайдами */
-    top: 40%;
+    top: 50%;
 }
 .prev-cust-button {
     position: absolute;
     z-index: 3; /* Высокий z-index для видимости над слайдами */
-    top: 60%;
+    top: 50%;
 }
 
 .prev-cust-button {
@@ -803,19 +810,17 @@ label {
 /* Стиль для всех активных слайдов (предполагается, что это будет влиять на предыдущий слайд) */
 /* Сброс стилей для всех активных слайдов */
 /* Стили для предыдущего слайда */
-.carousel-custom .prev-slide {
+/* .carousel-custom .prev-slide {
     margin-top: 150px;
-    /* width:50%; */
 }
 
 .carousel-custom .next-slide {
     margin-top: 10px;
-    /* width:50%; */
-}
+} */
 
-.carousel-custom .slick-current {
+/* .carousel-custom .slick-current {
     margin-top: 70px;
-}
+} */
 
 /* .carousel-custom {
   justify-content: space-between;
@@ -936,7 +941,7 @@ label {
     }
     .next-cust-button {
         /* right:5% !important; */
-        top: 40%;
+        top: 50%;
     }
 
     .carousel-custom {
@@ -973,7 +978,11 @@ label {
 }
 @media (max-width: 1550px) {
     .serv-slider {
-        margin-left: 6%;
+        margin-left: 10%;
+    }
+
+    .small-container.no-padding{
+        padding: 0;
     }
 }
 
@@ -992,7 +1001,7 @@ label {
         font-size: 24px;
     }
     .next-cust-button {
-        top: 30%;
+        top: 50%;
         font-size: 24px;
     }
 
@@ -1155,6 +1164,10 @@ label {
         font-size: 16px;
         margin-bottom: 5px;
     }
+
+    .rotate {
+        transform: rotate(180deg); /* Поворот на 180 градусов */
+    }
     .pulse {
         width: fit-content;
         background: rgb(122, 170, 255);
@@ -1166,6 +1179,15 @@ label {
     .pulse:hover {
         animation: none;
     }
+
+    details[open] summary ~ * {
+        animation: sweep .5s ease-in-out;
+      }
+      
+      @keyframes sweep {
+        0%    {opacity: 0; margin-top: -10px}
+        100%  {opacity: 1; margin-top: 0px}
+      }
 
     @-webkit-keyframes pulse {
         0% {

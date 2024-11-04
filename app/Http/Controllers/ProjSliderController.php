@@ -28,7 +28,7 @@ class ProjSliderController extends Controller
         }
     
         $categories = Categories::all();
-        $currentPage = __('translate.portfolio');
+        $currentPage = "";
     
         return view('webpage', [
             'portfolio' => $portfolio,

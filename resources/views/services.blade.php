@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Услуги IT-консалтинговой компании LTM Studio в Туркменистане')
+@section('title', 'Услуги IT-компании LTM Studio в Туркменистане')
 @section('circles')
     <div class="circle-1">
         <img src="{{ '../assets/images/circle-1.png' }}" alt="" loading="lazy">
@@ -26,10 +26,7 @@
     <div class="servicesPage">
         <div class="servicesIntro">
             <!-- <div class="circle">  <img src="radialCircle.png" width="707"></div> -->
-            <div class="leftHeaderTop">
-                <p>{{ __('translate.mainPage') }}</p>
-                <p>{{ __('translate.services') }}</p>
-            </div>
+           
             {{-- <div class="pre_title">{{ __('translate.pre_title') }}
     </div> --}}
             <div class="h"></div>
@@ -66,15 +63,15 @@
                                     <h2 class="slide-title"> {{ __('translate.servTitle1') }}</h2>
                                     <p class="slide-desc">{{ __('translate.servDesc1') }}</p>
                                 </div>
-                                <div class="glassmorph-slide gsap__item">
+                                <div class="glassmorph-slide gsap__item active">
                                     <h2 class="slide-title">{{ __('translate.servTitle2') }}</h2>
                                     <p class="slide-desc">{{ __('translate.servDesc2') }}</p>
                                 </div>
-                                <div class="glassmorph-slide gsap__item">
+                                <div class="glassmorph-slide gsap__item active">
                                     <h2 class="slide-title">{{ __('translate.servTitle3') }}</h2>
                                     <p class="slide-desc">{{ __('translate.servDesc3') }}</p>
                                 </div>
-                                <div class="glassmorph-slide gsap__item">
+                                <div class="glassmorph-slide gsap__item active">
                                     <h2 class="slide-title">{{ __('translate.servTitle4') }}</h2>
                                     <p class="slide-desc">{{ __('translate.servDesc4') }}</p>
                                 </div>
@@ -107,8 +104,9 @@
             </div>
         </div>
         @include('components.timeline')
-        <div class="emoji">
+        <div class="emoji d-flex flex-column justify-content-center">
             <p> {{ __('translate.emoji') }}</p>
+            <p>🤞🖖✌️</p>
         </div>
 
         <div class="servicesBody">
@@ -152,18 +150,91 @@
             <p>
                 <strong>{{ __('translate.questionTitle') }}</strong>
                 <br> {{ __('translate.questionSub') }}
-                <strong> <span class="serv-p1"> {{ __('translate.questionSubCustom') }} </span></strong>
+                <strong> <a href="/{{ $lang }}/faq" class="no-line"><span class="serv-p1"> {{ __('translate.questionSubCustom') }} </span></a></strong>
             </p>
-            <p>{!! nl2br(__('translate.call')) !!}
-                <strong><a class="no-line" href="mailto:info@ltm.studio"><span class="serv-p1"> {{ __('translate.mail') }}
+            <p>{{ __('translate.call') }}<a class="serv-p1 no-line" href="tel:+99312753713">{!! nl2br(__('translate.number')) !!}</a>
+                <strong><a class="no-line" href="mailto:info@ltm.studio">{{ __('translate.write_to_email') }}<span class="serv-p1"> {{ __('translate.mail') }}
                         </span> </a></strong>
             </p>
         </div>
     </div>
-    <div class="servicesFooter">
-        <div class="title">{!! nl2br(__('translate.footerTitle')) !!}</div>
-        <p>{!! nl2br(__('translate.footerSub')) !!}</p>
-        {{-- <p><strong>{{ __('translate.footerSubStrong') }}</strong></p> --}}
+    <div class="about_company ">
+        <div class="small-container no-padding">
+            <div class="large-text-wrap" style="position: relative">
+                <div class="side-text-wrapper" data-side-text
+                    style="transform: translate(0%, -22.0837%) translate3d(0px, 0px, 0px);">
+                    {!! nl2br(__('translate.weAreBest')) !!}
+
+                </div>
+            </div>
+            <div class="about_company_left">
+                <div class="shortDesc">
+                    <h2 class="about_company_title" data-separate-word style>
+                        <div class="title_back" id="h2">
+
+
+                        </div>
+                        <span class="word">{{ __('translate.moreThan1') }} <br> </span>
+                        <div class="title_back" id="h3">
+
+
+                        </div>
+                        <span class="word">{{ __('translate.moreThan2') }}</span>
+
+                    </h2>
+                    <div class="about_company_sml">
+                        <p>
+                            {{ __('translate.aboutUsFooter1') }}
+                        </p>
+
+                        <p>{{ __('translate.aboutUsFooter2') }}</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <details class="desktop-none">
+                <summary>
+                    <div class="d-flex hide-more-block">
+                        <p> {{ __('translate.more') }}</p>
+                        <div class="hide-more-btn ">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </summary>
+                <div class="scroll_desc" style="padding-bottom: 20px;">
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter3') }}</p>
+
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter4') }}</p>
+
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter5') }}</p>
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter6') }}</p>
+                </div>
+            </details>
+
+            <div class="about_company_right mobile-none">
+                <div class="right_desc">
+
+                    <div class="scroll_content" style="padding-right: 20px; margin-bottom: -20px;">
+                        <div class="scroll_desc" style="padding-bottom: 20px;">
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter3') }}</p>
+
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter4') }}</p>
+
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter5') }}</p>
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter6') }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex hide-more-block desktop-none mobile-none">
+                    <p>Скрыть</p>
+                    <div class="hide-more-btn">
+                        <i class="fa fa-chevron-up"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 @endsection

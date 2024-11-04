@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Контакты IT-консалтинговой компании LTM Studio в Туркменистане')
+@section('title', 'Контакты IT-компании LTM Studio в Туркменистане')
 
 @section('content')
 

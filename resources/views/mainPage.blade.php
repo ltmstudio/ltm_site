@@ -96,7 +96,7 @@
                         <span>{{ __('translate.servDesc1') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
+                <a href="/{{$lang}}/services-webpages" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
             <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
@@ -108,7 +108,7 @@
                         <span>{{ __('translate.servDesc2') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
+                <a href="/{{$lang}}/services-mobileapps" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
             <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
@@ -120,7 +120,7 @@
                         <span>{{ __('translate.servDesc3') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
+                <a href="/{{$lang}}/services-bitrix" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
             <div class="serv-custom-item" itemscope itemtype="http://schema.org/Service">
 
@@ -132,7 +132,7 @@
                         <span>{{ __('translate.servDesc4') }}</span>
                     </p>
                 </div>
-                <a href="" class="services_more">{{ __('translate.readMore') }}</a>
+                <a href="/{{$lang}}/services-bcloud" class="services_more">{{ __('translate.readMore') }}</a>
             </div>
         </div>
         <div class="small-container">
@@ -364,7 +364,7 @@
         </div>
     </div>
     <div class="about_company ">
-        <div class="small-container">
+        <div class="small-container no-padding">
             <div class="large-text-wrap" style="position: relative">
                 <div class="side-text-wrapper" data-side-text
                     style="transform: translate(0%, -22.0837%) translate3d(0px, 0px, 0px);">

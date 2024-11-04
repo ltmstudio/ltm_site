@@ -1,9 +1,10 @@
 <IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
-
     RewriteEngine On
+
+    # WebP Redirect Block for all images
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+    RewriteRule ^(assets/images/.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -18,4 +19,15 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Test redirect rule
+    Redirect 302 /test-htaccess-check /index.php    
 </IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|webp)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+</IfModule>
+

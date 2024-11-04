@@ -28,10 +28,10 @@
         </div>
         <div class="contact-info">
             <span><a href="tel:+99361648605" class="no-line">+993 61 00 97 92</a></span>
-            <a href="https://www.linkedin.com/company/ltmstudio/" class="no-line"><i id="linkedIn"
+            <a href="https://www.linkedin.com/company/104843040" class="no-line"><i id="linkedIn"
                     class="fa-brands fa-linkedin"
                     style="color: #ffffff; font-size: 3.6rem; text-align: center;"></i></a>
-            <a href="https://www.instagram.com/ltmstudio" class="no-line"><i id="instagram"
+            <a href="https://www.instagram.com/ltmstudio_dev" class="no-line"><i id="instagram"
                     class="fa-brands fa-instagram"
                     style="color: #ffffff; font-size: 3.6rem; text-align: center;"></i></a>
             <div class="lang">

@@ -24,7 +24,6 @@ return [
   'picturesFromProject' => 'Taslamadan käbir suratlar',
   'goToSite' => 'Sahypany gör',
   'texts' => [
-    "Hil. Täzelik. Çözümler",
     "Koronawirussyz saýt",
     "Işewürligi gowulaşdyrmak",
     "Türkmenistandaky IT-hyzmatlar",

@@ -1,6 +1,6 @@
-@extends('layouts.base')
+хм@extends('layouts.base')
 
-@section('title', 'Об IT-консалтинговой компании LTM Studio в Туркменистане')
+@section('title', 'Об IT-компании LTM Studio в Туркменистане')
 @section('circles')
 <div class="circle-1">
     <img src="{{ '../assets/images/circle-1.png' }}" alt="" loading="lazy">
@@ -34,14 +34,7 @@
             <div class="about-us-photo" style="backface-visibility: hidden; transform: translate3d(0px, 0px, 0px);">
             </div>
             <div class="about-lines-container"> </div>
-            <div class="breadcrumbs">
-                <span property="itemListElement" typeof="ListItem">
-                    <a href="">Главная</a>
-                </span>
-                <span property="itemListElement" typeof="ListItem">
-                    <a href="">О нас</a>
-                </span>
-            </div>
+           
             <h1 style="">{{ __('translate.aboutUsTitle') }}</h1>
             {{-- <p class="header-sub"> {{ __('translate.aboutSub') }}
                 <a href="">Remote agency</a>
@@ -200,7 +193,7 @@
                 <ul class="valuesList">
                     <li class="valueList_item">
                         <div class="item_column">
-                            <h3 class="item_title">{{ __('translate.spec1') }}</h3>
+                            <h3 class="item_title"><a class="no-line" href="/{{ $lang }}/services-webpages">{{ __('translate.spec1') }}</a></h3>
                             <hr>
                             <div class="item_desc"> {!! nl2br(__('translate.spec1Sub')) !!}</div>
                         </div>
@@ -208,7 +201,7 @@
 
                     <li class="valueList_item">
                         <div class="item_column">
-                            <h3 class="item_title">{{ __('translate.spec2') }}</h3>
+                            <h3 class="item_title"><a class="no-line" href="/{{ $lang }}/services-mobileapps">{{ __('translate.spec2') }}</a></h3>
                             <hr>
                             <div class="item_desc"> {!! nl2br(__('translate.spec2Sub')) !!}</div>
                         </div>
@@ -216,7 +209,7 @@
 
                     <li class="valueList_item">
                         <div class="item_column">
-                            <h3 class="item_title">{{ __('translate.spec3') }}</h3>
+                            <h3 class="item_title"><a class="no-line" href="/{{ $lang }}/services-bitrix">{{ __('translate.spec3') }}</a></h3>
                             <hr>
                             <div class="item_desc"> {!! nl2br(__('translate.spec3Sub')) !!}</div>
                         </div>
@@ -299,9 +292,84 @@
             </p>
         </div>
     </div>
-    <h2 class="aboutCompany">
-        {!! nl2br(__('translate.footerTitle')) !!}
-    </h2>
+    <div class="about_company ">
+        <div class="small-container no-padding">
+            <div class="large-text-wrap" style="position: relative">
+                <div class="side-text-wrapper" data-side-text
+                    style="transform: translate(0%, -22.0837%) translate3d(0px, 0px, 0px);">
+                    {!! nl2br(__('translate.weAreBest')) !!}
+
+                </div>
+            </div>
+            <div class="about_company_left">
+                <div class="shortDesc">
+                    <h2 class="about_company_title" data-separate-word style>
+                        <div class="title_back" id="h2">
+
+
+                        </div>
+                        <span class="word">{{ __('translate.moreThan1') }} <br> </span>
+                        <div class="title_back" id="h3">
+
+
+                        </div>
+                        <span class="word">{{ __('translate.moreThan2') }}</span>
+
+                    </h2>
+                    <div class="about_company_sml">
+                        <p>
+                            {{ __('translate.aboutUsFooter1') }}
+                        </p>
+
+                        <p>{{ __('translate.aboutUsFooter2') }}</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <details class="desktop-none">
+                <summary>
+                    <div class="d-flex hide-more-block">
+                        <p> {{ __('translate.more') }}</p>
+                        <div class="hide-more-btn ">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </summary>
+                <div class="scroll_desc" style="padding-bottom: 20px;">
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter3') }}</p>
+
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter4') }}</p>
+
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter5') }}</p>
+                    <p class="mt-5"> {{ __('translate.aboutUsFooter6') }}</p>
+                </div>
+            </details>
+
+            <div class="about_company_right mobile-none">
+                <div class="right_desc">
+
+                    <div class="scroll_content" style="padding-right: 20px; margin-bottom: -20px;">
+                        <div class="scroll_desc" style="padding-bottom: 20px;">
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter3') }}</p>
+
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter4') }}</p>
+
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter5') }}</p>
+                            <p class="mt-5"> {{ __('translate.aboutUsFooter6') }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex hide-more-block desktop-none mobile-none">
+                    <p>Скрыть</p>
+                    <div class="hide-more-btn">
+                        <i class="fa fa-chevron-up"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     {{--
 </div> --}}
 @endsection

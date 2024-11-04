@@ -64,6 +64,10 @@
             <div class="container">
                 @yield('content')
             </div>
+            @yield('out-container')
+            <div class="container">
+                @yield('second-content')
+            </div>
             @include('layouts.footer')
         </div>
     </div>

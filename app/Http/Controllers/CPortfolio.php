@@ -53,7 +53,7 @@ class CPortfolio extends Controller
             'portfolio' => $portfolio[0],
             'categories' => $categories,
             'leftMenu' => true,
-            'currentPage' => 'Проекты',
+            'currentPage' => '',
             'lang' => $lang,
             'id' => $id,
             'images_add' => $images_add,
@@ -234,21 +234,32 @@ class CPortfolio extends Controller
 
     public function showMore(string $lang, $pageOffset, $type)
     {
+        $limit = 3;
         $baseQuery = Portfolio::query()
-            ->join('category_portfolio', 'portfolio.id', '=', 'category_portfolio.portfolio_id') // Correct table and field names
+            ->join('category_portfolio', 'portfolio.id', '=', 'category_portfolio.portfolio_id')
             ->join('categories', 'category_portfolio.category_id', '=', 'categories.id')
-            ->select('portfolio.*', 'categories.category_en as category_name'); // Use category_en instead of name
+            ->select('portfolio.*', 'categories.category_en as category_name');
+            
         if ($type != 'All') {
-            $portfolio = $baseQuery->where('categories.category_en', '=', $type)->orderBy('when', 'desc')->offset($pageOffset)->limit(3)->get();
-            // dd($portfolio);
-// var_dump($portfolio);
-            // $portfolio = Portfolio::where('what', $type)->orderBy('when', 'desc')->offset($pageOffset)->limit(3)->get();
+            $portfolio = $baseQuery->where('categories.category_en', '=', $type)
+                ->orderBy('when', 'desc')
+                ->offset($pageOffset)
+                ->limit($limit + 1) // +1 для проверки, есть ли ещё данные
+                ->get();
         } else {
-            $portfolio = Portfolio::offset($pageOffset)->orderBy('when', 'desc')->limit(3)->get();
+            $portfolio = Portfolio::orderBy('when', 'desc')
+                ->offset($pageOffset)
+                ->limit($limit + 1) // +1 для проверки, есть ли ещё данные
+                ->get();
         }
-        $json = json_encode($portfolio);
-        return $json;
+    
+        $hasMore = $portfolio->count() > $limit;
+        $portfolio = $portfolio->take($limit); // Берём только первые 3
+    
+        return response()->json(['data' => $portfolio, 'hasMore' => $hasMore]);
     }
+    
+    
     // public function showMore(string $lang, $pageOffset, $type)
     // {
     //     $baseQuery = Portfolio::query()

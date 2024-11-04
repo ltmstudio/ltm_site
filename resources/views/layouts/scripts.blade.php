@@ -18,15 +18,15 @@
 <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
 <script src="{{ asset('assets/js/ScrollTrigger.min.js') }}"></script>
 
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script> -->
 <script>
-    $(window).on('load', function() {
+    $(window).on('load', function () {
         $('.loaders').hide(200);
     });
-    $(document).ready(function() {
+    $(document).ready(function () {
         var currentPage = "{{ $currentPage }}";
         // console.log(currentPage);
-        $('.nav-item').each(function() {
+        $('.nav-item').each(function () {
             var text = $(this).text().trim();
             // console.log(text);
             if (currentPage === text) {
@@ -59,7 +59,7 @@
     // });
 
     // Ajax portfolio
-    $('.element').click(function() {
+    $('.element').click(function () {
         var categoryName = $(this).find('p').data('category-name');
         $.ajax({
             headers: {
@@ -71,7 +71,7 @@
             data: {
                 category: categoryName
             }, //$(this).text()
-            success: function(data) {
+            success: function (data) {
                 $('.grid_portfolio').html("");
                 data.forEach(p => {
                     $('.grid_portfolio').append(
@@ -92,7 +92,7 @@
 
 
     // Ajax Blog
-    $('.element-blog').click(function() {
+    $('.element-blog').click(function () {
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
@@ -103,7 +103,7 @@
             data: {
                 category_blog: $(this).text()
             },
-            success: function(data) {
+            success: function (data) {
                 $('.grid_blog').html("");
                 data.forEach(i => {
                     var additionalClass = (i['id'] % 2 == 0 && i['id'] != 2) ?
@@ -114,9 +114,9 @@
                         '       <div class="row_blog">' +
                         '           <h2 class="subtBlog">' + i['what'] + '</h2>' +
                         '           <h1 class="titleBlog">' + i[
-                            "title_{{ $lang }}"] + '</h1>' +
+                        "title_{{ $lang }}"] + '</h1>' +
                         '           <div class="body-text">' + i[
-                            "desc_{{ $lang }}"] + '</div>' +
+                        "desc_{{ $lang }}"] + '</div>' +
                         '       </div>' +
                         '       <div class="arrow d-flex align-items-center justify-content-center">' +
                         '           <i class="fa-solid fa-arrow-right-long" style="color:white; font-size:40px;"></i>' +
@@ -135,89 +135,67 @@
 
     //        
     //////////////////////////////// GPT LOAD-MORE//////////////////////
-    $(document).ready(function() {
-        var currentPage = 1;
-        var selectedType = "";
+    $(document).ready(function () {
+    let pageOffset = 6;
+    let categoryName = 'All';
+    let lang = $('.grid_portfolio').data('lang'); // Получаем значение языка из data-lang
 
-        $('#loadMoreButton').click(function() {
-            $('.reload-icon').addClass('loading');
+    $('#loadMoreButton').on('click', function () {
+        $('.reload-icon').addClass('rotate-more-btn');
 
-            // var newType = $(this).find('p').data('category-name');
-            var newType = $('.element.selected p').text();
-            console.log(newType);
-            if (newType !== selectedType) {
-                selectedType = newType;
-                // $('.reload').show();
-                // $('#loadMoreButton').addClass('reload');
-                currentPage = 1;
-                console.log((6 * (currentPage)));
-                console.log(selectedType);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+            },
+            url: `/${lang}/show-more/${pageOffset}/${categoryName}`,
+            method: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                if (response.data.length > 0) {
+                    response.data.forEach((p, index) => {
+                        // Вычисляем общий индекс для нового элемента
+                        let currentIndex = pageOffset + index;
+                        // Добавляем класс `add-padding` для нечетных индексов
+                        let additionalClass = currentIndex % 2 !== 0 ? 'add-padding' : '';
+
+                        $('.grid_portfolio').append(
+                            `<a href="/${lang}/portfolio/${p.id}" class="grid-item ${additionalClass} no-line">
+                                <div class="columnPort">
+                                    <img src="/storage/${p.photo}" alt="Image">
+                                    <div class="gridText">
+                                        <div class="subtitle">${p.what || ''}</div>
+                                        <div class="rowPort">
+                                            <div class="line"></div>
+                                            <div class="gridTitle">${p["title_" + lang]}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>`
+                        );
+                    });
+                    pageOffset += 3;
+
+                    if (!response.hasMore) {
+                        $('#loadMoreButton').hide();
+                    }
+                }
+                $('.reload-icon').removeClass('rotate-more-btn');
+            },
+            error: function () {
+                console.error("Ошибка загрузки данных");
+                $('.reload-icon').removeClass('rotate-more-btn');
             }
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
-                },
-                url: '/en/load-more/' + (6 * (currentPage)) + '/' + selectedType,
-                method: 'post',
-                dataType: 'json',
-                success: function(data) {
-                    var loadEndTime = new Date().getTime() +
-                        2300; // 15 seconds for full rotation
-                    var checkCompletion = function() {
-                        var currentTime = new Date().getTime();
-                        if (currentTime >= loadEndTime) {
-                            $('.reload-icon').removeClass(
-                                'loading'); // Remove the loading animation
-                            if (data.length > 0) {
-                                console.log(data);
-                                data.forEach(p => {
-                                    $('.grid_portfolio').append(
-                                        '<a href="/{{ $lang }}/portfolio/' +
-                                        p['id'] +
-                                        '" class="grid-item no-line"> <div class="columnPort"> <img src="/storage/' +
-                                        p['photo'] +
-                                        '" alt="Image"> <div class="gridText"> <div class="subtitle">' +
-                                        p['what'] +
-                                        '</div> <div class="rowPort"> <div class="line"></div> <div class="gridTitle">' +
-                                        p["title_{{ $lang }}"] +
-                                        '</div> </div> </div> </div> </a>');
-                                });
-                                //             data.forEach(i => {
-                                //  var additionalClass = (i['id'] % 2 == 0 && i['id'] != 2) ? 'add-margin-blog' : '';
-                                //  var html = '<a href="/{{ $lang }}/blog/' + i['id'] + '" class="grid-item ' + additionalClass + ' no-line">' +
-                                //            '   <div class="block">' +
-                                //            '       <div class="row_blog">' +
-                                //            '           <h2 class="subtBlog">' + i['what'] + '</h2>' +
-                                //            '           <h1 class="titleBlog">' + i["title_{{ $lang }}"] + '</h1>' +
-                                //            '           <div class="body-text truncate">' + i["desc_{{ $lang }}"] + '</div>' +
-                                //            '       </div>' +
-                                //            '       <div class="arrow d-flex align-items-center justify-content-center">' +
-                                //            '           <i class="fa-solid fa-arrow-right-long" style="color:white; font-size:40px;"></i>' +
-                                //            '       </div>' +
-                                //            '   </div>' +
-                                //            '</a>';
-
-                                // $('.grid_blog').append(html);
-                                //  });
-                                cleanAndTruncateText('.body-text',
-                                    400); // Adjust 150 to your desired max lengths
-                            } else
-                            if (data.length === 0) {
-                                $('.reload').hide();
-                            }
-                        } else {
-                            setTimeout(checkCompletion, 100); // Check again in 100ms
-                        }
-                    };
-                    checkCompletion();
-                },
-            });
-            currentPage++;
         });
     });
+});
 
 
-    $(document).ready(function() {
+
+
+
+
+
+    $(document).ready(function () {
         $('.element:first').addClass('selected');
     });
 
@@ -285,96 +263,96 @@
     //     });
 
 
-        $('.portf-slider').slick({
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: false,
-            prevArrow:'<div></div>',
-            nextArrow:'<div class="next-portf-arrow"></div>',
-            responsive: [{
-                breakpoint: 991, // Когда ширина экрана меньше 991px
-                settings: {
-                    slidesToShow: 1, // Показываем 1 слайд
-                    slidesToScroll: 1
-                }
-            }]
-        });
+    $('.portf-slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: false,
+        prevArrow: '<div></div>',
+        nextArrow: '<div class="next-portf-arrow"></div>',
+        responsive: [{
+            breakpoint: 991, // Когда ширина экрана меньше 991px
+            settings: {
+                slidesToShow: 1, // Показываем 1 слайд
+                slidesToScroll: 1
+            }
+        }]
+    });
 
 
     // });
-//     $(function() {
+    //     $(function() {
 
-// 'use strict';
+    // 'use strict';
 
-// //Create animation ScrollTrigger
-// function scrollTrig() {
+    // //Create animation ScrollTrigger
+    // function scrollTrig() {
 
-//     gsap.registerPlugin(ScrollTrigger);
+    //     gsap.registerPlugin(ScrollTrigger);
 
-//     let gsapBl = $('.gsap__bl').width();
+    //     let gsapBl = $('.gsap__bl').width();
 
-//     //On full width
-//     // $('.gsap__item').css('width', gsapBl + 'px');
+    //     //On full width
+    //     // $('.gsap__item').css('width', gsapBl + 'px');
 
-//     //Transform slider track
-//     let gsapTrack = $('.gsap__track').width();
-//     let scrollSliderTransform = gsapTrack - gsapBl
+    //     //Transform slider track
+    //     let gsapTrack = $('.gsap__track').width();
+    //     let scrollSliderTransform = gsapTrack - gsapBl
 
-//     //Create ScrollTrigger
-//     gsap.to('.gsap__track', {
-//         scrollTrigger: {
-//             trigger: '.gsap_slider',
-//             start: 'center center',
-//             end: () => '+=' + gsapTrack,
-//             pin: true,
-//             scrub: true,
-//             onUpdate: updateActiveSlide
-//         },
-//         x: '-=' + scrollSliderTransform + 'px'
-//     });
+    //     //Create ScrollTrigger
+    //     gsap.to('.gsap__track', {
+    //         scrollTrigger: {
+    //             trigger: '.gsap_slider',
+    //             start: 'center center',
+    //             end: () => '+=' + gsapTrack,
+    //             pin: true,
+    //             scrub: true,
+    //             onUpdate: updateActiveSlide
+    //         },
+    //         x: '-=' + scrollSliderTransform + 'px'
+    //     });
 
-// }
-// scrollTrig();
+    // }
+    // scrollTrig();
 
-// // Function to update active slide
-// function updateActiveSlide() {
-//     let slides = $('.gsap__item');
-//     let scrollPos = $(window).scrollLeft();
-//     let windowWidth = $(window).width();
+    // // Function to update active slide
+    // function updateActiveSlide() {
+    //     let slides = $('.gsap__item');
+    //     let scrollPos = $(window).scrollLeft();
+    //     let windowWidth = $(window).width();
 
-//     slides.each(function() {
-//         let slide = $(this);
-//         let slideLeft = slide.offset().left;
-//         let slideRight = slideLeft + slide.width();
+    //     slides.each(function() {
+    //         let slide = $(this);
+    //         let slideLeft = slide.offset().left;
+    //         let slideRight = slideLeft + slide.width();
 
-//         if (slideLeft < scrollPos + windowWidth / 2 && slideRight > scrollPos + windowWidth / 2) {
-//             slide.addClass('active');
-//         } else {
-//             slide.removeClass('active');
-//         }
-//     });
-// }
+    //         if (slideLeft < scrollPos + windowWidth / 2 && slideRight > scrollPos + windowWidth / 2) {
+    //             slide.addClass('active');
+    //         } else {
+    //             slide.removeClass('active');
+    //         }
+    //     });
+    // }
 
-// //resize window
-// const debouncedResize = _.debounce(onWindowResize, 500);
+    // //resize window
+    // const debouncedResize = _.debounce(onWindowResize, 500);
 
-// function onWindowResize() {
-//     console.log('Window resized!');
-//     location.reload();
-// }
-// $(window).on('resize', debouncedResize);
-// });
+    // function onWindowResize() {
+    //     console.log('Window resized!');
+    //     location.reload();
+    // }
+    // $(window).on('resize', debouncedResize);
+    // });
 
 </script>
 
 <script>
-    (function($) {
-        $(function() {
-            $(window).on("scroll", function() {
+    (function ($) {
+        $(function () {
+            $(window).on("scroll", function () {
                 fnOnScroll();
             });
 
-            $(window).on("resize", function() {
+            $(window).on("resize", function () {
                 fnOnResize();
             });
 
@@ -432,7 +410,7 @@
                     height: n + "px"
                 });
 
-                agTimelineItem.each(function() {
+                agTimelineItem.each(function () {
                     var agTop = $(this).find(agTimelinePoint).offset().top;
 
                     agTop + agPosY - $(window).scrollTop() <
@@ -450,70 +428,145 @@
     })(jQuery);
 </script>
 <script>
-  $(document).ready(function() {
-    // Функция для анимации чисел
-    function animateNumbers(element, start, end, duration) {
-        let range = end - start;
-        let current = start;
-        let increment = end > start ? 1 : -1;
-        let stepTime = Math.abs(Math.floor(duration / range));
-        let hasPlus = $(element).data('target').includes('+'); // Проверяем, есть ли плюс
+    $(document).ready(function () {
+        // Функция для анимации чисел
+        function animateNumbers(element, start, end, duration) {
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let hasPlus = $(element).data('target').includes('+'); // Проверяем, есть ли плюс
 
-        let timer = setInterval(function() {
-            current += increment;
-            $(element).text(current + (hasPlus ? "+" : ""));
-            if (current >= end) {
-                clearInterval(timer);
-                $(element).text(end + (hasPlus ? "+" : "")); // Финальная точка с плюсом
-            }
-        }, stepTime);
-    }
-
-    // Проверка на видимость элемента
-    function checkVisibility() {
-        $('.stats_count').each(function() {
-            let $this = $(this);
-            let textValue = $this.attr('data-target').replace('+', ''); // Убираем знак "+" для правильного подсчета
-            let targetValue = parseInt(textValue); // Превращаем текст в число
-
-            // Проверка, виден ли элемент
-            let windowHeight = $(window).height();
-            let scrollTop = $(window).scrollTop();
-            let elementOffsetTop = $this.offset().top;
-            let elementHeight = $this.outerHeight();
-
-            // Условие видимости элемента
-            if (elementOffsetTop < scrollTop + windowHeight && elementOffsetTop + elementHeight > scrollTop) {
-                // Элемент виден — запускаем анимацию
-                if (!$this.hasClass('animating')) { 
-                    animateNumbers($this, 0, targetValue, 2000);
-                    $this.addClass('animating'); 
+            let timer = setInterval(function () {
+                current += increment;
+                $(element).text(current + (hasPlus ? "+" : ""));
+                if (current >= end) {
+                    clearInterval(timer);
+                    $(element).text(end + (hasPlus ? "+" : "")); // Финальная точка с плюсом
                 }
-            } else {
-                // Элемент выходит за пределы видимости — сбрасываем класс, чтобы анимация могла быть запущена заново
-                $this.removeClass('animating');
-                $this.text("0+"); // Возвращаем элемент к исходному состоянию
-            }
-        });
-    }
+            }, stepTime);
+        }
 
-    // Отслеживаем скролл и проверяем видимость
-    $(window).on('scroll', function() {
+        // Проверка на видимость элемента
+        function checkVisibility() {
+            $('.stats_count').each(function () {
+                let $this = $(this);
+                let textValue = $this.attr('data-target').replace('+', ''); // Убираем знак "+" для правильного подсчета
+                let targetValue = parseInt(textValue); // Превращаем текст в число
+
+                // Проверка, виден ли элемент
+                let windowHeight = $(window).height();
+                let scrollTop = $(window).scrollTop();
+                let elementOffsetTop = $this.offset().top;
+                let elementHeight = $this.outerHeight();
+
+                // Условие видимости элемента
+                if (elementOffsetTop < scrollTop + windowHeight && elementOffsetTop + elementHeight > scrollTop) {
+                    // Элемент виден — запускаем анимацию
+                    if (!$this.hasClass('animating')) {
+                        animateNumbers($this, 0, targetValue, 2000);
+                        $this.addClass('animating');
+                    }
+                } else {
+                    // Элемент выходит за пределы видимости — сбрасываем класс, чтобы анимация могла быть запущена заново
+                    $this.removeClass('animating');
+                    $this.text("0+"); // Возвращаем элемент к исходному состоянию
+                }
+            });
+        }
+
+        // Отслеживаем скролл и проверяем видимость
+        $(window).on('scroll', function () {
+            checkVisibility();
+        });
+
+        // Проверяем видимость элементов при загрузке страницы
         checkVisibility();
     });
-
-    // Проверяем видимость элементов при загрузке страницы
-    checkVisibility();
-});
 
 </script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TMJMPE0M9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-5TMJMPE0M9');
+    gtag('config', 'G-5TMJMPE0M9');
+</script>
+
+<script>
+$(document).ready(function () {
+    let userEmail = '';
+
+    // Открыть модальное окно и начать с первого шага (ввод email)
+    $('#startQuiz').on('click', function () {
+        $('#quizModal').addClass('show');
+
+        // Проверяем, есть ли уже сохраненный email
+        if (userEmail) {
+            $('#quizStep1').fadeIn().addClass('active'); // Переходим сразу к первому вопросу
+        } else {
+            $('#quizStep0').addClass('active').fadeIn(); // Сначала показываем ввод email
+        }
+    });
+
+    // Закрыть модальное окно
+    $('.close').on('click', function () {
+        $('#quizModal').removeClass('show');
+        resetQuiz();
+    });
+
+    // Переход к следующему вопросу после ввода email
+    $('#startQuizButton').on('click', function () {
+        var email = $('#userEmail').val();
+        if (email && validateEmail(email)) {
+            userEmail = email; // Сохраняем email
+            $('#quizStep0').removeClass('active').fadeOut(function () {
+                $('#quizStep1').fadeIn().addClass('active'); // Переход к первому вопросу
+            });
+        } else {
+            alert("Пожалуйста, введите корректный email.");
+        }
+    });
+
+    // Валидация email
+    function validateEmail(email) {
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Логика переключения вопросов с анимацией
+    $('.quiz-answer').on('change', function () {
+        var nextStep = $(this).data('next');
+        var result = $(this).data('result');
+
+        if (result) {
+            $('#quizFinalResult').text(result);
+            $('.quiz-step').removeClass('active').hide();
+            $('#quizResult').fadeIn().addClass('active');
+        } else if (nextStep) {
+            $('.quiz-step').removeClass('active').fadeOut(function () {
+                $('#quizStep' + nextStep).fadeIn().addClass('active');
+            });
+        }
+    });
+
+    // Сбросить квиз
+    function resetQuiz() {
+        $('.quiz-step').removeClass('active').hide();
+        $('#quizResult').removeClass('active').hide();
+        $('#userEmail').val(''); // Очищаем поле ввода email
+        userEmail = ''; // Сбрасываем сохраненный email
+    }
+
+    // Перезапустить квиз
+    $('#restartQuiz').on('click', function () {
+        resetQuiz();
+        $('#quizStep1').fadeIn().addClass('active'); // Переходим сразу к первому вопросу
+    });
+});
+
+
 </script>

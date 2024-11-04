@@ -74,7 +74,7 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="grid_portfolio">
+                <div class="grid_portfolio" data-lang="{{ $lang }}">
                     @for ($i = 0; $i < count($portfolio); $i++)
                         @php
                             $portf = $portfolio[$i];

@@ -183,13 +183,21 @@ Route::get('/{lang}/services-bcloud', function ($lang) {
     $currentPage = "";
     return view('bitrixcloud', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
 })->middleware('redirect');
+//apps
+Route::get('/{lang}/services-apps', function ($lang) {
+    App::setLocale($lang);
+    $leftMenu = true;
+    $currentPage = "";
+    return view('mobileapps', ['leftMenu' => $leftMenu, 'currentPage' => $currentPage, 'lang' => $lang]);
+})->middleware('redirect');
 
 
 
 Route::post('/{lang}/admin/delete-project', $path . '\CPortfolio@destroy');
 Route::post('/{lang}/ajax-portfolio', $path . '\CPortfolio@ajaxPortfolio');
 Route::post('/{lang}/ajax-tmp', $path . '\CPortfolio@ajaxTmp');
-Route::post('/{lang}/load-more/{pageOffset}/{type}',  $path . '\CPortfolio@showMore');
+Route::get('/{lang}/show-more/{pageOffset}/{type}',  $path . '\CPortfolio@showMore');
+
 
 
 Route::post('/{lang}/ajax-blog', $path . '\CPortfolio@ajaxBlog');

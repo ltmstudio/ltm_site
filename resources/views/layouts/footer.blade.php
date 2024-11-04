@@ -157,9 +157,9 @@
         </div>
         <ul class="col-lg-4 col-12 text-center">
 
-            <li><a href="https://www.instagram.com/ltmstudio/"> Inst</a></li>
+            <li><a href="https://www.instagram.com/ltmstudio_dev/"> Inst</a></li>
 
-            <li><a href="https://tm.linkedin.com/company/ltmstudio/">Ln</a></li>
+            <li><a href="https://www.linkedin.com/company/104843040">Ln</a></li>
         </ul>
 
     </div>

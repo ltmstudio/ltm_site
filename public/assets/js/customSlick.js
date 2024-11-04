@@ -1,34 +1,36 @@
 $(function () {
-    $('.carousel-custom').on('init reInit afterChange', function (event, slick, currentSlide) {
-        var $slick = $(slick.$slider);
-        $slick.find('.slick-slide').removeClass('prev-slide next-slide');
-        $slick.find('.slick-current').prev('.slick-slide').addClass('prev-slide');
-        $slick.find('.slick-current').next('.slick-slide').addClass('next-slide');
-    });
-    $('.carousel-custom').on('beforeChange', function (event, slick, currentSlideIndex, nextSlideIndex) {
-        var windowWidth = $(window).width();
-        $('.slick-slide').css('margin-top', '');
+    // $('.carousel-custom').on('init reInit beforeChange', function (event, slick, currentSlideIndex, nextSlideIndex) {
+    //     // Для первого слайда делаем особую проверку
+    //     if (typeof nextSlideIndex === 'undefined') {
+    //         nextSlideIndex = 0;
+    //     }
+        
+    //     applyMargins(slick, nextSlideIndex); // Применяем отступы ДО переключения
+    // });
+    
+    // function applyMargins(slick, currentSlideIndex) {
+    //     var windowWidth = $(window).width();
+    //     var prevMargin = windowWidth <= 1090 ? '40px' : '130px';
+    
+    //     // Сначала убираем отступы у всех слайдов, кроме текущих
+    //     slick.$slides.css('margin-top', '0');
+    
+    //     // Устанавливаем отступы только для предыдущего, текущего и следующего слайдов
+    //     var $currentSlide = $(slick.$slides[currentSlideIndex]);
+    //     var $prevSlide = $currentSlide.prev().length ? $currentSlide.prev() : slick.$slides.last();
+    //     var $nextSlide = $currentSlide.next().length ? $currentSlide.next() : slick.$slides.first();
+    
+    //     $currentSlide.css('margin-top', '70px');
+    //     $prevSlide.css('margin-top', prevMargin);
+    //     $nextSlide.css('margin-top', '10px');
+    // }
+    
 
-
-        $(slick.$slides[nextSlideIndex]).prev().css('margin-top', '130px');
-        $(slick.$slides[nextSlideIndex]).next().css('margin-top', '10px');
-
-        if (windowWidth <= 1090) {
-            $(slick.$slides[nextSlideIndex]).next().css('margin-top', '40px');
-        }
-
-    });
-
-
-    $('.carousel-custom').on('afterChange', function (event, slick, currentSlideIndex) {
-        slick.setPosition();
-        $('.slick-slide').css('transform', '').css('margin-top', '');
-        $(slick.$slides[currentSlideIndex]).css('margin-top', '70px');
-    });
 
 
 
     $('.carousel-custom').slick({
+        autoplay: true,
         infinite: true,
         slidesToShow: 1,
         centerPadding: '20%',
@@ -73,11 +75,11 @@ $(function () {
 
         $('.services_dots .services-dot').eq(currentSlide).addClass('active-dot');
         if (currentSlide > 4) {
-           
-            $('.services_dots').slick('slickUnfilter').slick('slickFilter', function(index) {
-                return index >= slick.slideCount - 3; 
+
+            $('.services_dots').slick('slickUnfilter').slick('slickFilter', function (index) {
+                return index >= slick.slideCount - 3;
             });
-    
+
             $('.services_dots .services-dot').removeClass('active-dot');
             $('.services_dots .services-dot').eq(currentSlide - 5).addClass('active-dot');
         } else {
